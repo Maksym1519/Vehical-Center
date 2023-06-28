@@ -1,0 +1,24 @@
+.title {
+color: #FFF;
+font-size: 32px;
+font-family: 'Raleway-700';
+margin-bottom: 24px;
+}
+.container {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    flex-wrap: nowrap;
+}
+.slide {
+    max-width: 235px !important;
+    box-sizing: border-box;
+    margin-right: 16px;
+}
+.swiper-pagination-progressbar-fill {
+background: red !important;    
+}
+.swiper-pagination-progressbar {
+    width: 150% !important;
+  }
+  

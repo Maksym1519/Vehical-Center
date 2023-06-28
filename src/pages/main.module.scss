@@ -13,7 +13,7 @@
     display: grid;
     grid-template-columns: 39.2% 1fr;
     column-gap: 16px;
-    margin-bottom: 80px;
+    margin-bottom: 108px;
    }
 .vhf__info {
     width: 100%;
@@ -164,22 +164,20 @@ margin-right: 12px;
     display: flex;
     align-items: center;
     column-gap: 12px;
-    margin-bottom: 100px;
+    margin-bottom: 21px;
 }
 .dropdown__recent {
     width: 168px;
     height: 40px;
     border-radius: 99px;
     border: 1px solid rgba(255, 255, 255, 0.10);
-    box-shadow: 0px 15px 30px 0px rgba(20, 102, 204, 0.16);
 }
 .dropdown__auctions {
     width: 121px;
     height: 40px;
     border-radius: 99px;
     border: 1px solid rgba(255, 255, 255, 0.10);
-    box-shadow: 0px 15px 30px 0px rgba(20, 102, 204, 0.16);
-}
+    }
 .dropdown__recent__toggle {
     display: flex;
     align-items: center;
@@ -188,7 +186,17 @@ margin-right: 12px;
     color: #FFF;
     font-size: 14px;
     font-family: 'Raleway-700';
-
+}
+.dropdown__recent__toggle::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 5px;
+    background-image: url('../images/vhf-arrow.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 10px;
 }
 .dropdown__auctions__toggle {
     display: flex;
@@ -198,6 +206,17 @@ margin-right: 12px;
     color: #FFF;
     font-size: 14px;
     font-family: 'Raleway-700';
+}
+.dropdown__auctions__toggle::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 5px;
+    background-image: url('../images/vhf-arrow.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 10px;
 }
 .dropdown__menu__recent li{
     list-style: none;

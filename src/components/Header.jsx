@@ -1,4 +1,3 @@
-//import React from "react";
 import '../style.scss';
 import h from './header.module.scss';
 import Logo from '../images/header-logo.svg';

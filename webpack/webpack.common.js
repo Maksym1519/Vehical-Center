@@ -19,10 +19,10 @@ module.exports = {
         ],
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
-       {
+        {
         test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
         type: 'asset/resource',
       },
