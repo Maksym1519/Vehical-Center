@@ -9,6 +9,12 @@
     margin: 0 auto;
     height: auto;
 }
+.title {
+    color: #FFF;
+    font-size: 32px;
+    font-family: 'Raleway-700';
+    margin-bottom: 13px;
+    }
 .vhf {
     display: grid;
     grid-template-columns: 39.2% 1fr;
@@ -20,36 +26,6 @@
     display: flex;
     flex-direction: column;
     padding-top: 297px;
-}
-.header {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    margin-bottom: 5px;
-    margin-left: -16px;
-}
-.header__description {
-    margin-left: -2px;
-}
-.header__title {
-    color: #FFF;
-    font-size: 18px;
-    font-family: 'Raleway-600';
-    margin-bottom: 5px;
-}
-.header__userName {
-    font-size: 14px;
-    font-family: 'Raleway-500';
-    background-image: linear-gradient(to right, #8743FF, #D8C2FF);
-    background-clip: text;
-    -webkit-background-clip: text; /* Для поддержки веб-браузерами на основе WebKit (Chrome, Safari) */
-    color: transparent;
-}
-.title {
-color: #FFF;
-font-size: 32px;
-font-family: 'Raleway-700';
-margin-bottom: 13px;
 }
 .vhf__text {
 color: rgba(255, 255, 255, 0.50);
