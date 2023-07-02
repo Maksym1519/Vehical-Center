@@ -1,0 +1,136 @@
+.container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    border: 1px solid #333940;
+    }
+    .cardImg {
+        width: 100%;
+        height: auto;
+    }
+.cardInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 23px 14px 16px 16px;
+}
+.title {
+    color: #FFF;
+    font-size: 20px;
+    font-family: 'Raleway-700';
+    margin-bottom: 14px;
+    }
+    .sold {
+        display: flex;
+        align-items: center;
+        margin-bottom: 13px;
+    }
+     .sold__text {
+    color: rgba(255, 255, 255, 0.50);
+    font-size: 14px;
+    font-family: 'Raleway-600';
+    margin-right: 47.8%;
+    }
+    .sold__logo {
+        margin-right: 5px;
+    }
+    .sold__numbers {
+    color: #FFF;
+    font-size: 16px;
+    font-family: 'Raleway-600';
+    }
+    .ending {
+        display: flex;
+        align-items: center;
+    }
+    .ending__text {
+    color: rgba(255, 255, 255, 0.50);
+    font-size: 14px;
+    font-family: 'Raleway-600';
+    margin-right: 43.5%;
+    }
+    .ending__numbers_h {
+    color: #FFF;
+    font-size: 16px;
+    font-family: 'Raleway-600';
+    margin-right: 5px;
+    }
+    .ending__numbers_m {
+    color: #FFF;
+    font-size: 16px;
+    font-family: 'Raleway-600';
+    margin-right: 5px;
+    }
+    .ending__numbers_s {
+    color: #FFF;
+    font-size: 16px;
+    font-family: 'Raleway-600';
+    }
+    .card__headerWrapper {
+    width: 89.9%;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    }
+   .status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 142px;
+    height: 44px;
+    border-radius: 12px;
+    background: #FFF;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    }
+    .status__text {
+    color: #86D084;
+    font-size: 16px;
+    font-family: 'Raleway-600';
+    }
+    .status__menu__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .status__menu {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #FFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 19px;
+         }
+         .status__menu__dotsWrapper {
+            display: flex;
+            flex-direction: column;
+            row-gap: 3px;
+             }
+    .status__menu__dot {
+        transform: translate(-2px, -24px);
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        font-size: 32px;
+        margin-bottom: 3px;
+    }
+    .status__menu__navContainer {
+        display: flex;
+        flex-direction: column;
+        row-gap: 19px;
+         }
+    .status__menu__item {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #FFF;
+    }

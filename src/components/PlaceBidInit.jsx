@@ -2,8 +2,10 @@ import '../style.scss';
 import A from './placeBidInit.module.scss';
 import PriceLogo from '../images/price-logo.svg';
 import Line from '../images/placebid-line.png';
+import React, { useState } from 'react';
 
-export const PlaceBidInit = () => {
+export const PlaceBidInit = ({closeModal}) => {
+ 
     return (
         <div className={A.placeBid}>
         <div className={A.placeBid__current}>
@@ -25,7 +27,7 @@ export const PlaceBidInit = () => {
         </div>
         <img src={Line} alt="line" />
         <div className={A.placeBid__button}>
-         <button className={A.placeBid__button__button}>Place a bid</button>
+         <button onClick={closeModal} className={A.placeBid__button__button}>Place a bid</button>
         </div>
         </div>
     )

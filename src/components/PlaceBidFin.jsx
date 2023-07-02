@@ -3,7 +3,10 @@ import Pf from './placeBidFin.module.scss';
 import PriceLogo from '../images/price-logo.svg';
 import Line from '../images/placebid-line.png'
 
-export const PlaceBidFin = () => {
+export const PlaceBidFin = ({closeModal}) => {
+  const handleCloseModal = () => {
+    closeModal();
+  };
     return (
         <div className={Pf.body}>
          <div className={Pf.price__wrapper}>
@@ -15,7 +18,7 @@ export const PlaceBidFin = () => {
             </div>
          </div>
         <img src={Line} alt="line" className={Pf.line} />
-        <button className={Pf.button}>Buy art</button>
+        <button className={Pf.button} onClick={handleCloseModal}>Buy art</button>
         </div>
     )
 }

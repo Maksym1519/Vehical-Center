@@ -1,5 +1,6 @@
 import '../style.scss';
 import A from './artwork.module.scss';
+import React, { useState } from 'react';
 import {Header} from '../components/Header';
 import { ArtName } from '../components/ArtName';
 import { ActivityCard } from '../components/Activity-Card';
@@ -11,12 +12,20 @@ import Bg from '../images/Artwork-Bg.png';
 import FuncExt from '../images/vhf- external.svg';
 import FuncShare from '../images/vhf-share.svg';
 import FuncVertical from '../images/vhf-vertical.svg';
-import React, { useState } from 'react';
+
 
 
  export const Artwork = () => {
+   const [currentModal, setCurrentModal] = useState(1)
+   const openModal = (modalNumber) => {
+      setCurrentModal(modalNumber)
+  }
+  const closeModal = () => {
+      setCurrentModal((prevModal) => prevModal + 1)
+  }
     return (
         <div className={A.wrapper}>
+         {(currentModal === 2 || currentModal === 3) && <div className={A.overlay}></div>}
          <div className={A.header__wrapper}>   
          <Header />
          </div>
@@ -52,16 +61,16 @@ import React, { useState } from 'react';
               <ActivityCard />
               </div>
            </div>
-         <PlaceBidInit />
-         <PlaceBidProg />
-         <PlaceBidFin />
+         {currentModal === 1 && <PlaceBidInit closeModal={closeModal}/>}
+         {currentModal === 2 && <PlaceBidProg openModal={openModal} closeModal={closeModal}/>}
+         {currentModal === 3 && <PlaceBidFin openModal={openModal} closeModal={closeModal}/>}
          </div>
          <div className={A.title__container}>
             <h3 className={A.title__container__title}>Feature works</h3>
          </div>
          <VFHCards />
          </div>
-        </div>
+         </div>
     )
      }
 

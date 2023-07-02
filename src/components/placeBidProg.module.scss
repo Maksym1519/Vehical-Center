@@ -10,7 +10,7 @@
     box-sizing: border-box;
     border-radius: 8px;
     background: #30363D;
-    display: none;
+    z-index: 5;
 }
 .header {
     position: relative;

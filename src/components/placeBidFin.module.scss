@@ -1,6 +1,6 @@
 .body {
     position: absolute;
-    top: -350px;
+    top: -70px;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -10,7 +10,7 @@
     box-sizing: border-box;
     background: #30363D;
     border-radius: 16px;
-    display: none;
+    z-index: 5;
 }
 .price__wrapper {
     display: flex;
