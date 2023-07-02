@@ -1,5 +1,6 @@
 import '../../style.scss';
 import Cp from './aboutUser.module.scss';
+import React, { useState } from 'react';
 import {ArtName} from '../ArtName';
 import TwichLogo from '../../images/twich-logo.svg';
 import InstagramLogo from '../../images/instagram-logo.svg';
@@ -8,10 +9,19 @@ import OnlyfansLogo from '../../images/onlyfans-logo.svg';
 import LogoExt from '../../images/vhf- external.svg';
 import LogoShare from '../../images/vhf-share.svg';
 import LogoVert from '../../images/vhf-vertical.svg';
+import { FollowModal } from '../../pages/FollowModal';
 
 export const AboutUser = () => {
-    return (
+     const [isModalOpen, setIsModalOpen] = useState(false)
+      const openModal = () => {
+          setIsModalOpen(true)
+      }
+      const closeModal = () => {
+          setIsModalOpen(false)
+      }
+      return (
         <div className={Cp.aboutCreator}>
+          {isModalOpen &&<div className={Cp.overlay}></div>}
          <div className={Cp.description}>
          <div className={Cp.userName__wrapper}>
          <ArtName />
@@ -60,7 +70,7 @@ export const AboutUser = () => {
                   <span className={Cp.follow__statistics__text}>Following</span>
                 </div>
             </div>
-            <button className={Cp.follow__button}>Follow</button>
+            <button onClick={openModal} className={Cp.follow__button}>Follow</button>
             <div className={Cp.follow__share}>
              <div className={Cp.follow__item}>
                 <img src={LogoExt} alt="logo" />
@@ -73,6 +83,7 @@ export const AboutUser = () => {
              </div>
             </div>
          </div>
+          {isModalOpen && <FollowModal closeModal={closeModal} />} 
         </div>
     )
 }
