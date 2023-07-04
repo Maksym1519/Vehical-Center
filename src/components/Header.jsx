@@ -13,7 +13,7 @@ export const Header = () => {
           <img src= {SearchIcon} alt="search" />
           <input type="search" className={h.search__input} placeholder='Search for ...'/>
           </div>
-          <Button />
+          <Button buttonText="Connect wallet"/>
          </div>
     )
 }

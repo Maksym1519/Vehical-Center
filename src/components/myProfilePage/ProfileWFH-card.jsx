@@ -2,25 +2,26 @@ import '../../style.scss';
 import c from './profileWFHCard.module';
 import CardLogo from '../../images/TasteNFT_logo.svg';
 import TimeIcon from '../../images/card-time-icon.svg';
-import EditIcon from '../../images/card-time-icon.svg';
-import BucketIcon from '../../images/card-time-icon.svg';
+import EditIcon from '../../images/card-edit-icon.svg';
+import BucketIcon from '../../images/card-bucket-icon.svg';
+import { useState } from 'react';
 //import { VFHCards } from './WFH-Cards';
 
  
-export const ProfileVFHCard = ({ava,img,text}) => {
+export const ProfileVFHCard = ({img,text}) => {
    let textColor = '';
-   let iconView = document.getElementsByClassName('.status__menu__navContainer');
-  if (text === 'On moderation') {
+   const [isMenuOpen,setMenuOpen] = useState(false)
+    //-----------------------------------------------------------------------------------------
+    if (text === 'On moderation') {
     textColor = '#FFBA09';
   } else if (text === 'Declined') {
     textColor = '#FF5E54';
   } else {
     textColor = '#86D084';
   }
-   if (text === 'Declined') {
-   for(let i = 0; i < iconView.length; i++) {
-   iconView[i].style.display = 'none'
-   }
+  //-----------------------------------------------------------------------------------------
+  const handleMenu = () => {
+    setMenuOpen(!isMenuOpen)
   }
       return (
         <div className={c.container}>
@@ -43,16 +44,17 @@ export const ProfileVFHCard = ({ava,img,text}) => {
         </div>
         <div className={c.card__headerWrapper}>
         <div className={c.status}>
-           <span className={c.status__text} style={{color:textColor,display:iconView}}>{text}</span>
+           <span className={c.status__text} style={{color:textColor}}>{text}</span>
         </div>
-<div className={c.status__menu__wrapper}>
+       <div className={c.status__menu__wrapper}>
         <div className={c.status__menu}>
-             <div className={c.status__menu__dotsWrapper}>
+             <div className={c.status__menu__dotsWrapper} onClick={handleMenu}>
               <span className={c.status__menu__dot}>.</span>  
               <span className={c.status__menu__dot}>.</span>  
               <span className={c.status__menu__dot}>.</span>  
               </div>
             </div>
+           {isMenuOpen && (
            <div className={c.status__menu__navContainer}>
                {text === 'On moderation' && (
                <div className={c.status__menu__item}>
@@ -73,8 +75,10 @@ export const ProfileVFHCard = ({ava,img,text}) => {
                </>
             )}
               </div>
-</div>
+             )}
+             </div>
            </div>
         </div>
+        
     )
 }

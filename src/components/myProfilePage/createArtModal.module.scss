@@ -1,0 +1,128 @@
+.wrapper {
+position: absolute;
+top: 10%;
+left: 50%;
+transform: translateX(-50%);
+width: 653px;
+height: 734px;
+border-radius: 32px;
+background: #30363D;
+box-shadow: 0px 25px 40px 0px rgba(0, 0, 0, 0.05);
+padding: 45px 24px 32px 24px;
+z-index: 999;
+}
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title {
+    color: #FFF;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Raleway-700';
+    margin-bottom: 15px;
+    }
+    .predictionText {
+        width: 100%;
+        height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 16px;
+        border-radius: 16px;
+        background: rgba(255, 94, 84, 0.10);
+        color: #FF5E54;
+        font-size: 14px;
+        font-family: 'Raleway-400';
+        margin-bottom: 23px;
+        }
+        .progressBar__wrapper {
+            width: 70.75%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+           }
+        .progressBar__itemWrapper {
+            width: 100%;
+            height: 5px;
+            display: flex;
+            column-gap: 6px;
+            margin-bottom: 16px;
+        }
+        .progressBar__item {
+         width: 32.46%;
+         height: 5px;
+         border-radius: 12px;
+         background: rgba(255, 255, 255, 0.20);
+          }
+        .progressBar__item1 {
+         width: 32.46%;
+         height: 100%;
+         border-radius: 12px;
+         background: var(--linear, linear-gradient(270deg, #8743FF 0%, #4136F1 100%));
+        }
+        .progressBar__textInfo {
+        color: rgba(255, 255, 255, 0.50);
+        font-size: 12px;
+        font-family: 'Raleway-600';
+        margin-bottom: 20px;
+        }
+        .uploadTitle {
+        color: rgba(255, 255, 255, 0.50);
+        text-align: center;
+        font-size: 16px;
+        font-family: 'Raleway-600';
+        margin-bottom: 12px;
+        }
+        .upload__body {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 124px;
+        padding-bottom: 142px;
+        align-items: center;
+        border-radius: 16px;
+        border: 1px dashed #C4C4C4;
+        margin-bottom: 32px;
+        }
+        .upload__description {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 3px;
+            margin-bottom: 30px;
+        }
+        .upload__description__text {
+        color: rgba(255, 255, 255, 0.50);
+        text-align: center;
+        font-size: 14px;
+        font-family: 'Raleway-400';
+        }
+        .upload__textBottom {
+        color: rgba(255, 255, 255, 0.50);
+        text-align: center;
+        font-size: 14px;
+        font-family: 'Raleway-400';
+        }
+        .button {
+        width: 157px;
+        height: 40px;   
+        border-radius: 12px;
+        background: var(--linear, linear-gradient(270deg, #8743FF 0%, #4136F1 100%));
+        box-shadow: 0px 15px 30px 0px rgba(20, 102, 204, 0.16); 
+        color: #FFF;
+        text-align: center;
+        font-size: 14px;
+        font-family: 'Raleway-700';
+        justify-self: center;
+        }
+        .closeWindow {
+            position: absolute;
+            top: 52px;
+            right: 24px;
+        }

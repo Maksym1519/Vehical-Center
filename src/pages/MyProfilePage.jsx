@@ -9,11 +9,12 @@ import ProfileAvatar from '../images/main-avatar.svg'
 export const MyProfile = () => {
      return (
         <div className={Pp.wrapper}>
-               <ProfileHeader />
+         <ProfileHeader />
          <div className={Pp.container}>
          <ProfileAboutUser />
          <ProfileWFHCards />
-        </div>
+        
+         </div>
        </div>
     )
 }

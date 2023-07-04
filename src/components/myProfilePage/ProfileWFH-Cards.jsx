@@ -22,12 +22,12 @@ import Card8 from '../../images/VFH-card8.png';
 
 export const ProfileWFHCards = () => {
     const imagesBg = [Card1,Card2,Card3,Card4,Card5,Card6,Card7,Card8]
-    const avatars = [CardAvatar1, CardAvatar2, CardAvatar3, CardAvatar4, CardAvatar5, CardAvatar6, CardAvatar7, CardAvatar8];
+    //const avatars = [CardAvatar1, CardAvatar2, CardAvatar3, CardAvatar4, CardAvatar5, CardAvatar6, CardAvatar7, CardAvatar8];
     const array  = array
       return (
         <div className={Pw.container}>
-      {avatars.map((avatar, index) => (
-        <ProfileVFHCard key={index} ava={avatar} img={imagesBg[index]} text={index === 1 ? 'On moderation' : index === 2 ? 'Declined' : 'Approved'} />
+      {imagesBg.map((image, index) => (
+        <ProfileVFHCard key={index} img={image} text={index === 1 ? 'On moderation' : index === 2 ? 'Declined' : 'Approved'} />
       ))}
       </div>
     )

@@ -1,8 +1,9 @@
 import b from './button.module.scss';
+import React, { useState, useEffect } from 'react';
 
-export const Button = () => {
+export const Button = ({buttonText, handleClick}) => {
     return (
-    <div className={b.button}>Connect wallet</div>
+    <div className={b.button} onClick={handleClick}>{buttonText}</div>
     )
 }
 console.log(Button)
