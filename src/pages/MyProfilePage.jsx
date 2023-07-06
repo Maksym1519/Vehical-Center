@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { ProfileHeader } from '../components/myProfilePage/ProfileHeader';
 import { ProfileAboutUser } from '../components/myProfilePage/AboutUser';
 import { ProfileWFHCards } from '../components/myProfilePage/ProfileWFH-Cards';
-import ProfileAvatar from '../images/main-avatar.svg'
+
 
 export const MyProfile = () => {
      return (
@@ -14,7 +14,7 @@ export const MyProfile = () => {
          <ProfileAboutUser />
          <ProfileWFHCards />
         
-         </div>
+          </div>
        </div>
     )
 }

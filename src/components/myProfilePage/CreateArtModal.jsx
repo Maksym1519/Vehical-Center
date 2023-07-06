@@ -3,6 +3,7 @@ import Ca from './createArtModal.module.scss';
 import CloseWindow from '../../images/close.svg'
 import { ProfileVFHCard } from './ProfileWFH-card';
 import { EndingTime } from './EndingTimeModal';
+import { CreateArtModal2 } from './createArtModal2';
 import React, { useState } from 'react';
 
 export const CreateArtModal = ({openModal, closeModal}) => {
@@ -27,7 +28,7 @@ export const CreateArtModal = ({openModal, closeModal}) => {
       <div>
       {
         isEndingTimeModalOpen ? (
-          <EndingTime openModal={handleOpenEndingTimeModal} closeModal={handleModalClose} />
+          <CreateArtModal2 openModal={handleOpenEndingTimeModal} closeModal={handleModalClose} />
         ) : (
         <div className={Ca.wrapper}>
          <div className={Ca.container}>
@@ -55,7 +56,7 @@ export const CreateArtModal = ({openModal, closeModal}) => {
             <button className={Ca.button} onClick={handleOpenEndingTimeModal}>Next step</button>
           </div>
           <img src={CloseWindow} alt="close" className={Ca.closeWindow} onClick={handleModalClose} />
-          {isEndingTimeModalOpen && <EndingTime openModal={handleOpenEndingTimeModal} closeModal={handleCloseEndingTimeModal} />}
+          {isEndingTimeModalOpen && <CreateArtModal2 openModal={handleOpenEndingTimeModal} closeModal={handleCloseEndingTimeModal} />}
          </div>)}
          </div>
        )

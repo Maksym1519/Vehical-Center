@@ -7,6 +7,7 @@ import { Header } from '../components/Header';
 import { VFHCards } from '../components/WFH-Cards';
 import {SliderCreators} from '../components/Slider-Creators';
 import { ArtName } from '../components/ArtName';
+import { WalletModal } from '../components/WalletModal';
 //import Avatar from '../images/main-avatar.svg';
 import PriceLogo from '../images/price-logo.svg'
 import PriceExt from '../images/vhf- external.svg'
@@ -86,6 +87,7 @@ import IndicatorNonAct from '../images/indicator-nonactive.svg';
          </div>
          <VFHCards />
          <SliderCreators />
+         <WalletModal />
         </div>  
         </div>
         </div>
