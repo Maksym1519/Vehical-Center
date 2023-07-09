@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../fonts.scss';
 import '../style.scss';
 import '../components/header.module.scss';
@@ -7,8 +7,7 @@ import { Header } from '../components/Header';
 import { VFHCards } from '../components/WFH-Cards';
 import {SliderCreators} from '../components/Slider-Creators';
 import { ArtName } from '../components/ArtName';
-import { WalletModal } from '../components/WalletModal';
-//import Avatar from '../images/main-avatar.svg';
+import { MainSlider } from '../components/MainSlider';
 import PriceLogo from '../images/price-logo.svg'
 import PriceExt from '../images/vhf- external.svg'
 import PriceShare from '../images/vhf-share.svg';
@@ -22,9 +21,10 @@ import IndicatorNonAct from '../images/indicator-nonactive.svg';
 
 
  export const Main = () => {
+  
     return (
         <div className='main-wrapper'>
-        <Header />
+       <Header />
         <div className={m.wrapper}>
          <div className={m.container}>
          <div className={m.vhf}>
@@ -51,7 +51,8 @@ import IndicatorNonAct from '../images/indicator-nonactive.svg';
                 </div>
              </div>
             </div>
-            <div className={m.vhf__gallery}>
+            <MainSlider />
+            {/* <div className={m.vhf__gallery}>
              <div className={m.vhf__gallery__imgWrapper}>
                 <div className={m.vhf__gallery__item}><img src={Gallery1} alt="img" className={m.vhf__gallery__item_cutting1}/></div>
                 <div className={m.vhf__gallery_item}><img src={Gallery2} alt="img" className={m.vhf__gallery__item_cutting2}/></div>
@@ -65,7 +66,7 @@ import IndicatorNonAct from '../images/indicator-nonactive.svg';
               <div className={m.vhf__gallery__indicator}><img src={IndicatorNonAct} alt="img" /></div>
               <div className={m.vhf__gallery__indicator}><img src={IndicatorNonAct} alt="img" /></div>
              </div>
-            </div>
+            </div> */}
          </div>
          <div className={m.dropdown}>
           <div className={m.dropdown__recent}>
@@ -87,8 +88,7 @@ import IndicatorNonAct from '../images/indicator-nonactive.svg';
          </div>
          <VFHCards />
          <SliderCreators />
-         <WalletModal />
-        </div>  
+         </div>  
         </div>
         </div>
     )

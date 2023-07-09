@@ -1,6 +1,7 @@
 .body {
     width: 100%;
-    max-width: 235px;
+    max-width: 246px;
+    max-height: 222px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -8,7 +9,6 @@
     align-items: center;
     border: 1px solid #333940;
     padding: 24px 56px;
-    margin-bottom: 16px;
     box-sizing: border-box;
 }
 .ava {

@@ -9,16 +9,18 @@ margin-bottom: 24px;
     align-items: center;
     column-gap: 16px;
     flex-wrap: nowrap;
-}
+   }
 .slide {
-    max-width: 235px !important;
-    box-sizing: border-box;
+    width: 246px !important;
+    max-height: 222px !important;
+    box-sizing: border-box !important;
     margin-right: 16px;
-}
-.swiper-pagination-progressbar-fill {
-background: red !important;    
-}
-.swiper-pagination-progressbar {
-    width: 150% !important;
-  }
-  
+    margin-bottom: 25px;
+    }
+    
+
+    .swiper-scrollbar-drag {
+        background: red !important;
+    }
+   
+    

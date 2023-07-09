@@ -15,6 +15,7 @@ import FuncVertical from '../images/vhf-vertical.svg';
 
 
 
+
  export const Artwork = () => {
    const [currentModal, setCurrentModal] = useState(1)
    const openModal = (modalNumber) => {

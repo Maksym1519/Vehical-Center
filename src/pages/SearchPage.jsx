@@ -21,6 +21,7 @@ import CardAvatar5 from '../images/card5-ava.jpg';
 import CardAvatar6 from '../images/card6-ava.jpg';
 import CardAvatar7 from '../images/card7-ava.jpg';
 import CardAvatar8 from '../images/card8-ava.jpg';
+import Text from '../images/Show all.svg'
 
 export const SearchPage = () => {
     const [isOpenCards, setOpenCards] = useState(false)
