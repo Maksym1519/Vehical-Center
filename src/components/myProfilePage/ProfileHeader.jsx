@@ -12,6 +12,7 @@ import ProfileAva from "../../images/profile-avatar-circ.png";
 import ProfileLogo from "../../images/profile-logo.svg";
 import Arrow from "../../images/profile-arrow.svg";
 import React, { useState, useEffect } from "react";
+import { Link, Route, Router, Routes } from "react-router-dom";
 
 export const ProfileHeader = () => {
   const [isOpenMenu, setOpenMenu] = useState(false);
@@ -66,7 +67,7 @@ export const ProfileHeader = () => {
       {isEditProfile && <div className={Hp.overlay}></div>}
       {isBalanceModalOpen && <div className={Hp.overlay}></div>}
       {isSwapModalOpen && <div className={Hp.overlay}></div>}
-      <img src={Logo} alt="logo" className="logo" />
+      <Link to={"/"}><img src={Logo} alt="logo" className="logo" /></Link>
       <div className={Hp.search}>
         <img src={SearchIcon} alt="search" />
         <input

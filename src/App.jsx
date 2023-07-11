@@ -1,10 +1,11 @@
 import React from 'react';
-import {Routes, Route, Link } from 'react-router-dom';
+import {BrowserRouter, Routes, Route, Link, Switch } from 'react-router-dom';
 import { Main } from './pages/Main';
 import { Artwork } from './pages/Artwork';
 import { CreatorPage } from './pages/CreatorPage';
 import { MyProfile } from './pages/MyProfilePage';
 import { SearchPage } from './pages/SearchPage';
+
 import './fonts.scss';
 import './style.scss';
 

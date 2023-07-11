@@ -6,6 +6,9 @@ import { Button } from './Button';
 import {WalletModal} from '../components/WalletModal'
 import { MyProfile } from '../pages/MyProfilePage';
 import React, { useState, useEffect } from "react";
+import { Link, Route, Router, Routes } from "react-router-dom";
+import { Main } from '../pages/Main';
+
 
 export const Header = () => {
   const [isWalletModalOpen, setWalletModalOpen] = useState(false)
@@ -17,9 +20,10 @@ export const Header = () => {
   }
 
       return (
+        <div>
         <div className={h.wrapper}>
            {isWalletModalOpen && <div className={h.overlay}></div>}
-          <img src={Logo} alt="logo" className="logo" />
+           <Link to="/"><img src={Logo} alt="logo" className="logo" /></Link>
           <div className={h.search}>
           <img src= {SearchIcon} alt="search" />
           <input type="search" className={h.search__input} placeholder='Search for ...' />
@@ -29,5 +33,7 @@ export const Header = () => {
          <WalletModal closeModal={closeModal} handleClick={handleClick} />
          )}
          </div>
+        </div>
+        
     )
 }

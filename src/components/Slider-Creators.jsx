@@ -1,16 +1,18 @@
-import '../slider.css'
+import '../style.scss';
+import Sl from './slider-creators.module.scss';
 import React from 'react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useEffect, useRef } from "react";
+import { register } from "swiper/element/bundle";
+register();
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import 'swiper/scss/scrollbar';
-//import SwiperCore, { Pagination } from 'swiper/core';
 import 'swiper/swiper-bundle.css'; 
 
-import '../style.scss';
-import Sl from './slider-creators.module.scss';
+
 import { SliderCard } from './Slider-Card';
 import Img1 from '../images/slider-img1.jpg';
 import Img2 from '../images/slider-img2.jpg';
@@ -20,24 +22,53 @@ import Img5 from '../images/slider-img5.jpg';
 import Img6 from '../images/slider-img6.jpg';
 import Img7 from '../images/slider-img7.jpg';
 
-//SwiperCore.use([Pagination]);
 
 export const SliderCreators = () => {
+    const swiperRef = useRef(null);
+
+    useEffect(() => {
+      const swiperEl = document.querySelector("swiper-container");
+      const swiperContainer = swiperRef.current;
+      const params = {
+       scrollbar: true,
+       injectStyles: [
+          `
+          .swiper-scrollbar-drag {
+            min-width: 400px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+          }
+          .swiper-scrollbar-horizontal {
+            background: transparent;
+            z-index: -5;
+            margin-left: -15px;
+           }
+          
+        `,
+          ],
+      };
+  
+       Object.assign(swiperContainer, params);
+      swiperContainer.initialize();
+     }, []);
+  
      const sliderImgs = [Img1,Img2,Img3,Img4,Img5,Img6,Img7]
     return (
         <div className={Sl.wrapper}>
          <h2 className={Sl.title}>Featured creators</h2>
          <div className={Sl.container}>
-            <Swiper  
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            scrollbar={{ draggable: true }}
-            className={Sl.mySlider}>
+            <swiper-container 
+            ref={swiperRef} 
+            init="false"
+            slides-per-view="1"
+            className={Sl.swiperContainer}
+            >
             {sliderImgs.map((images,index) => (
           <SwiperSlide className={Sl.slide}>     
          <SliderCard  key={index} img={images} />
          </SwiperSlide> 
          ))}
-         </Swiper>
+         </swiper-container>
          </div>
         </div>
     )

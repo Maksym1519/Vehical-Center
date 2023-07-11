@@ -18,11 +18,13 @@
   margin-bottom: 13px;
 }
 .vhf {
+  height: auto;
   display: grid;
   grid-template-columns: 39.2% 1fr;
+  grid-template-rows: 600px;
   column-gap: 16px;
-  margin-bottom: 108px;
-}
+  margin-bottom: 67px;
+  }
 .vhf__info {
   width: 100%;
   display: flex;

@@ -128,9 +128,9 @@
   width: 121px;
   height: 40px;
   border-radius: 12px;
-  opacity: 0.20000000298023224;
-  background: rgb(135,67,255);
-  background: linear-gradient(90deg, rgba(135,67,255,1) 0%, rgba(65,54,241,1) 35%);
+  opacity: 1;
+  background: rgb(65, 33, 119);
+ // background: linear-gradient(90deg, rgba(135,67,255,1) 0%, rgba(65,54,241,1) 35%);
   margin-top: 24px;
   margin-bottom: 60px;
   z-index: 1;
@@ -140,7 +140,7 @@
   font-family: "Raleway-700";
   background-clip: text;
    background: #8743FF;
-  background: linear-gradient(to right, #8743ff 0%, #d8c2ff 100%);
+  background: linear-gradient(to left, #8743ff 0%, #d8c2ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 1;

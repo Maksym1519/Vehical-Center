@@ -1,16 +1,16 @@
 import "../style.scss";
 import Ms from "./mainSlider.module.scss";
-import React, { useRef, useState, useEffect } from "react";
 import Gallery1 from "../images/vhf-pic1.jpg";
 import Gallery2 from "../images/vhf-pic2.jpg";
 import Gallery3 from "../images/vhf-pic3.jpg";
 import Gallery4 from "../images/vhf-pic4.jpg";
-//import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-//import { register } from "swiper/react";
+import { EffectCards } from "swiper";
+import { EffectCreative } from "swiper";
 import SwiperCore, { Pagination } from "swiper";
-//import { params } from "./SwiperParams.jsx";
-//import SwiperCore from "swiper";
+import React, { useRef, useState } from 'react';
+import { useEffect } from "react";
+import { register } from "swiper/element/bundle";
 
 
 import "swiper/scss";
@@ -18,88 +18,126 @@ import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 import "swiper/scss/scrollbar";
 import "swiper/scss/effect-fade";
+import 'swiper/scss/effect-cards';
+import 'swiper/css/effect-creative';
 import "swiper/swiper-bundle.css";
-SwiperCore.use([Pagination]);
 
+//SwiperCore.use([Pagination]);
+
+//---------------------------------------------------------------------------------
 export const MainSlider = () => {
-  //register();
-  useEffect(() => {
-    // Perform any additional setup or initialization here
-  }, []);
-  const sliderImgs = [Gallery1, Gallery2, Gallery3, Gallery4];
+  register();
+  // const swiperRef = useRef(null);
+    //const swiperContainer = swiperRef.current;
+    const params = {
+    injectStyles: [
+        `
+          .swiper-pagination-bullet {
+           width: 95px;
+             height: 5px;
+           background: rgba(255, 255, 255, 0.5);
+          inactive-opacity: 1;
+          border-radius: 0;
+         }
+       .swiper-wrapper {
+           //display: flex;
+         //justify-content: flex-start;
+          //  align-items: center;
+           //margin-top: 40px;
+           //height: 150%;
+          }
+                   
+          .swiper-pagination-bullets.swiper-pagination-horizontal {
+            position: absolute;
+            bottom: -30px !important;
+            left: 0;  
+            display: flex;
+            justify-content: flex-start;
+          }
+          .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            margin-left: 0 !important;
+          }
+            swiper-container {
+            margin-left: 0 !important;
+            margin-top: 0 !important;
+            display-flex !important;
+            align-items: center !important:
+           // justify-content: flex-start;
+            width: 519px;
+            height: auto;
+            box-sizing: border-box;
+          }
+         
+           .swiper-slide-active {
+            z-index: 1233 !important;
+          }
+            .swiper-slide {
+           // position: absolute;
+           // left: 100px;
+            //justify-self: flex-start;
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
+            //transform: translate3d(-34%) !important;
+              }
+              swiper-slide:nth-child(2n) {
+                margin-top: 20px;
+              }
+              swiper-slide:nth-child(3n) {
+                margin-top: 50px;
+              }
+              swiper-slide:nth-child(4n) {
+                margin-top: 100px;
+              }
+           
+           
+         
+      `,
+       ],
+    };
  
-  return (
-    <div>
-      <Swiper
-        modules={[Pagination]}
-        className={Ms.mainSlider}
-        spaceBetween={30}
-        pagination={{
-        clickable: true,
-        bulletClass: Ms.swiper__pagination,
-        }}
-      >
-        <SwiperSlide className={Ms.slide1}>
-          <img src={Gallery1} alt={`Slide`} />
-        </SwiperSlide>
-        <SwiperSlide className={Ms.slide2}>
-          <img src={Gallery2} alt={`Slide`} />
-        </SwiperSlide>
-        <SwiperSlide className={Ms.slide3}>
-          <img src={Gallery3} alt={`Slide`} />
-        </SwiperSlide>
-        <SwiperSlide className={Ms.slide4}>
-          <img src={Gallery4} alt={`Slide`} />
-        </SwiperSlide>
+    const authorSwiper = useRef("none");
 
-        {/* <div className={m.vhf__gallery__imgWrapper}>
-            <div className={m.vhf__gallery__item}>
-              <img
-                src={Gallery1}
-                alt="img"
-                className={m.vhf__gallery__item_cutting1}
-              />
-            </div>
-            <div className={m.vhf__gallery_item}>
-              <img
-                src={Gallery2}
-                alt="img"
-                className={m.vhf__gallery__item_cutting2}
-              />
-            </div>
-            <div className={m.vhf__gallery_item}>
-              <img
-                src={Gallery3}
-                alt="img"
-                className={m.vhf__gallery__item_cutting3}
-              />
-            </div>
-            <div className={m.vhf__gallery_item}>
-              <img
-                src={Gallery4}
-                alt="img"
-                className={m.vhf__gallery__item_cutting4}
-              />
-            </div>
-          </div>
-          <div className={m.vhf__gallery__navigation}>
-            <div className={m.vhf__gallery__indicator}>
-              <img src={IndicatorAct} alt="img" />
-            </div>
-            <div className={m.vhf__gallery__indicator}>
-              <img src={IndicatorNonAct} alt="img" />
-            </div>
-            <div className={m.vhf__gallery__indicator}>
-              <img src={IndicatorNonAct} alt="img" />
-            </div>
-            <div className={m.vhf__gallery__indicator}>
-              <img src={IndicatorNonAct} alt="img" />
-            </div>
-            <div className={m.vhf__gallery__indicator}>
-              <img src={IndicatorNonAct} alt="img" />
-            </div>
-          </div> */}
-      </Swiper>
-    </div>
+    useEffect(() => {
+      Object.assign(authorSwiper.current, params);
+      authorSwiper.current.initialize();
+    }, []);
+  
+
+   const sliderImgs = [Gallery1, Gallery2, Gallery3, Gallery4];
+
+  return (
+    
+    <div className={Ms.slider__body}>
+        <swiper-container
+         init="false"
+         ref={authorSwiper}
+         slides-per-view="1"
+         effect="cards"
+         grab-cursor="true"
+         centeredSlides="true"
+         loop="true"
+         cards-effect-rotate="false"
+         cards-effect-per-slide-offset="30"
+         cards-effect-slide-shadows="false"
+         pagination="true"
+         className="mySwiper"
+         //modules={EffectCards}
+            >
+
+          <swiper-slide className={Ms.slide1}>
+            <img src={Gallery1} alt={`Slide`} />
+          </swiper-slide>
+          <swiper-slide className={Ms.slide2}>
+            <img src={Gallery2} alt={`Slide`} />
+          </swiper-slide>
+          <swiper-slide className={Ms.slide3}>
+            <img src={Gallery3} alt={`Slide`} />
+          </swiper-slide>
+          <swiper-slide className={Ms.slide4}>
+            <img src={Gallery4} alt={`Slide`} />
+          </swiper-slide>
+        </swiper-container> 
+       </div>
   );
 };
