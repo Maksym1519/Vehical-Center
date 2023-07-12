@@ -60,7 +60,7 @@ export const SliderCreators = () => {
             <swiper-container 
             ref={swiperRef} 
             init="false"
-            slides-per-view="1"
+            slides-per-view="4"
             className={Sl.swiperContainer}
             >
             {sliderImgs.map((images,index) => (

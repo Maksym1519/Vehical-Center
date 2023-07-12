@@ -3,8 +3,12 @@
   display: flex !important;
   align-items: center !important;
 }
-
+.mySwiper {
+  max-width: 519px !important;
+}
 .slider__body {
+  overflow: hidden !important;
+  max-width: 800px !important;
   height: auto;
   display: flex !important;
   align-items: center !important;
@@ -15,8 +19,7 @@
 .slide2 {
   display: flex !important;
   z-index: 3 !important;
-  margin-left: 300px !important;
-  transform: translateX(-50%) !important;
+  min-height: 463px !important;
   
  }
 .slide3 {

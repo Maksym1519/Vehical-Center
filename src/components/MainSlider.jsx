@@ -40,6 +40,7 @@ export const MainSlider = () => {
           border-radius: 0;
          }
        .swiper-wrapper {
+       // max-width: 800px !important;
            //display: flex;
          //justify-content: flex-start;
           //  align-items: center;
@@ -63,15 +64,15 @@ export const MainSlider = () => {
             display-flex !important;
             align-items: center !important:
            // justify-content: flex-start;
-            width: 519px;
-            height: auto;
+            max-width: 100% !important;
+            max-height: 100%;
             box-sizing: border-box;
           }
          
            .swiper-slide-active {
             z-index: 1233 !important;
           }
-            .swiper-slide {
+            swiper-slide {
            // position: absolute;
            // left: 100px;
             //justify-self: flex-start;
@@ -79,15 +80,22 @@ export const MainSlider = () => {
             // align-items: center;
             // justify-content: center;
             //transform: translate3d(-34%) !important;
+             width: 519px !important;
               }
               swiper-slide:nth-child(2n) {
-                margin-top: 20px;
-              }
+                margin-top: 20px !important;
+                margin-left: 350px !important;
+                z-index: 3 !important;
+                 }
               swiper-slide:nth-child(3n) {
-                margin-top: 50px;
+                margin-top: 55px;
+                margin-left: 550px !important;
+                z-index: 2 !important;
               }
               swiper-slide:nth-child(4n) {
-                margin-top: 100px;
+                margin-top: 93px !important;
+                margin-left: 950px !important;
+                z-index: 1 !important;
               }
            
            
@@ -118,7 +126,7 @@ export const MainSlider = () => {
          centeredSlides="true"
          loop="true"
          cards-effect-rotate="false"
-         cards-effect-per-slide-offset="30"
+         cards-effect-per-slide-offset="25"
          cards-effect-slide-shadows="false"
          pagination="true"
          className="mySwiper"
