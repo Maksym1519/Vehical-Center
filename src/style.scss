@@ -1,6 +1,7 @@
  body {
  margin: 0;
  padding: 0;
+ box-sizing: border-box;
 }
 .main-wrapper {
     background: #1D2228;
@@ -16,6 +17,7 @@ button {
 }
 div {
     margin: 0;
+    box-sizing: border-box;
 }
 a {
     text-decoration: none;

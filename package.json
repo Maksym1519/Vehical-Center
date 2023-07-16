@@ -34,6 +34,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
     "node-sass": "^9.0.0",
+    "react-image-webp": "^0.8.0",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
     "url-loader": "^4.1.1",
@@ -42,7 +43,7 @@
     "webpack-dev-server": "^4.15.1",
     "webpack-merge": "^5.9.0"
   },
-    "resolutions": {
-       "react-devtools-core": "~4.25.0"
-    }
+  "resolutions": {
+    "react-devtools-core": "~4.25.0"
   }
+}

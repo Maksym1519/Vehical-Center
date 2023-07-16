@@ -1,0 +1,279 @@
+@media (min-width: 768px) {
+.wrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.buyCar__wrapper {
+  background-image: url("../../images/slider-Bg.webp");
+  height: 600px; 
+  background-size: cover; 
+  background-position: center; 
+  display: flex;
+}
+.buyCar__container {
+    width: 83.44%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 120px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    }
+
+.buyCar__title {
+    color: #FFF;
+    font-family: 'Gilroy-800';
+    font-size: 60px;
+    font-style: normal;
+    line-height: 108.5%;
+    letter-spacing: 1.2px;  
+    max-width: 80%;
+    margin-bottom: 57px;
+    }
+.buyCar__button {
+width: 200px;
+height: 45px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+flex-grow: 1;
+border-radius: 2px;
+background: var(--primary-white, #FFF);
+color: var(--primary-accent, #7481FF);
+text-align: center;
+font-family: 'Gilroy-700';
+font-size: 16px;
+line-height: 14.364px;
+letter-spacing: 0.32px;
+text-transform: uppercase;
+}
+.buyCar__slider {
+    padding-top: 56px;
+}
+.slider__image {
+    justify-self: center !important;
+    max-width: 100%;
+}
+}
+.itWork {
+    width: 100%;
+    height: 394px;
+    position: relative;
+}
+.cars__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.itWork__carLeft {
+   width: 100%;
+   height: auto;
+   align-self: flex-end;
+   justify-self: flex-start;
+   }
+   .itWork__carLeft img {
+    max-width: 100%;
+   }
+.itWork__carRight {
+   width: 100%;
+   align-self: flex-start;
+   justify-self: flex-end;
+   margin-top: 26px;
+   display: flex;
+   justify-content: flex-end;
+}
+.itWork__carRight img {
+    max-width: 100%;
+    }
+.itWork__info {
+    width: 42%;
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: -39px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: var(--primary-white, #FFF);
+    box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.10);
+    padding: 60px;
+    }
+.itWork__title {
+color: var(--primary-content, #41456B);
+text-align: center;
+font-family: 'Gilroy-700';
+font-size: 45px;
+line-height: 140.5%;
+}
+.itWork__subTitle {
+color: var(--primary-accent, #7481FF);
+text-align: center;
+font-family: 'Gilroy-700';
+font-size: 30px;
+line-height: 140%;
+margin-bottom: 20px;
+}
+.itWork__text {
+color: var(--secondary-text, #606276);
+text-align: center;
+font-family: 'Gilroy-400';
+font-size: 16px;
+line-height: 180%;
+letter-spacing: 0.32px;
+}
+.steps {
+    width: 91.7%;
+    align-self: flex-end;
+    display: grid;
+    grid-template-columns: 41% 59%;
+    column-gap: 85px;
+    padding-top: 221px;
+    padding-bottom: 15px;
+    margin-bottom: 220px;
+}
+.steps__items {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+.steps__title {
+color: var(--primary-content, #41456B);
+font-family: 'Gilroy-700';
+font-size: 45px;
+line-height: 140.5%;
+max-width: 75%;
+margin-bottom: 20px;
+}
+.step__item {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.step__iconWrapper {
+   position: relative;
+}
+.step__iconNumber {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.step__item__infoWrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.step__item__title {
+color: var(--primary-content, #41456B);
+font-family: 'Gilroy-600';
+font-size: 20px;
+line-height: 25px;
+}
+.step__item__text {
+color: var(--secondary-text, #606276);
+font-family: 'Gilroy-400';
+font-size: 16px;
+line-height: 180%; 
+letter-spacing: 0.32px;
+}
+.steps__imagesWrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+}
+.steps__imagesWrapper img {
+    max-width: 100%;
+}
+.step__iconNumber {
+color: var(--primary-content, #41456B);
+text-align: center;
+font-family: 'Gilroy-700';
+font-size: 25px;
+line-height: 140%;
+letter-spacing: 0.5px;
+}
+.steps__img1 {
+    transform: translateY(2.2%);
+    max-width: 100%;
+}
+.steps__img2 {
+    transform: translate(-31%, 5%);
+    max-width: 100%;
+}
+
+@media (min-width: 361px) and (max-width: 767px) {
+    .wrapper {
+        overflow: hidden;
+    }
+    .buyCar__wrapper {
+      background-image: url("../../images/slider-Bg-767.webp");
+      height: 600px; 
+      background-size: cover; 
+      background-position: center; 
+      display: flex;
+      position: relative;
+    }
+    .buyCar__container {
+        width: 93.44%;
+        height: auto;
+        margin: 0 auto;
+        padding-top: 61px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+    .buyCar__info {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .buyCar__title {
+        color: #FFF;
+        font-family: 'Gilroy-800';
+        font-size: 60px;
+        font-style: normal;
+        line-height: 108.5%;
+        letter-spacing: 1.2px;  
+        width: 92%;
+        margin-bottom: 57px;
+        text-align: center;
+        }
+    .buyCar__button {
+    width: 200px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-grow: 1;
+    border-radius: 2px;
+    background: var(--primary-white, #FFF);
+    color: var(--primary-accent, #7481FF);
+    text-align: center;
+    font-family: 'Gilroy-700';
+    font-size: 16px;
+    line-height: 14.364px;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    bottom: 20%;
+    transform: translateX(-50%);
+    z-index: 999;
+    }
+    .buyCar__slider {
+        padding-top: 0px;
+    }
+    .slider__image {
+        justify-self: center !important;
+        max-width: 100%;
+    }
+    
+  }

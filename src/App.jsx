@@ -1,11 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route, Link, Switch } from 'react-router-dom';
-import { Main } from './pages/Main';
-import { Artwork } from './pages/Artwork';
-import { CreatorPage } from './pages/CreatorPage';
-import { MyProfile } from './pages/MyProfilePage';
-import { SearchPage } from './pages/SearchPage';
-
+import { Main } from './pages/Main/Main.jsx';
 import './fonts.scss';
 import './style.scss';
 
@@ -15,17 +10,11 @@ import './style.scss';
       <>
       <nav>
         <Link to="/">Home</Link>
-        <Link to="/artwork">Artwork</Link>
-        <Link to="/creatorPage">CreatorPage</Link>
-        <Link to="/myProfilePage">MyProfilePage</Link>
-        <Link to="/searchPage">searchPage</Link>
-      </nav>
+       </nav>
       <Routes>
          <Route path="/" element={<Main />} />
-         <Route path="/artwork" element={<Artwork />} />
-         <Route path="/creatorPage" element={<CreatorPage />} />
-         <Route path="/myProfilePage" element={<MyProfile />} />
-         <Route path="/searchPage" element={<SearchPage />} />
+         {/* <Route path="/artwork" element={<Artwork />} /> */}
+        
       </Routes>
     </>
     )
