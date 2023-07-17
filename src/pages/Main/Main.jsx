@@ -19,6 +19,17 @@ import Lexus from '../../images/Lexus-right.webp';
 import StepIcon from '../../images/step-icon.svg';
 import StepsImg1 from '../../images/steps-img1.webp';
 import StepsImg2 from '../../images/steps-img2.webp';
+import Adv1 from '../../images/advantages-bg1-3.webp';
+import Adv2 from '../../images/advantages-bg2.webp';
+import AdvLogo1 from '../../images/adv-logo1.svg';
+import AdvLogo2 from '../../images/adv-logo2.svg';
+import AdvLogo3 from '../../images/adv-logo3.svg';
+import Car1 from '../../images/choose-car-img1.webp';
+import Car2 from '../../images/choose-car-img2.webp';
+import { Button } from '../../components/Common/Button';
+import { ClientSlider } from '../../components/ClientSlider';
+import { Counter } from '../../components/Counter';
+import { ArticlesSlider } from '../../components/ArticlesSlider';
 
 
 export const Main = () => {
@@ -190,19 +201,88 @@ export const Main = () => {
         </div>
        </div>
        <div className={m.advantages}>
+        <div className={m.advantages__container}>
+        <h3 className={m.advantages__title}>Advantages of working with us</h3>
          <div className={m.advantages__itemsWraper}>
           <div className={m.advantages__item}>
              <div className={m.advantages__item__imgWrapper}>
-                <img src="" alt="bg" className={m.advantages__item__bg}/>
+                <img src={Adv1} alt="bg" className={m.advantages__item__bg}/>
              </div>
-             <div className={m.advantages__item__info}>
-              <img src="" alt="logo" />
-              <h4 className={m.advantages__item__title}></h4>
-              <p className={m.advantages__item__text}></p>
+             <div className={m.advantages__item__info + ' ' +  m.advantages__item__info1}>
+              <img src={AdvLogo1} alt="logo" />
+              <h4 className={m.advantages__item__title}>Vehicle Delivery</h4>
+              <p className={m.advantages__item__text}>We deliver your vehicle directly to your door. You don’t sign 
+              anything until you test drive the vehicle. There is never any obligation to buy beforehand.</p>
+             </div>
+          </div>
+          <div className={m.advantages__item}>
+             <div className={m.advantages__item__imgWrapper + " " + m.advantages__item__imgWrapper2}>
+                <img src={Adv2} alt="bg" className={m.advantages__item__bg}/>
+             </div>
+             <div className={m.advantages__item__info + ' ' +  m.advantages__item__info2}>
+              <img src={AdvLogo2} alt="logo" />
+              <h4 className={m.advantages__item__title}>Auto Financing</h4>
+              <p className={m.advantages__item__text}>We partner with the largest lenders in Canada to offer the 
+              strongest financing options in the industry—including rates as low as 4%</p>
+             </div>
+          </div>
+          <div className={m.advantages__item}>
+             <div className={m.advantages__item__imgWrapper}>
+                <img src={Adv1} alt="bg" className={m.advantages__item__bg}/>
+             </div>
+             <div className={m.advantages__item__info + ' ' +  m.advantages__item__info3}>
+              <img src={AdvLogo3} alt="logo" />
+              <h4 className={m.advantages__item__title}>Huge Inventory</h4>
+              <p className={m.advantages__item__text}>We have access to thousands of high-quality vehicles and offer 
+              them to you at wholesale prices. Your dream car is waiting for you</p>
              </div>
           </div>
          </div>
+          </div> 
        </div>
+       <div className={m.chooseCar}>
+         <div className={m.chooseCar__container}>
+           <div className={m.images__wrapper}>
+            <img src={Car1} alt="cars" className={m.chooseCar__car1} />
+            <img src={Car2} alt="cars" className={m.chooseCar__car2}/>
+           </div>
+           <div className={m.chooseCar__info}>
+              <h3 className={m.chooseCar__info__title}>Сhoose your dream vehicle in our catalog</h3>
+              <p className={m.chooseCar__info__text}>In our catalogue there are many models of vehicles. Choose your car to your liking.</p>
+              <button className={m.chooseCar__info__button}>Inventory</button>
+           </div>
+         </div>
+       </div>
+       <div className={m.statistics}>
+         <div className={m.statistics__container}>
+          <div className={m.statistics__description}>
+            <h3 className={m.description__title}>Happy customers</h3>
+            <p className={m.description__text}>Since 2017, we have helped thousands of Canadians get their dream vehicles 
+            from the comfort of their homes. </p>
+          </div>
+          <div className={m.statistics__itemsWrapper}>
+            <div className={m.statistics__item}>
+              <span className={m.statistics__item__numbers}>7,988+</span>
+              <span className={m.statistics__item__text}>Sold Cars</span>
+            </div>
+            <div className={m.statistics__item}>
+              <span className={m.statistics__item__numbers}>16,974+</span>
+              <span className={m.statistics__item__text}>Vehicles To Choose From</span>
+            </div>
+            <div className={m.statistics__item}>
+              <span className={m.statistics__item__numbers}>123</span>
+              <span className={m.statistics__item__text}>Experts Across Canada</span>
+            </div>
+          </div>
+          <div className={m.statistics__order}>
+            <h3 className={m.statistics__order__title}>What are you waiting? Get started right now!</h3>
+            <Button />
+          </div>
+         </div>
+       </div>
+     <ClientSlider />
+     <Counter />
+    <ArticlesSlider />
        </div>
     )
 }
