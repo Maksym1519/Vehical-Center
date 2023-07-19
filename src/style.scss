@@ -27,3 +27,43 @@ input {
     outline: none;
     padding-bottom: 0;
 }
+.mainSlider {
+max-width: 600px !important;
+}
+@media (min-width: 769px) {
+    .sliderArticlesTablet {
+        display: none;
+    }
+    .sliderArticlesMobile {
+        display: none;
+    }
+   
+}
+@media (min-width: 466px) and (max-width: 768px) {
+    .mainSlider {
+        max-width: 600px !important;
+        display: flex !important;
+        justify-content: center !important;
+}
+.sliderArticles {
+    display: none;
+}
+.sliderArticlesMobile {
+    display: none;
+}
+}
+@media (max-width: 465px) {
+    .mainSlider {
+        max-width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        }
+        .sliderArticles {
+            display: none;
+        }
+        .sliderArticlesTablet {
+            display: none;
+        }
+
+
+}

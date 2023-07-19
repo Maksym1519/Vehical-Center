@@ -21,12 +21,13 @@ export const ClientSlider = () => {
       `
           swiper-container {
             max-width: 100% !important;
-          }
+             }
           .swiper-wrapper {
             max-width: 100% !important;
           }
           swiper-slide {
             max-width: 100% !important;
+            margin-right: 20px !important;
           }
           .swiper-button-prev {
             width: 53px !important;
@@ -56,6 +57,36 @@ export const ClientSlider = () => {
           .swiper-button-next:after {
             color: rgba(255, 255, 255, 1) !important;
             font-size: 26px !important;
+          }
+          @media (max-width: 465px) {
+            .swiper-button-prev {
+              width: 35px !important;
+              height: 35px !important;
+              border-radius: 50% !important;
+              background: rgba(116, 129, 255, 1) !important;
+              display: flex !important;
+              align-items: center !important;
+              justify-content: center !important;
+              transform:translate(-33%, -450%) !important;
+            }
+            .swiper-button-next {
+              width: 35px !important;
+              height: 35px !important;
+              border-radius: 50% !important;
+              background: rgba(116, 129, 255, 1) !important;
+              display: flex !important;
+              align-items: center !important;
+              justify-content: center !important;
+              transform:translate(29%, -450%) !important;
+            }
+            .swiper-button-prev:after {
+              color: rgba(255, 255, 255, 1) !important;
+              font-size: 18px !important;
+            }
+            .swiper-button-next:after {
+              color: rgba(255, 255, 255, 1) !important;
+              font-size: 18px !important;
+            }
           }
              
           `,

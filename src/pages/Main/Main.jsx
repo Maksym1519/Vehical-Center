@@ -30,6 +30,7 @@ import { Button } from '../../components/Common/Button';
 import { ClientSlider } from '../../components/ClientSlider';
 import { Counter } from '../../components/Counter';
 import { ArticlesSlider } from '../../components/ArticlesSlider';
+import { Footer } from '../../components/Common/Footer/Footer';
 
 
 export const Main = () => {
@@ -37,21 +38,17 @@ export const Main = () => {
     const params = {
         injectStyles: [
           `
-          swiper-container {
-            max-width: 600px !important;
-          }
-          .swiper-wrapper {
+            .swiper-wrapper {
             display: flex !important;
             align-items: center !important;
-           
-            }
-          swiper-slide {
+             }
+            swiper-slide {
             display: flex !important;
             justify-content: center !important;
-            margin-left: 50px !important;
+            //margin-left: 50px !important;
             
           }
-          .swiper-button-prev {
+           .swiper-button-prev {
             width: 53px !important;
             height: 53px !important;
             border-radius: 50% !important;
@@ -80,7 +77,41 @@ export const Main = () => {
             color: rgba(116, 129, 255, 1) !important;
             font-size: 26px !important;
           }
-             
+          @media (max-width: 465px) {
+           
+            swiper-slide {
+              max-width: 100% !important;
+            }
+            .swiper-button-prev {
+              width: 35px !important;
+              height: 35px !important;
+              border-radius: 50% !important;
+              background:  White !important;
+              display: flex !important;
+              align-items: center !important;
+              justify-content: center !important;
+              transform:translate(6%, -38%) !important;
+              }
+            .swiper-button-next {
+              width: 35px !important;
+              height: 35px !important;
+              border-radius: 50% !important;
+              background:  White !important;
+              display: flex !important;
+              align-items: center !important;
+              justify-content: center !important;
+              transform:translate(5%, -39%) !important;
+            }
+            .swiper-button-prev:after {
+              color: rgba(116, 129, 255, 1) !important;
+              font-size: 18px !important;
+            }
+            .swiper-button-next:after {
+              color: rgba(116, 129, 255, 1) !important;
+              font-size: 18px !important;
+            }
+          }
+                                  
           `,
         ],
       };
@@ -103,12 +134,14 @@ export const Main = () => {
       <button className={m.buyCar__button}>Request a suv</button>
       </div>
       <div className={m.buyCar__slider}>
-       <swiper-container  init="false"
-        ref={authorSwiper} slides-per-view="1" 
+       <swiper-container 
+        init="false"
+        ref={authorSwiper} 
+        slides-per-view="1" 
         speed="500" loop="true" 
         css-mode="true" 
         navigation="true"
-        
+        class="mainSlider"
          >
             
         <swiper-slide>
@@ -138,11 +171,12 @@ export const Main = () => {
         </div>
        </div>
        <div className={m.steps}>
+      
         <div className={m.steps__items}>
-            <h3 className={m.steps__title}>Your perfect car in 5 easy steps</h3>
+        <h3 className={m.steps__title}>Your perfect car in 5 easy steps</h3>
             <div className={m.step__item}>
               <div className={m.step__iconWrapper}>
-                <img src={StepIcon} alt="icon" />
+                <img src={StepIcon} alt="icon"className={m.step__iconImg} />
                 <span className={m.step__iconNumber}>1</span>
               </div>
               <div className={m.step__item__infoWrapper}>
@@ -283,6 +317,7 @@ export const Main = () => {
      <ClientSlider />
      <Counter />
     <ArticlesSlider />
+    <Footer />
        </div>
     )
 }

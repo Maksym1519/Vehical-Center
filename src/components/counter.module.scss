@@ -1,4 +1,4 @@
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .counter {
     width: 100%;
     height: auto;
@@ -40,7 +40,7 @@
   .counter__states {
     display: flex;
     flex-direction: column;
-    padding: 60px 60px 112px 60px;
+    padding: 60px 60px 56px 60px;
     border-radius: 5px;
     background: var(--primary-white, #FFF);
     box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.10);
@@ -84,7 +84,7 @@
     flex-direction: column;
   }
   .counter__inputWrapper:nth-child(1n) {
-    margin-bottom: 53px;
+    margin-bottom: 58px;
   }
   .counter__input__body {
     width: 100%;
@@ -119,25 +119,30 @@
     width: 100%;
     //background: rgba(116, 129, 255, 1) !important;
   }
-    input {
-    -webkit-appearance: none;  /* Override default CSS styles */
+    input[type="range"] {
+    -webkit-appearance: none;  
     appearance: none;
-    width: 100%; /* Full-width */
-    height: 8px; /* Specified height */
-    background: rgba(116, 129, 255, 1); /* Grey background */
-    outline: none; /* Remove outline */
-    opacity: 1; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    width: 100%; 
+    height: 8px; 
+    background: rgba(116, 129, 255, 1); 
+    outline: none; 
+    opacity: 1; 
+    -webkit-transition: .2s;
     transition: opacity .2s;
 }
     input::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
+    -webkit-appearance: none; 
     appearance: none;
-    width: 18px; /* Set a specific slider handle width */
-    height: 18px; /* Slider handle height */
-    background: rgba(116, 129, 255, 1); /* Green background */
-    cursor: pointer; /* Cursor on hover */
+    width: 18px; 
+    height: 18px;
+    background: rgba(116, 129, 255, 1);
+    cursor: pointer; 
 }
+// input::-webkit-slider-runnable-track {
+//   -webkit-appearance: none;
+//   appearance: none;
+//   background-image: white;
+// }
   .counter__input__input {
     width: 100%;
   }
@@ -220,5 +225,492 @@
     letter-spacing: 0.32px;
     text-transform: uppercase;
     flex-shrink: 1;
+  }
+}
+@media (min-width: 466px) and (max-width: 768px) {
+  .counter {
+    width: 100%;
+    height: auto;
+    }
+  .counter__container {
+    width: 93.75%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+  }
+  .counter__description {
+    display: flex;
+    column-gap: 61px;
+    align-items: flex-start;
+  }
+  .counter__description__title {
+    color: var(--primary-content, #41456b);
+    font-family: "Gilroy-700";
+    font-size: 45px;
+    line-height: 140.5%;
+  }
+  .counter__description__text {
+    color: var(--secondary-text, #606276);
+    font-family: 'Gilroy-400';
+    font-size: 16px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+    padding-top: 11px;
+    max-width: 41.6%;
+    padding: 12px 15px 0px 0px;
+  }
+  .counter__inputHandling {
+    display: flex;
+    flex-direction: column;
+  }
+  .counter__states {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 60px 0px 40px;
+    border-radius: 5px;
+    background: var(--primary-white, #FFF);
+    box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.10);
+  }
+  .counter__switcher {
+    display: flex;
+    align-items: center;
+    width: 367px;
+    height: 50px;
+    border-radius: 2px;
+    border: 2px solid rgba(116, 129, 255, 1);
+    margin-bottom: 26px;
+  }
+  .counter__switcher__item {
+    width: 33.33%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-accent, #7481FF);
+    text-align: center;
+    font-family: 'Gilroy-700';
+    font-size: 16px;
+    line-height: 14.364px;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+  .counter__switcher__item:hover {
+    color: var(--primary-white, #FFF);
+    border-radius: 2px 0px 0px 2px;
+    background: var(--primary-accent, #7481FF);
+  }
+  .counter__switcher__itemMidle {
+    border-right: 2px solid rgba(116, 129, 255, 1);
+    border-left: 2px solid rgba(116, 129, 255, 1);
+  }
+  .counter__inputWrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .counter__inputWrapper:nth-child(1n) {
+    margin-bottom: 38px;
+  }
+  .counter__input__body {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 17px;
+  }
+  .counter__input__text {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-600';
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .counter__bucksLogo  {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-700';
+    font-size: 25px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+    margin-right: 5px;
+  }
+  .counter__input__numbers {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-700';
+    font-size: 25px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+  }
+  .counter__input {
+    width: 100%;
+    //background: rgba(116, 129, 255, 1) !important;
+  }
+    input[type="range"] {
+    -webkit-appearance: none;  
+    appearance: none;
+    width: 100%; 
+    height: 8px; 
+    background: rgba(116, 129, 255, 1); 
+    outline: none; 
+    opacity: 1; 
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+    input::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 18px; 
+    height: 18px;
+    background: rgba(116, 129, 255, 1);
+    cursor: pointer; 
+}
+// input::-webkit-slider-runnable-track {
+//   -webkit-appearance: none;
+//   appearance: none;
+//   background-image: white;
+// }
+  .counter__input__input {
+    width: 100%;
+  }
+  .counter__duration {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-700';
+    font-size: 25px;
+    line-height: 140%;
+    letter-spacing: 0.5px;
+    margin-right: 5px;
+  }
+  .counter__durationText {
+    color: var(--secondary-text, #606276);
+    font-family: 'Gilroy-700';
+    font-size: 16px;
+    line-height: 14.364px;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+  .counter__result {
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    padding: 5px 40px 40px 40px;
+    border-radius: 5px;
+    background: var(--primary-white, #FFF);
+    box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.10);
+  }
+  .biPayment {
+    width: 52%;
+  }
+  .weekPayment {
+    width: 21%;
+    margin-right: 40px;
+  }
+  .monthPayment {
+    width: 20%;
+  }
+  .biPayment__title, .weekPayment__title, .monthPayment__title {
+    color: var(--secondary-text, #606276);
+    font-family: 'Gilroy-400';
+    font-size: 16px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+  }
+  .biPayment__bucksLogo, .biPayment__numbers  {
+    color: var(--primary-accent, #7481FF);
+    font-family: 'Gilroy-700';
+    font-size: 45px;
+    line-height: 140.5%;
+    margin-right: 14px;
+  }
+  .weekPayment__bucksLogo, .monthPayment__bucksLogo {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-700';
+    font-size: 25px;
+    line-height: 140%;
+    letter-spacing: 0.5px;
+    margin-right: 5px;
+  }
+  .weekPayment__numbers, .monthPayment__numbers {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-700';
+    font-size: 25px;
+    line-height: 140%;
+    letter-spacing: 0.5px;
+  }
+  .biPayment {
+    margin-bottom: 32px;
+  }
+  .weekPayment {
+    margin-bottom: 22px;
+  }
+  .monthPayment {
+    margin-bottom: 40px;
+  }
+  .counter__button {
+    width: 100%;
+    max-width: 250px;
+    height: 45px;
+    border-radius: 2px;
+    background: var(--primary-accent, #7481FF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--leght-grey, #FFF);
+    text-align: center;
+    font-family: 'Gilroy-700';
+    font-size: 16px;
+    line-height: 14.364px;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    flex-shrink: 1;
+    margin-top: 9px;
+  }
+}
+@media (max-width: 465px) {
+  .counter {
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    background: var(--primary-white, #FFF);
+    box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.10);
+    }
+  .counter__container {
+    width: 88.88%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0px;
+  }
+  .counter__description {
+    display: flex;
+   flex-direction: column;
+   row-gap: 10px;
+   margin-bottom: 30px;
+  }
+  .counter__description__title {
+    color: var(--primary-content, #41456b);
+    font-family: "Gilroy-700";
+    font-size: 30px;
+    line-height: 140.5%;
+  }
+  .counter__description__text {
+    color: var(--secondary-text, #606276);
+    font-family: 'Gilroy-400';
+    font-size: 16px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+    padding-top: 11px;
+    max-width: 100%;
+    padding: 1px 0px 0px 0px;
+  }
+  .counter__inputHandling {
+    display: flex;
+    flex-direction: column;
+  }
+  .counter__states {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 5px;
+    }
+  .counter__switcher {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    border-radius: 2px;
+    border: 2px solid rgba(116, 129, 255, 1);
+    margin-bottom: 38px;
+  }
+  .counter__switcher__item {
+    width: 33.33%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-accent, #7481FF);
+    text-align: center;
+    font-family: 'Gilroy-700';
+    font-size: 16px;
+    line-height: 14.364px;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+  .counter__switcher__item:hover {
+    color: var(--primary-white, #FFF);
+    border-radius: 2px 0px 0px 2px;
+    background: var(--primary-accent, #7481FF);
+  }
+  .counter__switcher__itemMidle {
+    border-right: 2px solid rgba(116, 129, 255, 1);
+    border-left: 2px solid rgba(116, 129, 255, 1);
+  }
+  .counter__inputWrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .counter__inputWrapper:nth-child(1n) {
+    margin-bottom: 20px;
+  }
+  .counter__input__body {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .counter__input__text {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-600';
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .counter__bucksLogo  {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-700';
+    font-size: 20px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+    margin-right: 5px;
+  }
+  .counter__input__numbers {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-700';
+    font-size: 20px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+  }
+  .counter__input {
+    width: 100%;
+    //background: rgba(116, 129, 255, 1) !important;
+  }
+    input[type="range"] {
+    -webkit-appearance: none;  
+    appearance: none;
+    width: 100%; 
+    height: 8px; 
+    background: rgba(116, 129, 255, 1); 
+    outline: none; 
+    opacity: 1; 
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+    input::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 18px; 
+    height: 18px;
+    background: rgba(116, 129, 255, 1);
+    cursor: pointer; 
+}
+// input::-webkit-slider-runnable-track {
+//   -webkit-appearance: none;
+//   appearance: none;
+//   background-image: white;
+// }
+  .counter__input__input {
+    width: 100%;
+  }
+  .counter__duration {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-700';
+    font-size: 25px;
+    line-height: 140%;
+    letter-spacing: 0.5px;
+    margin-right: 5px;
+  }
+  .counter__durationText {
+    color: var(--secondary-text, #606276);
+    font-family: 'Gilroy-700';
+    font-size: 16px;
+    line-height: 14.364px;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+  .counter__result {
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    padding: 5px 20px 0px 20px;
+    border-radius: 5px;
+    }
+  .result__priceWrapper {
+    display: flex;
+    align-items: center;
+  }
+  .biPayment {
+    width: 100%;
+  }
+  .weekPayment {
+    width: auto;
+    margin-right: 18px;
+  }
+  .monthPayment {
+    width: auto;
+    }
+  .biPayment__title, .weekPayment__title, .monthPayment__title {
+    color: var(--secondary-text, #606276);
+    font-family: 'Gilroy-400';
+    font-size: 16px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+  }
+  .biPayment__bucksLogo, .biPayment__numbers  {
+    color: var(--primary-accent, #7481FF);
+    font-family: 'Gilroy-700';
+    font-size: 35px;
+    line-height: 140.5%;
+    margin-right: 14px;
+  }
+  .weekPayment__bucksLogo, .monthPayment__bucksLogo {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-700';
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0.5px;
+    margin-right: 5px;
+  }
+  .weekPayment__numbers, .monthPayment__numbers {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-700';
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0.5px;
+  }
+  .biPayment {
+    margin-bottom: 12px;
+  }
+  .weekPayment {
+    margin-bottom: 22px;
+  }
+  .monthPayment {
+    margin-bottom: 40px;
+  }
+  .counter__button {
+    width: 100%;
+    max-width: 100%;
+    height: 35px;
+    border-radius: 2px;
+    background: var(--primary-accent, #7481FF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--leght-grey, #FFF);
+    text-align: center;
+    font-family: 'Gilroy-700';
+    font-size: 14px;
+    line-height: 14.364px;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    flex-shrink: 1;
+    margin-top: 0px;
   }
 }

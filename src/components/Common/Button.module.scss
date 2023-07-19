@@ -1,4 +1,4 @@
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 .wrapper {
     width: 100%;
     max-width: 200px;
@@ -16,7 +16,7 @@
     text-transform: uppercase;
    }
 }
-@media (min-width: 361px) and (max-width: 767px) {
+@media (min-width: 466px) and (max-width: 768px) {
     .wrapper {
         width: 178px;
         height: 45px;
@@ -33,3 +33,21 @@
         text-transform: uppercase;
        }
 }
+@media (max-width: 465px) {
+    .wrapper {
+        width: 100%;
+        height: 35px;
+        background: rgba(116, 129, 255, 1);
+        color: rgba(255, 255, 255, 1);
+        font-family: 'Gilroy-700';
+        font-size: 14px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 1;
+        text-transform: uppercase;
+       }
+}
+
