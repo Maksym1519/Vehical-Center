@@ -8,3 +8,17 @@ export const Button = () => {
         </div>
     )
 }
+export const ButtonProps = (props) => {
+       return (
+        <div className={b.wrapper}>
+        {props.text}
+        </div>
+    )
+}
+export const Button178 = (props) => {
+       return (
+        <div className={b.wrapper178 + " " + b.wrapper}>
+        {props.text}
+        </div>
+    )
+}

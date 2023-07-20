@@ -28,7 +28,7 @@ export const ClientSlider = () => {
           swiper-slide {
             max-width: 100% !important;
             margin-right: 20px !important;
-          }
+             }
           .swiper-button-prev {
             width: 53px !important;
             height: 53px !important;
@@ -112,6 +112,7 @@ export const ClientSlider = () => {
           //loop="true"
           css-mode="true"
           navigation="true"
+          class='clientSliderDesctop'
         >
           <swiper-slide>
           <div className={Cs.slide}>
