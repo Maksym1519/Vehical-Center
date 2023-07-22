@@ -1,0 +1,665 @@
+@media (min-width: 1025px) {
+  .container {
+    width: 83.33%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .creditPolicy__wrapper {
+    width: 100%;
+    height: auto;
+    background: rgba(255, 255, 255, 1);
+  }
+  .creditPolicy__wrapper {
+    width: 100%;
+    height: auto;
+    padding-top: 40px;
+    margin-bottom: 220px;
+  }
+  .creditPolicy__container {
+    width: 82.77%;
+    height: auto;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 49% 1fr;
+    column-gap: 66px;
+  }
+  .creditPolicy__info {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px;
+    border-radius: 5px;
+    background: var(--primary-white, #fff);
+    box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.1);
+  }
+  .info__title {
+    color: var(--primary-content, #41456b);
+    font-family: "Gilroy-700";
+    font-size: 45px;
+    line-height: 140.5%;
+    margin-bottom: 20px;
+  }
+  .info__text {
+    color: var(--secondary-text, #606276);
+    font-family: "Gilroy-400";
+    font-size: 16px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+    margin-bottom: 40px;
+  }
+  .info__button {
+    width: 170px;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    background: var(--primary-accent, #7481ff);
+    color: var(--leght-grey, #fff);
+    font-family: "Gilroy-700";
+    font-size: 16px;
+    line-height: 14.364px;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .creditPolicy__imgWrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 11px;
+  }
+  .creditPolicy__imgWrapper img {
+    max-width: 100%;
+  }
+  //interestsRate-------------------------------
+  .interestsRate__wrapper {
+    width: 100%;
+    height: auto;
+    margin-bottom: 182px;
+  }
+  .interestsRate__container {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .interestsRate__title {
+    color: var(--primary-content, #41456b);
+    font-family: "Gilroy-700";
+    font-size: 45px;
+    line-height: 140.5%;
+    margin-bottom: 60px;
+  }
+  .interestsRate__blocksWrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+  }
+  .interestsRate__block {
+    width: 100%;
+    max-width: 100%;
+    min-height: 413px;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+    row-gap: 20px;
+    padding: 63px 60px 0px 60px;
+    border-radius: 5px;
+    background: var(--primary-white, #fff);
+    box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.1);
+  }
+  .interestsRate__block__header {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+  }
+  .block__header__title {
+    color: var(--primary-content, #41456b);
+    font-family: "Gilroy-700";
+    font-size: 25px;
+    line-height: 140%;
+    letter-spacing: 0.5px;
+    max-width: 70%;
+  }
+  .block__text {
+    color: var(--secondary-text, #606276);
+    font-family: "Gilroy-400";
+    font-size: 16px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+  }
+  //benefits----------------------------------
+  .benefits__wrapper {
+    width: 100%;
+    height: auto;
+    background: rgba(255, 255, 255, 1);
+  }
+  .benefits__wrapper {
+    width: 100%;
+    height: auto;
+    padding-top: 40px;
+    margin-bottom: 220px;
+  }
+  .benefits__container {
+    width: 83.33%;
+    height: auto;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.125fr;
+    column-gap: 66px;
+  }
+  .benefits__info {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 20px;
+  }
+  .benefits__info__title {
+    color: var(--primary-content, #41456b);
+    font-family: "Gilroy-700";
+    font-size: 45px;
+    line-height: 140.5%;
+    max-width: 85%;
+  }
+  .benefits__info__text {
+    color: var(--secondary-text, #606276);
+    font-family: "Gilroy-600";
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 22px;
+    max-width: 100%;
+  }
+  .benefits__info__lightText {
+    color: var(--secondary-text, #606276);
+    font-family: "Gilroy-400";
+    font-size: 16px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+    max-width: 100%;
+  }
+  .benefits__imgWrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 6px;
+  }
+  .benefits__imgWrapper img {
+    max-width: 100%;
+  }
+  //counter-----------------------------
+  .counter__wrapper {
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        width: 78.125%;
+        height: auto;
+        margin: 0 auto;
+      }
+      .creditPolicy__wrapper {
+        width: 100%;
+        height: auto;
+        background: rgba(255, 255, 255, 1);
+      }
+      .creditPolicy__wrapper {
+        width: 100%;
+        height: auto;
+        padding-top: 40px;
+        margin-bottom: 172px;
+      }
+      .creditPolicy__container {
+        width: 78.125%;
+        height: auto;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 100%;
+        column-gap: 0px;
+        row-gap: 40px;
+      }
+      .creditPolicy__info {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px;
+        border-radius: 5px;
+        background: var(--primary-white, #fff);
+        box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.1);
+      }
+      .info__title {
+        color: var(--primary-content, #41456b);
+        font-family: "Gilroy-700";
+        font-size: 45px;
+        line-height: 140.5%;
+        margin-bottom: 20px;
+      }
+      .info__text {
+        color: var(--secondary-text, #606276);
+        font-family: "Gilroy-400";
+        font-size: 16px;
+        line-height: 180%;
+        letter-spacing: 0.32px;
+        margin-bottom: 40px;
+      }
+      .info__button {
+        width: 170px;
+        height: 45px;
+        flex-shrink: 0;
+        border-radius: 2px;
+        background: var(--primary-accent, #7481ff);
+        color: var(--leght-grey, #fff);
+        font-family: "Gilroy-700";
+        font-size: 16px;
+        line-height: 14.364px;
+        letter-spacing: 0.32px;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .creditPolicy__imgWrapper {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: scale(1.095);
+        margin-top: 12px;
+      }
+      .creditPolicy__imgWrapper img {
+        max-width: 100%;
+      }
+      //interestsRate-------------------------------
+      .interestsRate__wrapper {
+        width: 100%;
+        height: auto;
+        margin-bottom: 121px;
+      }
+      .interestsRate__container {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .interestsRate__title {
+        color: var(--primary-content, #41456b);
+        font-family: "Gilroy-700";
+        font-size: 45px;
+        line-height: 140.5%;
+        margin-bottom: 60px;
+        width: 101%;
+      }
+      .interestsRate__blocksWrapper {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 100%;
+        column-gap: 0px;
+        row-gap: 20px;
+      }
+      .interestsRate__block {
+        width: 100%;
+        max-width: 100%;
+        min-height: 315px;
+        max-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-grow: 1;
+        row-gap: 20px;
+        padding: 40px;
+        border-radius: 5px;
+        background: var(--primary-white, #fff);
+        box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.1);
+      }
+      .interestsRate__block__header {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+      }
+      .block__header__title {
+        color: var(--primary-content, #41456b);
+        font-family: "Gilroy-700";
+        font-size: 25px;
+        line-height: 140%;
+        letter-spacing: 0.5px;
+        max-width: 61%;
+      }
+      .block__text {
+        color: var(--secondary-text, #606276);
+        font-family: "Gilroy-400";
+        font-size: 16px;
+        line-height: 180%;
+        letter-spacing: 0.32px;
+      }
+      //benefits----------------------------------
+      .benefits__wrapper {
+        width: 100%;
+        height: auto;
+        background: rgba(255, 255, 255, 1);
+      }
+      .benefits__wrapper {
+        width: 100%;
+        height: auto;
+        padding-top: 40px;
+        margin-bottom: 160px;
+      }
+      .benefits__container {
+        width: 78.125%;
+        height: auto;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 100%;
+        column-gap: 0px;
+      }
+      .benefits__info {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 20px;
+      }
+      .benefits__info__title {
+        color: var(--primary-content, #41456b);
+        font-family: "Gilroy-700";
+        font-size: 45px;
+        line-height: 140.5%;
+        max-width: 100%;
+      }
+      .benefits__info__text {
+        color: var(--secondary-text, #606276);
+        font-family: "Gilroy-600";
+        font-size: 20px;
+        line-height: 25px;
+        margin-bottom: 22px;
+        max-width: 100%;
+      }
+      .benefits__info__lightText {
+        color: var(--secondary-text, #606276);
+        font-family: "Gilroy-400";
+        font-size: 16px;
+        line-height: 180%;
+        letter-spacing: 0.32px;
+        max-width: 100%;
+      }
+      .benefits__imgWrapper {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 0px;
+        margin-top: 38px;
+      }
+      .benefits__imgWrapper img {
+        max-width: 100%;
+      }
+      //counter-----------------------------
+      .counter__wrapper {
+        margin-bottom: 40px;
+      }
+}
+@media (max-width: 767px) {
+    .container {
+        width: 88.88%;
+        height: auto;
+        margin: 0 auto;
+      }
+      .creditPolicy__wrapper {
+        width: 100%;
+        height: auto;
+        background: rgba(255, 255, 255, 1);
+      }
+      .creditPolicy__wrapper {
+        width: 100%;
+        height: auto;
+        padding-top: 30px;
+        margin-bottom: 80px;
+      }
+      .creditPolicy__container {
+        width: 88.88%;
+        height: auto;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 100%;
+        column-gap: 0px;
+        row-gap: 17px;
+      }
+      .creditPolicy__info {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        border-radius: 5px;
+        background: var(--primary-white, #fff);
+        box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.1);
+      }
+      .info__title {
+        color: var(--primary-content, #41456b);
+        font-family: "Gilroy-700";
+        font-size: 30px;
+        line-height: 140.5%;
+        margin-bottom: 11px;
+      }
+      .info__text {
+        color: var(--secondary-text, #606276);
+        font-family: "Gilroy-400";
+        font-size: 16px;
+        line-height: 180%;
+        letter-spacing: 0.32px;
+        margin-bottom: 31px;
+      }
+      .info__button {
+        width: 170px;
+        height: 45px;
+        flex-shrink: 0;
+        border-radius: 2px;
+        background: var(--primary-accent, #7481ff);
+        color: var(--leght-grey, #fff);
+        font-family: "Gilroy-700";
+        font-size: 16px;
+        line-height: 14.364px;
+        letter-spacing: 0.32px;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .creditPolicy__imgWrapper {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: scale(1);
+        margin-top: 12px;
+      }
+      .creditPolicy__imgWrapper img {
+        max-width: 100%;
+      }
+      //interestsRate-------------------------------
+      .interestsRate__wrapper {
+        width: 100%;
+        height: auto;
+        margin-bottom: 42px;
+      }
+      .interestsRate__container {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .interestsRate__title {
+        color: var(--primary-content, #41456b);
+        font-family: "Gilroy-700";
+        font-size: 30px;
+        line-height: 140.5%;
+        margin-bottom: 30px;
+        width: 101%;
+      }
+      .interestsRate__blocksWrapper {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 100%;
+        column-gap: 0px;
+        row-gap: 20px;
+      }
+      .interestsRate__block {
+        width: 100%;
+        max-width: 100%;
+        min-height: 315px;
+        max-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-grow: 1;
+        row-gap: 14px;
+        padding: 20px;
+        border-radius: 5px;
+        background: var(--primary-white, #fff);
+        box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.1);
+      }
+      .interestsRate__block__header {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        column-gap: 10px;
+      }
+      .block__header__imgWrapper {
+        width: 100%;
+        max-width: 50px;
+        height: auto;
+        max-height: 100%;
+        transform: scale(1);
+        justify-self: flex-start;
+        flex-grow: 0;
+      }
+      .block__header__imgWrapper img{
+        max-width: 100%;
+      }
+      .block__header__title {
+        color: var(--primary-content, #41456b);
+        font-family: "Gilroy-700";
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: 0.4px;
+        max-width: 100%;
+      }
+      .block__text {
+        color: var(--secondary-text, #606276);
+        font-family: "Gilroy-400";
+        font-size: 16px;
+        line-height: 180%;
+        letter-spacing: 0.32px;
+      }
+      //benefits----------------------------------
+      .benefits__wrapper {
+        width: 100%;
+        height: auto;
+        background: rgba(255, 255, 255, 1);
+      }
+      .benefits__wrapper {
+        width: 100%;
+        height: auto;
+        padding-top: 40px;
+        margin-bottom: 80px;
+      }
+      .benefits__container {
+        width: 88.88%;
+        height: auto;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 100%;
+        column-gap: 0px;
+      }
+      .benefits__info {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 11px;
+      }
+      .benefits__info__title {
+        color: var(--primary-content, #41456b);
+        font-family: "Gilroy-700";
+        font-size: 30px;
+        line-height: 140.5%;
+        max-width: 100%;
+      }
+      .benefits__info__text {
+        color: var(--secondary-text, #606276);
+        font-family: "Gilroy-600";
+        font-size: 18px;
+        line-height: 25px;
+        margin-bottom: 19px;
+        margin-top: 10px;
+        max-width: 100%;
+      }
+      .benefits__info__lightText {
+        color: var(--secondary-text, #606276);
+        font-family: "Gilroy-400";
+        font-size: 16px;
+        line-height: 180%;
+        letter-spacing: 0.32px;
+        max-width: 100%;
+      }
+      .benefits__imgWrapper {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 0px;
+        margin-top: 29px;
+      }
+      .benefits__imgWrapper img {
+        max-width: 100%;
+      }
+      //counter-----------------------------
+      .counter__wrapper {
+        margin-bottom: 30px;
+      }
+}

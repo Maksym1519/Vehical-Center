@@ -1,4 +1,4 @@
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
     .logoMob {
         display: none;
     }
@@ -94,7 +94,7 @@
  transform: translateY(-15px);
 }
 }
-@media (min-width: 466px) and (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     .logoMob {
         display: none;
     }
@@ -188,7 +188,7 @@
      transform: translateY(-15px);
     }
   }
-  @media (max-width: 465px) {
+  @media (max-width: 767px) {
     .logo {
         display: none;
     }

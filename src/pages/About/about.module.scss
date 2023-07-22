@@ -1,4 +1,4 @@
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
   .container {
     width: 83.33%;
     height: auto;
@@ -481,7 +481,7 @@
     margin-bottom: 40px;
   }
 }
-@media (min-width: 466px) and (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .container {
     width: 78.125%;
     height: auto;
@@ -639,7 +639,7 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin-bottom: 160px;
+    margin-bottom: 167px;
   }
   .transparency__container {
     width: 100%;
@@ -694,15 +694,16 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin-bottom: 197px;
+    margin-bottom: 160px;
   }
   .bestPrice__container {
     width: 100%;
     max-width: 100%;
     height: auto;
     display: grid;
-    grid-template-columns: 1.02fr 1fr;
-    column-gap: 88px;
+    grid-template-columns: 100%;
+    column-gap: 0px;
+    row-gap: 30px;
   }
   .bestPrice__block {
     width: 100%;
@@ -721,13 +722,11 @@
   }
   .bestPrice__block__text {
     color: var(--secondary-text, #606276);
-    font-family: Gilroy;
+    font-family: 'Gilroy-400';
     font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
     line-height: 180%;
     letter-spacing: 0.32px;
-    max-width: 97%;
+    max-width: 96%
   }
   .bestPrice__block__subTitle {
     color: var(--primary-content, #41456b);
@@ -738,11 +737,11 @@
     line-height: 140%;
     letter-spacing: 0.5px;
     margin-top: 13px;
-    max-width: 94%;
+    max-width: 91%;
   }
   .bestPrice__block__textMargin {
     margin-bottom: 20px;
-    max-width: 80%;
+    max-width: 96%;
   }
   //agents--------------------------------------
   .agents__wrapper {
@@ -750,6 +749,7 @@
     max-width: 100%;
     height: auto;
     margin-bottom: 220px;
+    display: none;
   }
   .agents__container {
     width: 100%;
@@ -809,17 +809,19 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin-bottom: 220px;
+    margin-bottom: 160px;
     padding-top: 20px;
+    margin-top: -57px;
   }
   .team__container {
     width: 100%;
     max-width: 100%;
     height: auto;
     display: grid;
-    grid-template-columns: 0.88fr 1fr;
-    column-gap: 73px;
+    grid-template-columns: 100%;
+    column-gap: 0px;
     align-items: flex-start;
+    row-gap: 40px;
   }
   .team__info {
     width: 100%;
@@ -862,44 +864,60 @@
     width: 100%;
     max-width: 100%;
     height: auto;
+    max-height: 428px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 15px;
+    padding-top: 0px;
+    //transform: scaleY(0.792);
   }
   .team__imgWrapper img {
     max-width: 100%;
+    transform: scaleY(0.792);
+    object-fit: cover;
+    
   }
   //features-------------------------------
   .features__wrapper {
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin-bottom: 220px;
+    margin-bottom: 161px;
   }
   .features__container {
     width: 100%;
     max-width: 100%;
     height: auto;
     display: grid;
-    grid-template-columns: 0.9fr 1fr;
-    column-gap: 60px;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+    column-gap: 0px;
+    grid-template-areas: 
+    "a" 
+    "b";
     align-items: flex-start;
+    row-gap: 40px;
   }
   .features__imgWrapper {
     width: 100%;
     max-width: 100%;
     height: auto;
+    max-height: 427px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 12px;
+    margin-top: 0px;
+   
   }
   .features__imgWrapper img {
     width: 100%;
     max-width: 100%;
+    height: auto;
+    max-height: 427px;
+    grid-area: b;
+    //object-fit: cover;
   }
   .features__info {
     width: 100%;
@@ -909,6 +927,7 @@
     flex-direction: column;
     align-items: flex-start;
     row-gap: 40px;
+    grid-area: a;
   }
   .features__info__description {
     width: 100%;
@@ -973,5 +992,521 @@
   //counter-----------------------------
   .counter__wrapper {
     margin-bottom: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    width: 88.88%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .about__wrapper {
+    width: 100%;
+    height: auto;
+    background: rgba(255, 255, 255, 1);
+  }
+  .aboutMission__wrapper {
+    width: 100%;
+    height: auto;
+    padding-top: 0px;
+    margin-top: 30px;
+    padding-bottom: 0px;
+    margin-bottom: 75px;
+  }
+  .aboutMission__container {
+    width: 88.88%;
+    height: auto;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 0px;
+  }
+  .aboutMission__info {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 5px;
+    background: var(--primary-white, #fff);
+    box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+  .info__title {
+    color: var(--primary-content, #41456b);
+    font-family: "Gilroy-700";
+    font-size: 30px;
+    line-height: 140.5%;
+    margin-bottom: 12px;
+  }
+  .info__text {
+    color: var(--secondary-text, #606276);
+    font-family: "Gilroy-400";
+    font-size: 16px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+    margin-bottom: 30px;
+  }
+  .info__button {
+    width: 170px;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    background: var(--primary-accent, #7481ff);
+    color: var(--leght-grey, #fff);
+    font-family: "Gilroy-700";
+    font-size: 16px;
+    line-height: 14.364px;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .aboutMission__imgWrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1);
+  }
+  .aboutMission__imgWrapper img {
+    max-width: 100%;
+  }
+  //interests---------------------
+  .getCar__wrapper {
+    width: 100%;
+    height: auto;
+    padding-top: 0px;
+    margin-bottom: 85px;
+  }
+  .getCar__container {
+    width: 88.88%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .getCar__body {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 0px;
+  }
+  .body__item {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 5px;
+  }
+    .body__item__title {
+    color: var(--primary-content, #41456b);
+    font-family: "Gilroy-700";
+    font-size: 30px;
+    line-height: 140.5%;
+    margin-bottom: 12px;
+  }
+  .body__item__text {
+    color: var(--secondary-text, #606276);
+    font-family: "Gilroy-400";
+    font-size: 16px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+  }
+  .body__item__textMargin {
+    margin-bottom: 11px;
+  }
+  .body__item__row {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    column-gap: 20px;
+  }
+  .body__item__row:nth-child(1) {
+    margin-bottom: 21px;
+    margin-top: 20px;
+  }
+  .body__item__row:nth-child(2n) {
+    margin-bottom: 21px;
+  }
+  .getCar__rowTitle {
+    color: var(--primary-content, #41456b);
+    font-family: "Gilroy-600";
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 5px;
+  }
+  //transparency------------------------------
+  .transparency__wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 82px;
+  }
+  .transparency__container {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    column-gap: 0px;
+    row-gap: 10px;
+  }
+  .transparency__imgWrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 2;
+    margin-top: -9px;
+  }
+  .transparency__imgWrapper img {
+    max-width: 100%;
+    transform: scale(1);
+  }
+  .transparency__info {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 11px;
+    order: 1;
+  }
+  .transparency__info__title {
+    color: var(--primary-content, #41456b);
+    font-family: "Gilroy-700";
+    font-size: 30px;
+    line-height: 140.5%;
+    max-width: 100%;
+  }
+  .transparency__info__text {
+    color: var(--secondary-text, #606276);
+    font-family: "Gilroy-400";
+    font-size: 16px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+    max-width: 97%;
+  }
+  //bestPrice-------------------------------
+  .bestPrice__wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 80px;
+  }
+  .bestPrice__container {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 0px;
+    row-gap: 6px;
+  }
+  .bestPrice__block {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 12px;
+  }
+  .bestPrice__block__title {
+    color: var(--primary-content, #41456b);
+    font-family: "Gilroy-700";
+    font-size: 30px;
+    line-height: 140.5%;
+  }
+  .bestPrice__block__text {
+    color: var(--secondary-text, #606276);
+    font-family: 'Gilroy-400';
+    font-size: 16px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+    max-width: 100%
+  }
+  .bestPrice__block__subTitle {
+    color: var(--primary-content, #41456b);
+    font-family: "Gilroy-700";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: 0.5px;
+    margin-top: 13px;
+    max-width: 100%;
+  }
+  .bestPrice__block__textMargin {
+    margin-bottom: 18px;
+    max-width: 100%;
+  }
+  //agents--------------------------------------
+  .agents__wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 220px;
+    display: none;
+  }
+  .agents__container {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    column-gap: 73px;
+    align-items: flex-start;
+  }
+  .agents__block {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 20px;
+  }
+  .agents__block__shadow {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 74px 60px 60px 56px;
+    border-radius: 5px;
+    background: var(--primary-white, #fff);
+    box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.1);
+  }
+  .agents__block__subTitle {
+    color: var(--primary-content, #41456b);
+    font-family: "Gilroy-700";
+    font-size: 30px;
+    line-height: 140%;
+    margin-bottom: 20px;
+  }
+  .agents__block__title {
+    color: var(--primary-content, #41456b);
+    font-family: "Gilroy-700";
+    font-size: 45px;
+    line-height: 140.5%;
+  }
+  .agents__block__text {
+    color: var(--secondary-text, #606276);
+    font-family: "Gilroy-400";
+    font-size: 16px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+  }
+  //aboutSlider------------------------------------
+  .aboutSlider__wrapper {
+    margin-bottom: 95px;
+  }
+  //team---------------------------------------------
+  .team__wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 80px;
+    padding-top: 20px;
+    margin-top: -36px;
+  }
+  .team__container {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 0px;
+    align-items: flex-start;
+    row-gap: 20px;
+  }
+  .team__info {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 11px;
+  }
+  .team__title {
+    color: var(--primary-content, #41456b);
+    font-family: "Gilroy-700";
+    font-size: 30px;
+    line-height: 140.5%;
+  }
+  .team__info__item {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 5px;
+  }
+  .team__subTitle {
+    color: var(--primary-content, #41456b);
+    font-family: "Gilroy-600";
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .team__text {
+    color: var(--secondary-text, #606276);
+    font-family: "Gilroy-400";
+    font-size: 16px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+  }
+  .team__imgWrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 227px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0px;
+    //transform: scaleY(0.792);
+  }
+  .team__imgWrapper img {
+    max-width: 100%;
+    transform: scaleY(0.792);
+    object-fit: cover;
+    
+  }
+  //features-------------------------------
+  .features__wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 81px;
+  }
+  .features__container {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+    column-gap: 0px;
+    grid-template-areas: 
+    "a" 
+    "b";
+    align-items: flex-start;
+    row-gap: 20px;
+  }
+  .features__imgWrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 228px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+   
+  }
+  .features__imgWrapper img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 228px;
+    grid-area: b;
+    //object-fit: cover;
+  }
+  .features__info {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 20px;
+    grid-area: a;
+  }
+  .features__info__description {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 12px;
+  }
+  .features__title {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-700';
+    font-size: 30px;
+    line-height: 140.5%;
+  }
+  .features__text {
+    color: var(--secondary-text, #606276);
+    font-family: 'Gilroy-400';
+    font-size: 16px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+  }
+  .statistics__wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 40px;
+  }
+  .statistics__item {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 5px;
+    border-radius: 5px;
+    background: var(--primary-white, #FFF);
+    box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.10);
+    padding: 20px 0px 20px 30px;
+  }
+  .statistics__item__numbers {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-700';
+    font-size: 30px;
+    line-height: 140.5%;
+  }
+  .statistics__item__text {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-400';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+  }
+
+  //counter-----------------------------
+  .counter__wrapper {
+    margin-bottom: 30px;
   }
 }

@@ -58,7 +58,7 @@ export const ClientSlider = () => {
             color: rgba(255, 255, 255, 1) !important;
             font-size: 26px !important;
           }
-          @media (max-width: 465px) {
+          @media (max-width: 767px) {
             .swiper-button-prev {
               width: 35px !important;
               height: 35px !important;
@@ -67,7 +67,7 @@ export const ClientSlider = () => {
               display: flex !important;
               align-items: center !important;
               justify-content: center !important;
-              transform:translate(-33%, -450%) !important;
+              transform:translate(-33%, -419%) !important;
             }
             .swiper-button-next {
               width: 35px !important;
@@ -77,7 +77,7 @@ export const ClientSlider = () => {
               display: flex !important;
               align-items: center !important;
               justify-content: center !important;
-              transform:translate(29%, -450%) !important;
+              transform:translate(29%, -424%) !important;
             }
             .swiper-button-prev:after {
               color: rgba(255, 255, 255, 1) !important;

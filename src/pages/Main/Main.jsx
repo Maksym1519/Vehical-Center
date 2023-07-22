@@ -77,7 +77,7 @@ export const Main = () => {
             color: rgba(116, 129, 255, 1) !important;
             font-size: 26px !important;
           }
-          @media (max-width: 465px) {
+          @media (max-width: 767px) {
            
             swiper-slide {
               max-width: 100% !important;
