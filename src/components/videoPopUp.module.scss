@@ -20,11 +20,120 @@
             top: 0px;
             right: -50px;
         }
+        .close__wrapper {
+            min-width: 30px;
+            max-height: 30px;
+            position: absolute;
+            top: 0;
+            right: -50px;
+            z-index: 5000;
+        }
+        .close__line1 {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: #fff;
+            transform: rotate(45deg);
+            font-size: 24px;
+        }
+        .close__line2 {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #fff;
+            transform: rotate(-45deg);
+        }
         
    }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+    .videoPopUp__wrapper {
+        width: 100%;
+        max-width: 660px;
+        height: 375px;
+        z-index: 1000;
+        position: absolute;
+        top: 40%;
+        left: 52%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-between;
+        column-gap: 20px;
+        }
+        .videoPopUp__container {
+            position: relative;
+        }
+      
+        .close__wrapper {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 0%;
+            right: 0%;
+             }
+        .close__line1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 30px;
+            height: 3px;
+            background: #fff;
+            transform: translateY(-50%) rotate(45deg);
+             }
+        .close__line2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 30px;
+            height: 3px;
+            background: #fff;
+            transform: translateY(-50%) rotate(-45deg);
+             }
+      
+        
 }
 
 @media (max-width: 767px) {
+    .videoPopUp__wrapper {
+        width: 100%;
+        max-width: 83.33%;
+        height: 235px;
+        z-index: 1000;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        }
+        .videoPopUp__container {
+            position: relative;
+        }
+          .close__wrapper {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: -15%;
+            right: 0%;
+             }
+        .close__line1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 30px;
+            height: 3px;
+            background: #fff;
+            transform: translateY(-50%) rotate(45deg);
+             }
+        .close__line2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 30px;
+            height: 3px;
+            background: #fff;
+            transform: translateY(-50%) rotate(-45deg);
+             }
+      
+        
 }

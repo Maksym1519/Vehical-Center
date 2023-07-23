@@ -59,12 +59,18 @@ max-width: 600px !important;
 .sliderArticlesMobile {
     display: none;
 }
+.youtube {
+    min-width: 100% !important;
+    max-width: 620px !important;
+    min-height: 375px !important;
+   }
 }
 @media (max-width: 767px) {
     .mainSlider {
         max-width: 100% !important;
         display: flex !important;
-        justify-content: center !important;
+        flex-direction: column !important;
+       
         }
         .sliderArticles {
             display: none;
@@ -72,6 +78,11 @@ max-width: 600px !important;
         .sliderArticlesTablet {
             display: none;
         }
-
+        .youtube {
+            min-width: 100% !important;
+            max-width: 320px !important;
+            min-height: 195px !important;
+            max-height: 195px !important;
+           }
 
 }

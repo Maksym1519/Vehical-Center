@@ -22,7 +22,11 @@ export const VideoPopUp = ({ videoId, isOpen, onClose }) => {
        
           </div>
         )}
-          <img src={Close} alt="close" className={vp.close} onClick={onClose}/>
+          {/* <img src={Close} alt="close" className={vp.close} onClick={onClose}/> */}
+          <div className={vp.close__wrapper} onClick={onClose}>
+            <span className={vp.close__line1}>-</span>
+            <span className={vp.close__line2}>-</span>
+            </div>
       </div>
   );
 };
