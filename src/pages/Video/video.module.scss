@@ -1,0 +1,71 @@
+@media (min-width: 1025px) {
+.videoPage__wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    }
+.videoItems__container {
+    width: 83.33%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 39px;
+    padding-top: 40px;
+    margin-bottom: 90px;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Здесь задается прозрачность заднего фона */
+    z-index: 6000; /* Задайте значение z-index, чтобы overlay был поверх других элементов */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .videoPage__wrapper {
+        width: 100%;
+        height: 100%;
+        }
+    .videoItems__container {
+        width: 93.75%;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 100%;
+        column-gap: 0px;
+        row-gap: 39px;
+        padding-top: 40px;
+        margin-bottom: 51px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .videoPage__wrapper {
+        width: 100%;
+        height: 100%;
+        }
+    .videoItems__container {
+        width: 88.88%;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 100%;
+        column-gap: 0px;
+        row-gap: 19px;
+        padding-top: 30px;
+        margin-bottom: 44px;
+    }
+}

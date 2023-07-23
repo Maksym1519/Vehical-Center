@@ -1,0 +1,30 @@
+@media (min-width: 1025px) {
+    .videoPopUp__wrapper {
+        width: 60.2%;
+        max-width: 60.2%;
+        height: 542px;
+        z-index: 1000;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+        .videoPopUp__container {
+            position: relative;
+        }
+          .close {
+            max-width: 30px !important;
+            max-height: 30px !important;
+            z-index: 5000;
+            position: absolute;
+            top: 0px;
+            right: -50px;
+        }
+        
+   }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+@media (max-width: 767px) {
+}
