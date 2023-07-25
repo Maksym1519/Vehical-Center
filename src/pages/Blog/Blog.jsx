@@ -74,7 +74,7 @@ export const Blog = () => {
                       <p className={b.grid__item__text}>How to save on buying a car? Why is it better to buy from us</p>
                     </div>
                 </div>
-             <div className={b.grid__item}>
+             <div className={b.grid__item + " " + b.grid__item_mobileNone}>
                     <div className={b.grid__item__bgWrapper}>
                       <img src={Img7} alt="bg" />
                     </div>
@@ -83,7 +83,7 @@ export const Blog = () => {
                       <p className={b.grid__item__text}>How to save on buying a car? Why is it better to buy from us</p>
                     </div>
                 </div>
-             <div className={b.grid__item}>
+             <div className={b.grid__item + " " + b.grid__item_mobileNone}>
                     <div className={b.grid__item__bgWrapper}>
                       <img src={Img8} alt="bg" />
                     </div>
@@ -92,7 +92,7 @@ export const Blog = () => {
                       <p className={b.grid__item__text}>How to save on buying a car? Why is it better to buy from us</p>
                     </div>
                 </div>
-             <div className={b.grid__item}>
+             <div className={b.grid__item + " " + b.grid__item_none}>
                     <div className={b.grid__item__bgWrapper}>
                       <img src={Img9} alt="bg" />
                     </div>
