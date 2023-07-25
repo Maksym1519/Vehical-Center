@@ -20,7 +20,7 @@ export const MobileMenu = ({closeModal, openModal}) => {
               <Link to="/about"><div className={mm.mobileMenu__item}>About VAC</div></Link>
               <Link to="/loanrates"><div className={mm.mobileMenu__item}>Loan Rates</div></Link>
               <Link to="/video"><div className={mm.mobileMenu__item}>Video</div></Link>
-              <Link to="/"><div className={mm.mobileMenu__item}>Blog</div></Link>
+              <Link to="/blog"><div className={mm.mobileMenu__item}>Blog</div></Link>
               <Link to="/"><div className={mm.mobileMenu__item}>Calculate</div></Link>
               </div>
               <div className={mm.socialMedia__wrapper}>

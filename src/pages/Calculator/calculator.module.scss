@@ -1,0 +1,20 @@
+@media (min-width: 1025px) {
+    .counter__wrapper {
+        margin-top: -177px;
+        margin-bottom: 40px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .counter__wrapper {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .counter__wrapper {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}

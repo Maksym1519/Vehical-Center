@@ -15,7 +15,7 @@ import Slider1 from '../images/article-slider1.webp';
 import Slider2 from '../images/article-slider2.webp';
 import Slider3 from '../images/article-slider3.webp';
 
-export const ArticlesSlider = () => {
+export const ArticlesSlider = ({text}) => {
     register();
   const params = {
     injectStyles: [
@@ -115,7 +115,7 @@ export const ArticlesSlider = () => {
     return (
         <div className={As.articles}>
         <div className={As.articles__container}>
-          <h3 className={As.articles__title}>Interesting to read</h3>
+          <h3 className={As.articles__title}>{text}</h3>
           <div className={As.articles__slider}>
           <swiper-container
             init="false"

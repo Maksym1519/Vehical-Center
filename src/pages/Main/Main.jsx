@@ -316,7 +316,7 @@ export const Main = () => {
        </div>
      <ClientSlider />
      <Counter />
-    <ArticlesSlider />
+    <ArticlesSlider text={'Interesting to read'} />
     <Footer />
        </div>
     )

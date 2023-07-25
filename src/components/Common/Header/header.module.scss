@@ -93,6 +93,13 @@
  height: 3px;
  transform: translateY(-15px);
 }
+.customStyle {
+    font-size: 25px;
+    border: none;
+    color: var(--primary-content, #41456B);
+    transform: translateX(-440%);
+    text-transform: capitalize;
+    }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
     .logoMob {
