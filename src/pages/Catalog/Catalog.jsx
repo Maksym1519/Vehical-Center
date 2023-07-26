@@ -1,4 +1,5 @@
 import ct from "./catalog.module.scss";
+import { Link } from "react-router-dom";
 import { Header } from "../../components/Common/Header/Header";
 import { Footer } from "../../components/Common/Footer/Footer";
 import { Accordion, AccordionItem } from "react-accessible-accordion";
@@ -13,7 +14,8 @@ import Car3 from "../../images/catalog-img3.webp";
 import Car4 from "../../images/catalog-img4.webp";
 import Car5 from "../../images/catalog-img5.webp";
 import Car6 from "../../images/catalog-img6.webp";
-import Truck from "../../images/Truck-icon.svg"
+import Truck from "../../images/Truck-icon.svg";
+import Filter from '../../images/Filter icon.svg'
 
 export const Catalog = ({ isCustomStyle }) => {
   //const [price, setPrice] = useState(10000);
@@ -22,7 +24,8 @@ export const Catalog = ({ isCustomStyle }) => {
   const [minYear, setMinYear] = useState(2005);
   const [maxYear, setMaxYear] = useState(2012);
   const [minDistance, setMinDistance] = useState(0);
-  const [maxDistance, setMaxDistance] = useState(5000);
+  const [maxDistance, setMaxDistance] = useState(0);
+  const [isRecomendations, setRecomendation] = useState(false)
   // const handleSliderChange = (event) => {
   //   const newPrice = parseInt(event.target.value);
   //   setPrice(newPrice);
@@ -45,9 +48,10 @@ export const Catalog = ({ isCustomStyle }) => {
     setMinDistance(parseInt(e.target.value));
   };
 
-  const handleMaxDisrance = (e) => {
+  const handleMaxDistance = (e) => {
     setMaxDistance(parseInt(e.target.value));
   };
+  
 
   const [isActive, setIsActive] = useState(false);
   const [isActive2, setIsActive2] = useState(false);
@@ -61,6 +65,7 @@ export const Catalog = ({ isCustomStyle }) => {
   const [isArrowRotated4, setIsArrowRotated4] = useState(false);
   const [isArrowRotated5, setIsArrowRotated5] = useState(false);
   const [isArrowRotated6, setIsArrowRotated6] = useState(false);
+  const [isArrowRotated7, setIsArrowRotated7] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const toggleAccordion = () => {
@@ -81,6 +86,9 @@ export const Catalog = ({ isCustomStyle }) => {
   const toggleAccordion6 = () => {
     setIsActive6((prevState) => !prevState);
   };
+  const showRecomendation = () => {
+    setRecomendation((prevState)=>!prevState)
+  }
 
   const toggleArrowRotation = () => {
     setIsArrowRotated((prevState) => !prevState);
@@ -99,6 +107,9 @@ export const Catalog = ({ isCustomStyle }) => {
   };
   const toggleArrowRotation6 = () => {
     setIsArrowRotated6((prevState) => !prevState);
+  };
+  const recomendationArrowRotation = () => {
+    setIsArrowRotated7((prevState) => !prevState);
   };
 
   const accordionData = [
@@ -393,15 +404,37 @@ export const Catalog = ({ isCustomStyle }) => {
                 </div>}
              </div>
             <div className={ct.search__item}>
-              <div className={ct.search__item__main}>
+              <div className={ct.search__item__main} onClick={() => {
+                  toggleAccordion6();
+                  toggleArrowRotation6();
+                }}>
                 <span className={ct.search__item__mainText}>Kilometres </span>
-                <img src={Arrow} alt="icon" />
+                <img src={Arrow} alt="icon" className={isArrowRotated6 ? ct.arrowRotated : ""}/>
               </div>
+              {isActive6 && <div className={ct.input__content}>
+                <div className={ct.accordion__counter}>
+                <div className={ct.accordion__price__wrapper}>
+                  <span className={ct.accordion__distance__num}>{minDistance}</span>
+                  <span className={ct.accordion__distance__num + " " + ct.accordion__price__total}>{maxDistance}</span>
+                </div>
+                <div className={ct.accordion__inputsWrapper}>
+                <input type="range"  
+                min={0}
+                max={200000}
+                value={maxDistance}
+                onChange={handleMaxDistance}/>
+                 </div>
+                </div>
+                </div>}
             </div>
           </div>
           <div className={ct.catalog__cars}>
             <div className={ct.catalog__filters}>
               <div className={ct.catalog__filters__block}>
+                <div className={ct.catalog__showMenu}>
+                  <img src={Filter} alt="icon" />
+                  <span className={ct.showMenu__text}>Search Filter</span>
+                </div>
                 <div className={ct.filters__inputSearch__wrapper}>
                   <input
                     type="text"
@@ -415,10 +448,21 @@ export const Catalog = ({ isCustomStyle }) => {
               <div className={ct.catalog__filters__block}>
                 <span className={ct.recomendations__label}>Sorted by</span>
                 <div className={ct.filters__block__recomendations}>
+                  <div className={ct.recomendations__main} onClick={()=> {recomendationArrowRotation();showRecomendation()}}>
                   <span className={ct.recomendations__text}>
                     Recommendations
                   </span>
-                  <img src={Arrow} alt="arrow" />
+                  <img src={Arrow} alt="arrow" className={isArrowRotated7 ? ct.arrowRotated : ""}/>
+                  </div>
+                  {isRecomendations &&
+                  <div className={ct.recomendations__content}>
+                      <div className={ct.recomendations__content__container}>
+                        <Link to="/"><span className={ct.recomendations__content__item}>Newest inventory</span></Link>
+                        <Link to="/"><span className={ct.recomendations__content__item}>Lowest price</span></Link>
+                        <Link to="/"><span className={ct.recomendations__content__item}>Highest prices</span></Link>
+                       </div>
+                  </div>
+                  }
                 </div>
               </div>
             </div>

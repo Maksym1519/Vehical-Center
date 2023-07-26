@@ -20,7 +20,7 @@
     .catalog__search {
         display: flex;
         flex-direction: column;
-        row-gap: 10px;
+        row-gap: 8px;
         padding-top: 8px;
     }
     .search__title {
@@ -54,7 +54,7 @@
     .catalog__cars {
         display: flex;
         flex-direction: column;
-        row-gap: 20px;
+        row-gap: 18px;
         margin-bottom: 115px;
     }
     .catalog__filters {
@@ -101,23 +101,25 @@
         letter-spacing: 0.32px;
     }
     .filters__block__recomendations {
-        display: flex;
-        width: 237px;
-        height: 45px;
-        justify-content: space-between;
-        align-items: center;
-        flex-shrink: 0;
+        height: 47px;
         border-radius: 2px;
         border: 1px solid var(--secondary-s-color, #D7D7D7);
-        background: var(--primary-white, #FFF);
-        padding: 0px 20px 0px 20px;
-    }
+        z-index: 3;
+      }
+    .recomendations__main {
+      width: 237px;
+      height: 45px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+      background: var(--primary-white, #FFF);
+      padding: 0px 20px 0px 20px;
+      }
     .recomendations__text {
         color: var(--primary-content, #41456B);
         font-family: 'Gilroy-500';
         font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
         line-height: 159%; 
     }
     .catalog__cars__body {
@@ -192,7 +194,7 @@
         flex-direction: column;
         align-items: flex-start;
         row-gap: 10px;
-        padding: 0px 20px 20px 20px;
+        padding: 0px 20px 30px 20px;
       }
       .input__content__item {
         min-width: 100%;
@@ -228,7 +230,6 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        padding: 0px;
         }
       .accordion__input__checkBox {
         margin-right: 10px;
@@ -287,9 +288,368 @@
         font-size: 20px;
         line-height: 25px; 
         }
+        .accordion__distance__num {
+        color: var(--primary-content, #41456B);
+        font-family: 'Gilroy-600';
+        font-size: 20px;
+        line-height: 25px; 
+        }
+        //recomendations content-------------------
+        .recomendations__content {
+          width: 100%;
+          height: auto;
+          border-radius: 2px;
+         // border: 1px solid var(--secondary-s-color, #D7D7D7);
+          background: var(--primary-white, #FFF);
+          padding: 20px;
+          z-index: 999999;
+        }
+        .recomendations__content__container {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          row-gap: 10px;
+        }
+        .recomendations__content__item {
+          color: var(--primary-content, #41456B);
+          font-family: 'Gilroy-500';
+          font-size: 16px;
+          line-height: 159%; 
+        }
       }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+  .catalog__wrapper {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+   }
+.catalog__mainWrapper {
+    border-top: 1px solid #D7D7D7;
+    padding-top: 40px;
+}
+.catalog__container {
+    width: 93.75%;
+    max-width: 720px;
+    height: auto;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 0px;
+}
+.catalog__search {
+    display: none;
+    flex-direction: column;
+    row-gap: 8px;
+    padding-top: 8px;
+}
+.search__title {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-600';
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 21px;
+}
+.search__item {
+    border-radius: 2px;
+    border: 1px solid var(--secondary-s-color, #D7D7D7);
+}
+.search__item__main {
+    width: 100%;
+    height: 45px;
+    // border-radius: 2px;
+    // border: 1px solid var(--secondary-s-color, #D7D7D7);
+    background: var(--primary-white, #FFF);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 18px 0px 20px;
+}
+.search__item__mainText {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-500';
+    font-size: 16px;
+    line-height: 159%; 
+}
+.catalog__cars {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    margin-bottom: 90px;
+}
+.catalog__filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.catalog__showMenu {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+.showMenu__text {
+  color: var(--primary-content, #41456B);
+  font-family: 'Gilroy-400';
+  font-size: 16px;
+  line-height: 180%; 
+  letter-spacing: 0.32px;
+}
+.catalog__filters__block {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.filters__inputSearch__wrapper {
+    width: 240px;
+    height: 45px;
+    position: relative;
+    }
+    .input__search {
+     position: absolute;
+     top: 50%;
+     right: 2%;
+     transform: translate(-50%, -50%);   
+    }
+.filters__inputSearch {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid var(--secondary-s-color, #D7D7D7);
+    background: var(--primary-white, #FFF);
+    padding: 0px 20px 0px 20px;
+}
+.filters__inputSearch::placeholder {
+    color: var(--secondary-s-color, #D7D7D7);
+    font-family: 'Gilroy-500';
+    font-size: 16px;
+    line-height: 159%; 
+}
+.recomendations__label {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-400';
+    font-size: 16px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+    display: none;
+}
+.filters__block__recomendations {
+    height: 47px;
+    border-radius: 2px;
+    border: 1px solid var(--secondary-s-color, #D7D7D7);
+    z-index: 3;
+  }
+.recomendations__main {
+  width: 237px;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  background: var(--primary-white, #FFF);
+  padding: 0px 20px 0px 20px;
+  }
+.recomendations__text {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-500';
+    font-size: 16px;
+    line-height: 159%; 
+}
+.catalog__cars__body {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+.catalog__item {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px 0px 5px 5px;
+    background: var(--primary-white, #FFF);
+    box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.10);
+}
+.item__imgWrapper {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+  }
+  .item__imgWrapper img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+  .item__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 10px;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+  }
+  .item__info__title {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-600';
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .item__info__price {
+    color: var(--primary-accent, #7481FF);
+    font-family: 'Gilroy-600';
+    font-size: 20px;
+    line-height: 25px; 
+  }
+  .item__description {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 100%;
+    padding-bottom: 25px;
+    row-gap: 8px;
+  }
+  .item__description__text {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-400';
+    font-size: 16px;
+    line-height: 180%;
+    letter-spacing: 0.32px;
+    padding: 0px 20px;
+  }
+  .item__description__textBorder {
+    border-left: 1px solid #D7D7D7;
+    border-right: 1px solid #D7D7D7;
+  }
+  //accordion-------------------------------------
+  .input__content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 10px;
+    padding: 0px 20px 30px 20px;
+  }
+  .input__content__item {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .input__item__title {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-500';
+    font-size: 16px;
+    line-height: 159%; 
+  }
+  .accordion__search {
+    width: 100%;
+    height: 45px;
+    border-radius: 2px;
+    border: 1px solid var(--secondary-s-color, #D7D7D7);
+    background: var(--primary-white, #FFF);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  .accordion__input::placeholder {
+    opacity: 0.5;
+  }
+  .arrowRotated {
+    transform: rotate(180deg);
+  }
+  .accordion__checkBox {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    }
+  .accordion__input__checkBox {
+    margin-right: 10px;
+  }
+  .truck__img {
+    margin-right: 5px;
+  }
+  .truck__title {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-500';
+    font-size: 16px;
+    line-height: 159%;
+  }
+  .accordion__counter {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    padding-top: 20px;
+    }
+  .accordion__price__wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .accordion__price__num {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-600';
+    font-size: 20px;
+    line-height: 25px; 
+  }
+  .accordion__price__num::before {
+    content: '$';
+    margin-right: 5px;
+  }
+  .accordion__inputsWrapper {
+   position: relative;
+  }
+  .accordion__inputsWrapper input {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+    input::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 18px; 
+    height: 18px;
+    background: rgba(116, 129, 255, 1);
+    cursor: pointer; 
+    }
+    .accordion__year__num {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-600';
+    font-size: 20px;
+    line-height: 25px; 
+    }
+    .accordion__distance__num {
+    color: var(--primary-content, #41456B);
+    font-family: 'Gilroy-600';
+    font-size: 20px;
+    line-height: 25px; 
+    }
+    //recomendations content-------------------
+    .recomendations__content {
+      width: 100%;
+      height: auto;
+      border-radius: 2px;
+     // border: 1px solid var(--secondary-s-color, #D7D7D7);
+      background: var(--primary-white, #FFF);
+      padding: 20px;
+      z-index: 999999;
+    }
+    .recomendations__content__container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 10px;
+    }
+    .recomendations__content__item {
+      color: var(--primary-content, #41456B);
+      font-family: 'Gilroy-500';
+      font-size: 16px;
+      line-height: 159%; 
+    }
 }
 
 @media (max-width: 767px) {
