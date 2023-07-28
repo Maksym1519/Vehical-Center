@@ -79,7 +79,7 @@ export const LoanRates = () => {
         </div>
       </div>
       <div className={l.counter__wrapper}>
-      <Counter />
+      <Counter text={'Before you start shopping, let’s figure out how much you can afford. Move the sliders to see how the loan duration and the total loan amount affect your monthly payments.'} title={'Let’s figure out how much you can afford'} />
       </div>
       <Footer />
         </div>

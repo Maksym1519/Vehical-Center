@@ -22,3 +22,10 @@ export const Button178 = (props) => {
         </div>
     )
 }
+export const ButtonCounter = ({text}) => {
+       return (
+        <div className={b.wrapperCounter}>
+        {text}
+        </div>
+    )
+}

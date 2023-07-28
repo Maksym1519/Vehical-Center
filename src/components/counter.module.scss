@@ -22,6 +22,7 @@
     font-family: "Gilroy-700";
     font-size: 45px;
     line-height: 140.5%;
+    max-width: 57%;
   }
   .counter__description__text {
     color: var(--secondary-text, #606276);
@@ -250,6 +251,7 @@
     font-family: "Gilroy-700";
     font-size: 45px;
     line-height: 140.5%;
+    //min-width: 100%;
   }
   .counter__description__text {
     color: var(--secondary-text, #606276);

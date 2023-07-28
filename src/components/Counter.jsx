@@ -1,10 +1,11 @@
 import { Button } from './Common/Button';
+import { ButtonCounter } from './Common/Button';
 import Cc from './counter.module.scss';
 import React, { useRef, useState } from "react";
 import { useEffect } from "react";
 import { register } from "swiper/element/bundle";
 
-export const Counter = () => {
+export const Counter = ({text,title,buttonText,styleForCounter, buttonStyle}) => {
     register();
     const params = {
       injectStyles: [
@@ -38,14 +39,29 @@ export const Counter = () => {
       const calculateMonthPayment = Math.floor(price / time)
       const calculateWeekPayment = Math.floor(calculateMonthPayment / 4)
       const calculateBiWeekPayment = Math.floor(calculateMonthPayment / 2)
+
+      const buttonLabel = buttonText ? buttonText : 'Request a Car';
+      //--------------------------------------------
+      const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+      useEffect(() => {
+        const handleResize = () => {
+          setWindowWidth(window.innerWidth);
+        };
+    
+        // Добавляем слушатель события изменения размера окна
+        window.addEventListener('resize', handleResize);
+    
+        // Очищаем слушатель события при размонтировании компонента
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
     return (
         <div className={Cc.counter}>
           <div className={Cc.counter__container}>
               <div className={Cc.counter__description}>
-               <div className={Cc.counter__description__title}>Let’s figure out how much you can afford</div>
-               <div className={Cc.counter__description__text}>Before you start shopping, let’s figure out how much you can
-                afford. Move the sliders to see how the loan duration and the total loan amount affect your monthly 
-                payments.</div>
+               <div className={Cc.counter__description__title}>{title}</div>
+               <div className={Cc.counter__description__text}>{text}</div>
            </div>
            <div className={Cc.counter__inputHandling}>
            <div className={Cc.counter__states}>
@@ -89,7 +105,7 @@ export const Counter = () => {
               </div>
             </div>
            </div>
-            <div className={Cc.counter__result}>
+            <div className={Cc.counter__result} style={{ ...styleForCounter, width: windowWidth >= 1025 ? '500px' : '100%' }}>
              <div className={Cc.biPayment}>
                <span className={Cc.biPayment__title}>Bi-Weekly Payment</span>
                 <div className={Cc.result__priceWrapper}>
@@ -111,9 +127,7 @@ export const Counter = () => {
                <span className={Cc.monthPayment__numbers}>{calculateWeekPayment}</span>
                </div>
              </div>
-             <div className={Cc.counter__button}>
-             Request a car
-             </div>
+           <ButtonCounter text={buttonLabel} style={{buttonStyle}} />
            </div>
             </div>
             </div>

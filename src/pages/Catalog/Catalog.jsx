@@ -2,9 +2,10 @@ import ct from "./catalog.module.scss";
 import { Link } from "react-router-dom";
 import { Header } from "../../components/Common/Header/Header";
 import { Footer } from "../../components/Common/Footer/Footer";
+import { CatalogModal } from "./CatalogModal";
 import { Accordion, AccordionItem } from "react-accessible-accordion";
 import "react-accessible-accordion/dist/fancy-example.css"; // Импорт стилей (можете выбрать свои стили)
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Arrow from "../../images/arrow-down.svg";
 import Share from "../../images/Share.svg";
 import Search from "../../images/Search.svg";
@@ -15,7 +16,8 @@ import Car4 from "../../images/catalog-img4.webp";
 import Car5 from "../../images/catalog-img5.webp";
 import Car6 from "../../images/catalog-img6.webp";
 import Truck from "../../images/Truck-icon.svg";
-import Filter from '../../images/Filter icon.svg'
+import Filter from '../../images/Filter icon.svg';
+import Close from "../../images/search-Close.svg"
 
 export const Catalog = ({ isCustomStyle }) => {
   //const [price, setPrice] = useState(10000);
@@ -197,12 +199,50 @@ export const Catalog = ({ isCustomStyle }) => {
     },
   ];
   const { title, content } = accordionData;
+  //modal search------------------------------------
+  const [isSearchOpen, setSearchOpen] = useState(false);
+
+  const openSearch = () => {
+    setSearchOpen(true);
+  };
+
+  const closeSearch = () => {
+    setSearchOpen(false);
+  };
+
+  useEffect(() => {
+    // Устанавливаем обработчик события при монтировании компонента
+    window.addEventListener("resize", handleResize);
+
+    // Инициализируем состояние isSearchOpen при загрузке страницы
+    handleResize();
+
+    // Удаляем обработчик события при размонтировании компонента
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const handleResize = () => {
+    // Определяем ширину экрана и управляем видимостью блока
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth >= 1025) {
+      setSearchOpen(true); // Открываем блок при ширине экрана >= 1025px
+    } else if (screenWidth >= 200 && screenWidth <= 1024) {
+      setSearchOpen(false); // Закрываем блок при ширине экрана от 768px до 1024px
+    }}
+
+
   return (
     <div className={ct.catalog__wrapper}>
       <Header isCustomStyle={true} />
       <div className={ct.catalog__mainWrapper}>
         <div className={ct.catalog__container}>
+      {/* catalog search------------------------------------------------------- */}
+      {isSearchOpen &&
           <div className={ct.catalog__search}>
+            <img src={Close} alt="close" className={ct.search__close} onClick={closeSearch}/>
             <h3 className={ct.search__title}>Detailed search</h3>
 
             <div className={ct.search__item}>
@@ -428,10 +468,12 @@ export const Catalog = ({ isCustomStyle }) => {
                 </div>}
             </div>
           </div>
+}
+      {/* -------------------------------------------------- */}
           <div className={ct.catalog__cars}>
             <div className={ct.catalog__filters}>
               <div className={ct.catalog__filters__block}>
-                <div className={ct.catalog__showMenu}>
+                <div className={ct.catalog__showMenu} onClick={openSearch}>
                   <img src={Filter} alt="icon" />
                   <span className={ct.showMenu__text}>Search Filter</span>
                 </div>

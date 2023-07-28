@@ -1,0 +1,110 @@
+@media (min-width: 1025px) {
+    .button__wrapper {
+        width: 380px;
+        height: 45px;
+        border-radius: 2px;
+        background: var(--primary-accent, #7481FF);
+        color: var(--leght-grey, #FFF);
+        font-family: 'Gilroy-700';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 14.364px; 
+        letter-spacing: 0.32px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .buttonHeader__wrapper {
+        width: 243px;
+        height: 45px;
+        border-radius: 2px;
+        background: var(--primary-accent, #7481FF);
+        color: var(--leght-grey, #FFF);
+        font-family: 'Gilroy-700';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 14.364px; 
+        letter-spacing: 0.32px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .button__wrapper {
+        width: 380px;
+        height: 45px;
+        border-radius: 2px;
+        background: var(--primary-accent, #7481FF);
+        color: var(--leght-grey, #FFF);
+        font-family: 'Gilroy-700';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 14.364px; 
+        letter-spacing: 0.32px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .buttonHeader__wrapper {
+        width: 236px;
+        height: 45px;
+        border-radius: 2px;
+        background: var(--primary-accent, #7481FF);
+        color: var(--leght-grey, #FFF);
+        font-family: 'Gilroy-700';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 14.364px; 
+        letter-spacing: 0.32px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .button__wrapper {
+        width: 380px;
+        height: 45px;
+        border-radius: 2px;
+        background: var(--primary-accent, #7481FF);
+        color: var(--leght-grey, #FFF);
+        font-family: 'Gilroy-700';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 14.364px; 
+        letter-spacing: 0.32px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .buttonHeader__wrapper {
+        width: 243px;
+        height: 45px;
+        border-radius: 2px;
+        background: var(--primary-accent, #7481FF);
+        color: var(--leght-grey, #FFF);
+        font-family: 'Gilroy-700';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 14.364px; 
+        letter-spacing: 0.32px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
