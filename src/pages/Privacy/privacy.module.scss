@@ -1,0 +1,91 @@
+@media (min-width: 1025px) {
+    .privacy__wrapper {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+    }
+    .privacy__container {
+        width: 83.33%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .line__wrapper {
+        width: 100%;
+        max-width: 100%;
+        min-height: 72px;
+        max-height: fit-content;
+        padding: 20px 30px 20px 30px;
+        border: 1px solid var(--secondary-s-color, #D7D7D7);
+        background: var(--primary-white, #FFF);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .footer__wrapper {
+        margin-top: 40px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .privacy__wrapper {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+    }
+    .privacy__container {
+        width: 83.33%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .line__wrapper {
+        width: 100%;
+        max-width: 100%;
+        min-height: 72px;
+        max-height: fit-content;
+        padding: 20px 30px 20px 30px;
+        border: 1px solid var(--secondary-s-color, #D7D7D7);
+        background: var(--primary-white, #FFF);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .footer__wrapper {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .privacy__wrapper {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+    }
+    .privacy__container {
+        width: 83.33%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .line__wrapper {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        padding: 20px;
+        border: 1px solid var(--secondary-s-color, #D7D7D7);
+        background: var(--primary-white, #FFF);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .footer__wrapper {
+        margin-top: 40px;
+    }
+    .dropdown__title {
+        font-size: 18px !important;
+    }
+    .arrow__wrapper {
+        margin-left: 15px;
+    }
+    .dropdown__text {
+        margin-top: 20px;
+    }
+}

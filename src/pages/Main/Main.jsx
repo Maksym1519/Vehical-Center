@@ -33,7 +33,7 @@ import { ArticlesSlider } from '../../components/ArticlesSlider';
 import { Footer } from '../../components/Common/Footer/Footer';
 
 
-export const Main = () => {
+ const Main = () => {
     register()
     const params = {
         injectStyles: [
@@ -321,3 +321,4 @@ export const Main = () => {
        </div>
     )
 }
+export default Main;

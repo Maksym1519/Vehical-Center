@@ -105,7 +105,7 @@ export const Counter = ({text,title,buttonText,styleForCounter, buttonStyle}) =>
               </div>
             </div>
            </div>
-            <div className={Cc.counter__result} style={{ ...styleForCounter, width: windowWidth >= 1025 ? '500px' : '100%' }}>
+            <div className={Cc.counter__result} >
              <div className={Cc.biPayment}>
                <span className={Cc.biPayment__title}>Bi-Weekly Payment</span>
                 <div className={Cc.result__priceWrapper}>

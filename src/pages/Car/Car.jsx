@@ -6,6 +6,7 @@ import { register } from "swiper/element/bundle";
 import { HeaderCar } from "../../components/Common/Header/HeaderCar";
 import { Counter } from "../../components/Counter";
 import { Footer } from "../../components/Common/Footer/Footer";
+import { CarButtonHeaderMobile } from "./CarButton";
 import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
@@ -23,24 +24,27 @@ import ArrowLeft from '../../images/Arrow-360-left.svg';
 import ArrowRight from '../../images/Arrow-360-right.svg';
 import Rotate from '../../images/360.svg';
 
-export const Car = () => {
+ const Car = () => {
   register();
   const params = {
     injectStyles: [
       `
+
       swiper-container {
         max-width: 100% !important;
       }
+      @media (min-width: 1025px) {
       .swiper-wrapper {
         width: 100% !important;
         column-gap: 10px !important;
         }
+      }
       swiper-slide {
-        width: 168px !important;
-        max-width: 168px !important;
+        //width: 168px !important;
+        //max-width: 168px !important;
        }
        swiper-slide:nth-child(1) {
-        margin-left: -113px !important
+        margin-left: -120px !important
        }
       .swiper-button-prev {
         width: 53px !important;
@@ -71,8 +75,15 @@ export const Car = () => {
         color: rgba(255, 255, 255, 1) !important;
         font-size: 26px !important;
       }
-      @media (max-width: 465px) {
-        .swiper-button-prev {
+      @media (max-width: 767px) {
+        .swiper-wrapper {
+          width: 100% !important;
+          column-gap: 5px !important;
+          }
+          swiper-container {
+            max-width: 320px !important;
+          }
+          .swiper-button-prev {
           width: 35px !important;
           height: 35px !important;
           border-radius: 50% !important;
@@ -80,7 +91,7 @@ export const Car = () => {
           display: flex !important;
           align-items: center !important;
           justify-content: center !important;
-          transform:translate(-33%, -11%) !important;
+          transform:translate(-33%, 9%) !important;
         }
         .swiper-button-next {
           width: 35px !important;
@@ -90,7 +101,7 @@ export const Car = () => {
           display: flex !important;
           align-items: center !important;
           justify-content: center !important;
-          transform:translate(34%, -9%) !important;
+          transform:translate(34%, 9%) !important;
         }
         .swiper-button-prev:after {
           color: rgba(255, 255, 255, 1) !important;
@@ -100,6 +111,9 @@ export const Car = () => {
           color: rgba(255, 255, 255, 1) !important;
           font-size: 18px !important;
         }
+        swiper-slide:nth-child(1) {
+          margin-left: -45px !important
+         }
       }
          `,
     ],
@@ -117,6 +131,7 @@ export const Car = () => {
     width: "500px",
   };
   const buttonStyle = {
+    minWidth: "100%",
     width: "100%",
      };
   //---------------------------------------------
@@ -145,7 +160,7 @@ export const Car = () => {
             <div className={ca.display__image__navigation}>
               <div className={ca.display__image__wrapper} >
                 <img src={CarBg} alt="bg" className={ca.display__image__rotation} onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}/>
+        onMouseLeave={handleMouseLeave} loading="lazy"/>
               </div>
               <div className={ca.navigation__items__body}>
                 <div className={ca.navigation__items__exterior}>
@@ -153,7 +168,7 @@ export const Car = () => {
                   <div className={ca.navigation__item}>Interior</div>
                 </div>
                 <div>
-                  <img src={Share} alt="icon" />
+                  <img src={Share} alt="icon" className={ca.share__icon} />
                 </div>
               </div>
               <div className={ca.navigation__button}>
@@ -205,6 +220,7 @@ export const Car = () => {
                 </swiper-slide>
               </swiper-container>
             </div>
+            <div className={ca.display__button__wrapper}><CarButtonHeaderMobile text={'apply for this vehicle'} /></div>
           </div>
           <div className={ca.car__card__description}>
             <div className={ca.card_description__main}>
@@ -282,3 +298,5 @@ export const Car = () => {
     </div>
   );
 };
+
+export default Car;

@@ -14,3 +14,10 @@ export const CarButtonHeader = ({text}) => {
         </div>
     )
 }
+export const CarButtonHeaderMobile = ({text}) => {
+    return (
+        <div className={cb.buttonHeaderMobile__wrapper}>
+            {text}
+        </div>
+    )
+}

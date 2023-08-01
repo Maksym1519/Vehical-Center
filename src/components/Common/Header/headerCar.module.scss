@@ -203,6 +203,9 @@
         }
   }
   @media (max-width: 767px) {
+    .button__wrapper {
+        display: none;
+    }
     .logo {
         display: none;
     }

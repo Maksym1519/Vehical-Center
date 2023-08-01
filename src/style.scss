@@ -28,7 +28,7 @@ a {
 input {
   border: none;
   outline: none;
-  padding-bottom: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 .mainSlider {
@@ -60,6 +60,11 @@ input {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
+    }
+    .carSlider swiper-slide {
+      width: 168px !important;
+      max-width: 168px !important;
+      max-height: 90px !important;
     }
     .rotate-360 {
       animation: rotate3DAnimation 7s linear infinite;
@@ -100,6 +105,11 @@ input {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
+    }
+    .carSlider swiper-slide {
+      width: 168px !important;
+      max-width: 168px !important;
+      max-height: 90px !important;
     }
   .rotate-360 {
     animation: rotate3DAnimation 7s linear infinite;
@@ -144,4 +154,16 @@ input {
       transform: rotate3d(0, 1, 0, 360deg);
     }
   }
-}
+  .carSlider {
+    width: 100% !important;
+    max-width: 320px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+     }
+    .carSlider swiper-slide {
+      width: 92px !important;
+      max-width: 92px !important;
+      max-height: 50px !important;
+    }
+    }

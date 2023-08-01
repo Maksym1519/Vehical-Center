@@ -37,7 +37,7 @@ export const HeaderCar = ({ isCustomStyle }) => {
                 isCustomStyle ? hc.customStyle : ""}`}>
             Inventory
             </div>
-            <CarButtonHeader text={'apply for this vehicle'} />
+            <div className={hc.button__wrapper}><CarButtonHeader text={'apply for this vehicle'} /></div>
             </div>
            <div className={hc.header__burger} onClick={openModal}>
             <span></span>
