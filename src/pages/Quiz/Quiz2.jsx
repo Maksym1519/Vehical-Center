@@ -6,16 +6,16 @@ import Back from "../../images/quiz-back.svg";
 export const Quiz2 = ({
   setCurrentStep,
   setDivWidth,
-  setNextOpen,
-  openModal,
-  closeModal,
+  // setNextOpen,
+  // openModal,
+  // closeModal,
   handleBackClick,
   currentStep
 }) => {
    const [showQuiz31Content, setShowQuiz31Content] = useState(false); // Add a state to track visibility of Quiz31 content
    const handleClick = () => {
     setDivWidth((prevWidth) => prevWidth + (100 - prevWidth) * 0.15);
-    setNextOpen(true);
+    // setNextOpen(true);
     setCurrentStep((prevStep) => prevStep + 1); // Increase the currentStep to navigate to the next step (Quiz31)
     setShowQuiz31Content(true);
     };
@@ -87,11 +87,12 @@ export const Quiz2 = ({
       </div>
       {currentStep === 3 && showQuiz31Content && (
         <Quiz31
-          openModal={openModal}
-          closeModal={closeModal}
+          // openModal={openModal}
+          // closeModal={closeModal}
           currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
           setDivWidth={setDivWidth}
-          setNextOpen={setNextOpen}
+          // setNextOpen={setNextOpen}
           handleBackClick={handleBackClick}
         />
       )}

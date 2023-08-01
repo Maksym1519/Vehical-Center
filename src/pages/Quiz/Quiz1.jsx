@@ -2,7 +2,10 @@ import qa from "./quiz1.module.scss";
 import { useState, useEffect } from "react";
 import { Link, Route, Router, Routes } from "react-router-dom";
 import { HeaderCar } from "../../components/Common/Header/HeaderCar";
+import { HeaderQuiz } from "../../components/Common/Header/HeaderQuiz.jsx";
 import { Quiz2 } from "./Quiz2";
+import { Quiz31 } from "./Quiz31";
+import { Quiz41 } from "./Quiz41";
 
 const Quiz1 = () => {
   const [isOpen, setNextOpen] = useState(false);
@@ -28,7 +31,7 @@ const Quiz1 = () => {
   };
   return (
     <div className={qa.quiz__wrapper}>
-      <HeaderCar />
+      <HeaderQuiz />
       <div className={qa.quiz__container}>
         <div className={qa.progress__bar}>
           <div
