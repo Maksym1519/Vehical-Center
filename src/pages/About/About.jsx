@@ -15,7 +15,7 @@ import TransCar from "../../images/transparency-car.webp";
 import TeamBg from "../../images/team-bg.webp";
 import FeatureBg from "../../images/features-bg.webp";
 
-export const About = () => {
+ const About = () => {
   return (
     <div className={a.about__wrapper}>
       <Header />
@@ -275,3 +275,5 @@ export const About = () => {
     </div>
   );
 };
+
+export default About;

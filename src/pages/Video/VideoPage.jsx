@@ -11,7 +11,7 @@ import Video3 from "../../images/Video3.webp";
 import Video4 from "../../images/Video4.webp";
 import { useState } from "react";
 
-export const VideoPage = () => {
+ const VideoPage = () => {
   const [isOpen, setOpen] = useState(false);
   const [selectedVideoId, setSelectedVideoId] = useState(null);
 
@@ -63,3 +63,5 @@ export const VideoPage = () => {
     </div>
   );
 };
+
+export default VideoPage;

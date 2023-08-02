@@ -7,7 +7,7 @@ import Banner from "../../images/article-banner.webp";
 import BannerMob from '../../images/article-banner-360.webp';
 import Back from '../../images/Arrow-back.svg'
 
-export const Article = () => {
+const Article = () => {
   return (
     <div className={ar.article__wrapper}>
       <Header />
@@ -102,3 +102,5 @@ export const Article = () => {
     </div>
   );
 };
+
+export default Article;

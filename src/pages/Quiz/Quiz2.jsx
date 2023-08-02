@@ -4,19 +4,19 @@ import { Quiz31 } from "./Quiz31";
 import Back from "../../images/quiz-back.svg";
 
 export const Quiz2 = ({
+  openModal,
+  setNextOpen,
   setCurrentStep,
   setDivWidth,
-  // setNextOpen,
-  // openModal,
-  // closeModal,
   handleBackClick,
   currentStep
 }) => {
+ //const [isOpen, setNextOpen] = useState(false);
    const [showQuiz31Content, setShowQuiz31Content] = useState(false); // Add a state to track visibility of Quiz31 content
    const handleClick = () => {
-    setDivWidth((prevWidth) => prevWidth + (100 - prevWidth) * 0.15);
-    // setNextOpen(true);
-    setCurrentStep((prevStep) => prevStep + 1); // Increase the currentStep to navigate to the next step (Quiz31)
+    //setDivWidth((prevWidth) => prevWidth + (100 - prevWidth) * 0.15);
+    setDivWidth((prevWidth) => prevWidth + 11.1);
+    setCurrentStep(3); // Increase the currentStep to navigate to the next step (Quiz31)
     setShowQuiz31Content(true);
     };
   
@@ -24,12 +24,6 @@ export const Quiz2 = ({
   return (
     <div className={qb.quiz__wrapper}>
       <div className={qb.quiz__container}>
-        {/* <div className={qb.progress__bar}>
-          <div
-            className={qb.progress__bar__fill}
-           
-          />
-        </div> */}
         {currentStep === 2 && ( // Показываем контент только на первом шаге
           <div className={qb.content__body}>
             <h2 className={qb.quiz__title}>What's your employment status?</h2>
@@ -87,12 +81,11 @@ export const Quiz2 = ({
       </div>
       {currentStep === 3 && showQuiz31Content && (
         <Quiz31
-          // openModal={openModal}
-          // closeModal={closeModal}
+          openModal={openModal}
+          setNextOpen={setNextOpen}
           currentStep={currentStep}
           setCurrentStep={setCurrentStep}
           setDivWidth={setDivWidth}
-          // setNextOpen={setNextOpen}
           handleBackClick={handleBackClick}
         />
       )}

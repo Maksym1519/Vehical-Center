@@ -1,34 +1,31 @@
 import qc from "./quiz31.module.scss";
 import { useState } from "react";
 import Back from "../../images/quiz-back.svg";
-import { Quiz41 } from "./Quiz41";
+import { Quiz4 } from "./Quiz4";
 
 export const Quiz31 = ({
+  openModal,
+  setNextOpen,
   setCurrentStep,
-  currentStep,
   setDivWidth,
-  // setNextOpen,
-  // openModal,
-  // closeModal,
   handleBackClick,
+  currentStep
 }) => {
-  const [showQuiz41Content, setShowQuiz41Content] = useState(false); // Add a state to track visibility of Quiz31 content
+  const [isOpenQuiz4, setCurrentOpen] = useState(true);
+  const [showQuiz41Content, setShowQuiz41Content] = useState(false);
+  const [currentStep1, setCurrentStep1] = useState(1);
+  const [showQuiz4Content, setShowQuiz4Content] = useState(false); 
   const handleClick = () => {
-    setDivWidth((prevWidth) => prevWidth + (100 - prevWidth) * 0.15);
-    // setNextOpen(true);
-    setCurrentStep((prevStep) => prevStep + 1); 
-    setShowQuiz41Content(true);
-  };
+    //setDivWidth((prevWidth) => prevWidth + (100 - prevWidth) * 0.15);
+    setDivWidth((prevWidth) => prevWidth + 11.1);
+    setCurrentStep1(2); 
+    setShowQuiz4Content(true);
+    setCurrentOpen(false)
+    };
   return (
     <div className={qc.quiz__wrapper}>
       <div className={qc.quiz__container}>
-        {/* <div className={qc.progress__bar}>
-          <div
-            className={qc.progress__bar__fill}
-           
-          />
-        </div> */}
-        {currentStep === 3 && ( // Показываем контент только на первом шаге
+       {isOpenQuiz4 && currentStep === 3 && ( // Показываем контент только на первом шаге
           <div className={qc.content__body}>
             <h2 className={qc.quiz__title}>Enter your monthly income</h2>
             <p className={qc.quiz__subTitle}>
@@ -57,15 +54,14 @@ export const Quiz31 = ({
             </div>
           </div>
         )}
-      </div>
-      {currentStep === 4 && showQuiz41Content && (
-        <Quiz41
-          // openModal={openModal}
-          // closeModal={closeModal}
-          currentStep={currentStep}
-          setCurrentStep={setCurrentStep}
+     </div>
+    {currentStep1 === 2 && showQuiz4Content && (
+        <Quiz4
+          openModal={openModal}
+          setNextOpen={setNextOpen}
+          currentStep1={currentStep1}
+          setCurrentStep1={setCurrentStep1}
           setDivWidth={setDivWidth}
-          // setNextOpen={setNextOpen}
           handleBackClick={handleBackClick}
            />
       )}

@@ -1,4 +1,5 @@
 import ct from "./catalog.module.scss";
+import ReactSlider from "react-slider";
 import { Link } from "react-router-dom";
 import { Header } from "../../components/Common/Header/Header";
 import { Footer } from "../../components/Common/Footer/Footer";
@@ -16,18 +17,20 @@ import Car4 from "../../images/catalog-img4.webp";
 import Car5 from "../../images/catalog-img5.webp";
 import Car6 from "../../images/catalog-img6.webp";
 import Truck from "../../images/Truck-icon.svg";
-import Filter from '../../images/Filter icon.svg';
-import Close from "../../images/search-Close.svg"
+import Filter from "../../images/Filter icon.svg";
+import Close from "../../images/search-Close.svg";
 
-export const Catalog = ({ isCustomStyle }) => {
-  //const [price, setPrice] = useState(10000);
+const Catalog = ({ isCustomStyle }) => {
+  const [sliderValue, setSliderValue] = useState([0, 500000]);
+  const [sliderYearValue, setSliderYearValue] = useState([2002, 2023]);
+  const [sliderDistanceValue, setSliderDistanceValue] = useState([0, 20000]);
   const [minValue, setMinValue] = useState(0);
-  const [maxValue, setMaxValue] = useState(5000);
+  const [maxValue, setMaxValue] = useState(500000);
   const [minYear, setMinYear] = useState(2005);
   const [maxYear, setMaxYear] = useState(2012);
   const [minDistance, setMinDistance] = useState(0);
-  const [maxDistance, setMaxDistance] = useState(0);
-  const [isRecomendations, setRecomendation] = useState(false)
+  const [maxDistance, setMaxDistance] = useState(20000);
+  const [isRecomendations, setRecomendation] = useState(false);
   // const handleSliderChange = (event) => {
   //   const newPrice = parseInt(event.target.value);
   //   setPrice(newPrice);
@@ -53,7 +56,21 @@ export const Catalog = ({ isCustomStyle }) => {
   const handleMaxDistance = (e) => {
     setMaxDistance(parseInt(e.target.value));
   };
-  
+  const handleSliderChange = (newValue) => {
+    setSliderValue(newValue);
+    setMinValue(newValue[0]);
+    setMaxValue(newValue[1]);
+  };
+  const handleSliderYearChange = (newValue) => {
+    setSliderYearValue(newValue);
+    setMinYear(newValue[0]);
+    setMaxYear(newValue[1]);
+  };
+  const handleSliderDistanceChange = (newValue) => {
+    setSliderDistanceValue(newValue);
+    setMinDistance(newValue[0]);
+    setMaxDistance(newValue[1]);
+  };
 
   const [isActive, setIsActive] = useState(false);
   const [isActive2, setIsActive2] = useState(false);
@@ -89,8 +106,8 @@ export const Catalog = ({ isCustomStyle }) => {
     setIsActive6((prevState) => !prevState);
   };
   const showRecomendation = () => {
-    setRecomendation((prevState)=>!prevState)
-  }
+    setRecomendation((prevState) => !prevState);
+  };
 
   const toggleArrowRotation = () => {
     setIsArrowRotated((prevState) => !prevState);
@@ -158,9 +175,7 @@ export const Catalog = ({ isCustomStyle }) => {
     {
       title: (
         <div className={ct.search__item}>
-          <div
-            className={ct.search__item__main}
-           >
+          <div className={ct.search__item__main}>
             <span className={ct.search__item__mainText}>Body type</span>
             <img
               src={Arrow}
@@ -231,245 +246,383 @@ export const Catalog = ({ isCustomStyle }) => {
       setSearchOpen(true); // Открываем блок при ширине экрана >= 1025px
     } else if (screenWidth >= 200 && screenWidth <= 1024) {
       setSearchOpen(false); // Закрываем блок при ширине экрана от 768px до 1024px
-    }}
-
+    }
+  };
 
   return (
     <div className={ct.catalog__wrapper}>
       <Header isCustomStyle={true} />
       <div className={ct.catalog__mainWrapper}>
         <div className={ct.catalog__container}>
-      {/* catalog search------------------------------------------------------- */}
-      {isSearchOpen &&
-          <div className={ct.catalog__search}>
-            <img src={Close} alt="close" className={ct.search__close} onClick={closeSearch}/>
-            <h3 className={ct.search__title}>Detailed search</h3>
+          {/* catalog search------------------------------------------------------- */}
+          {isSearchOpen && (
+            <div className={ct.catalog__search}>
+              <img
+                src={Close}
+                alt="close"
+                className={ct.search__close}
+                onClick={closeSearch}
+              />
+              <h3 className={ct.search__title}>Detailed search</h3>
 
-            <div className={ct.search__item}>
-              <div
-                className={ct.search__item__main}
-                onClick={() => {
-                  toggleAccordion();
-                  toggleArrowRotation();
-                }}
-              >
-                <span className={ct.search__item__mainText}>Make,model</span>
-                <img
-                  src={Arrow}
-                  alt="icon"
-                  className={isArrowRotated ? ct.arrowRotated : ""}
-                />
-              </div>
+              <div className={ct.search__item}>
+                <div
+                  className={ct.search__item__main}
+                  onClick={() => {
+                    toggleAccordion();
+                    toggleArrowRotation();
+                  }}
+                >
+                  <span className={ct.search__item__mainText}>Make,model</span>
+                  <img
+                    src={Arrow}
+                    alt="icon"
+                    className={isArrowRotated ? ct.arrowRotated : ""}
+                  />
+                </div>
 
-              {isActive && (
-                <div>
-                  {" "}
-                  <div className={ct.input__content}>
-                    <div className={ct.input__content__item}>
-                      <h4 className={ct.input__item__title}>Make, Model</h4>
-                      <div className={ct.accordion__search}>
-                        <input
-                          type="text"
-                          className={ct.accordion__input}
-                          placeholder="Search make"
-                        />
-                        <img src={Search} alt="icon" />
+                {isActive && (
+                  <div>
+                    {" "}
+                    <div className={ct.input__content}>
+                      <div className={ct.input__content__item}>
+                        <h4 className={ct.input__item__title}>Make, Model</h4>
+                        <div className={ct.accordion__search}>
+                          <input
+                            type="text"
+                            className={ct.accordion__input}
+                            placeholder="Search make"
+                          />
+                          <img src={Search} alt="icon" />
+                        </div>
                       </div>
-                    </div>
-                    <div className={ct.input__content__item}>
-                      <h4 className={ct.input__item__title}>Model</h4>
-                      <div className={ct.accordion__search}>
-                        <input
-                          type="text"
-                          className={ct.accordion__input}
-                          placeholder="Search make"
-                        />
-                        <img src={Search} alt="icon" />
+                      <div className={ct.input__content__item}>
+                        <h4 className={ct.input__item__title}>Model</h4>
+                        <div className={ct.accordion__search}>
+                          <input
+                            type="text"
+                            className={ct.accordion__input}
+                            placeholder="Search make"
+                          />
+                          <img src={Search} alt="icon" />
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              )}
-            </div>
+                )}
+              </div>
 
-            <div className={ct.search__item}>
-              <div className={ct.search__item__main} onClick={() => {
-                  toggleAccordion2();
-                  toggleArrowRotation2();
-                }}>
-                <span className={ct.search__item__mainText}>Body type</span>
-                <img src={Arrow} alt="icon" className={isArrowRotated2 ? ct.arrowRotated : ""}/>
-              </div>
-              {isActive2 && <div className={ct.input__content}>
-          <div className={ct.input__content__item}>
-             <div className={ct.accordion__checkBox}>
-              <input
-                type="checkbox"
-                className={ct.accordion__input__checkBox}
-                placeholder="Search make"
-              />
-              <img src={Truck} alt="icon" className={ct.truck__img} />
-              <span className={ct.truck__title}>Trucks</span>
-            </div>
-             <div className={ct.accordion__checkBox}>
-              <input
-                type="checkbox"
-                className={ct.accordion__input__checkBox}
-                placeholder="Search make"
-              />
-              <img src={Truck} alt="icon" className={ct.truck__img} />
-              <span className={ct.truck__title}>SUV</span>
-            </div>
-             <div className={ct.accordion__checkBox}>
-              <input
-                type="checkbox"
-                className={ct.accordion__input__checkBox}
-                placeholder="Search make"
-              />
-              <img src={Truck} alt="icon" className={ct.truck__img} />
-              <span className={ct.truck__title}>Sedan</span>
-            </div>
-             <div className={ct.accordion__checkBox}>
-              <input
-                type="checkbox"
-                className={ct.accordion__input__checkBox}
-                placeholder="Search make"
-              />
-              <img src={Truck} alt="icon" className={ct.truck__img} />
-              <span className={ct.truck__title}>Hatchback</span>
-            </div>
-             <div className={ct.accordion__checkBox}>
-              <input
-                type="checkbox"
-                className={ct.accordion__input__checkBox}
-                placeholder="Search make"
-              />
-              <img src={Truck} alt="icon" className={ct.truck__img} />
-              <span className={ct.truck__title}>Coupe</span>
-            </div>
-             <div className={ct.accordion__checkBox}>
-              <input
-                type="checkbox"
-                className={ct.accordion__input__checkBox}
-                placeholder="Search make"
-              />
-              <img src={Truck} alt="icon" className={ct.truck__img} />
-              <span className={ct.truck__title}>Convertiable</span>
-            </div>
-             <div className={ct.accordion__checkBox}>
-              <input
-                type="checkbox"
-                className={ct.accordion__input__checkBox}
-                placeholder="Search make"
-              />
-              <img src={Truck} alt="icon" className={ct.truck__img} />
-              <span className={ct.truck__title}>VAN</span>
-            </div>
-          </div>
-         </div>}
-            </div>
-           
-            <div className={ct.search__item}>
-              <div className={ct.search__item__main} onClick={() => {
-                  toggleAccordion3();
-                  toggleArrowRotation3();
-                }}>
-                <span className={ct.search__item__mainText}>Transmission</span>
-                <img src={Arrow} alt="icon" className={isArrowRotated3 ? ct.arrowRotated : ""}/>
-              </div>
-              {isActive3 && <div className={ct.input__content}>
-              <div className={ct.accordion__checkBox}>
-              <input
-                type="checkbox"
-                className={ct.accordion__input__checkBox}
-                />
-               <span className={ct.truck__title}>Automatic</span>
-            </div>
-              <div className={ct.accordion__checkBox}>
-              <input
-                type="checkbox"
-                className={ct.accordion__input__checkBox}
-                />
-               <span className={ct.truck__title}>Manual</span>
-            </div>
-                </div>}
-              </div>
-           
-            <div className={ct.search__item}>
-              <div className={ct.search__item__main} onClick={() => {
-                  toggleAccordion4();
-                  toggleArrowRotation4();
-                }}>
-                <span className={ct.search__item__mainText}>Price</span>
-                <img src={Arrow} alt="icon" className={isArrowRotated4 ? ct.arrowRotated : ""}/>
-              </div>
-              {isActive4 && <div className={ct.input__content}>
-                <div className={ct.accordion__counter}>
-                <div className={ct.accordion__price__wrapper}>
-                  <span className={ct.accordion__price__num}>{minValue}</span>
-                  <span className={ct.accordion__price__num + " " + ct.accordion__price__total}>{maxValue}</span>
+              <div className={ct.search__item}>
+                <div
+                  className={ct.search__item__main}
+                  onClick={() => {
+                    toggleAccordion2();
+                    toggleArrowRotation2();
+                  }}
+                >
+                  <span className={ct.search__item__mainText}>Body type</span>
+                  <img
+                    src={Arrow}
+                    alt="icon"
+                    className={isArrowRotated2 ? ct.arrowRotated : ""}
+                  />
                 </div>
-                <div className={ct.accordion__inputsWrapper}>
-                <input type="range"  
+                {isActive2 && (
+                  <div className={ct.input__content}>
+                    <div className={ct.input__content__item}>
+                      <div className={ct.accordion__checkBox}>
+                        <input
+                          type="checkbox"
+                          className={ct.accordion__input__checkBox}
+                          placeholder="Search make"
+                        />
+                        <img src={Truck} alt="icon" className={ct.truck__img} />
+                        <span className={ct.truck__title}>Trucks</span>
+                      </div>
+                      <div className={ct.accordion__checkBox}>
+                        <input
+                          type="checkbox"
+                          className={ct.accordion__input__checkBox}
+                          placeholder="Search make"
+                        />
+                        <img src={Truck} alt="icon" className={ct.truck__img} />
+                        <span className={ct.truck__title}>SUV</span>
+                      </div>
+                      <div className={ct.accordion__checkBox}>
+                        <input
+                          type="checkbox"
+                          className={ct.accordion__input__checkBox}
+                          placeholder="Search make"
+                        />
+                        <img src={Truck} alt="icon" className={ct.truck__img} />
+                        <span className={ct.truck__title}>Sedan</span>
+                      </div>
+                      <div className={ct.accordion__checkBox}>
+                        <input
+                          type="checkbox"
+                          className={ct.accordion__input__checkBox}
+                          placeholder="Search make"
+                        />
+                        <img src={Truck} alt="icon" className={ct.truck__img} />
+                        <span className={ct.truck__title}>Hatchback</span>
+                      </div>
+                      <div className={ct.accordion__checkBox}>
+                        <input
+                          type="checkbox"
+                          className={ct.accordion__input__checkBox}
+                          placeholder="Search make"
+                        />
+                        <img src={Truck} alt="icon" className={ct.truck__img} />
+                        <span className={ct.truck__title}>Coupe</span>
+                      </div>
+                      <div className={ct.accordion__checkBox}>
+                        <input
+                          type="checkbox"
+                          className={ct.accordion__input__checkBox}
+                          placeholder="Search make"
+                        />
+                        <img src={Truck} alt="icon" className={ct.truck__img} />
+                        <span className={ct.truck__title}>Convertiable</span>
+                      </div>
+                      <div className={ct.accordion__checkBox}>
+                        <input
+                          type="checkbox"
+                          className={ct.accordion__input__checkBox}
+                          placeholder="Search make"
+                        />
+                        <img src={Truck} alt="icon" className={ct.truck__img} />
+                        <span className={ct.truck__title}>VAN</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <div className={ct.search__item}>
+                <div
+                  className={ct.search__item__main}
+                  onClick={() => {
+                    toggleAccordion3();
+                    toggleArrowRotation3();
+                  }}
+                >
+                  <span className={ct.search__item__mainText}>
+                    Transmission
+                  </span>
+                  <img
+                    src={Arrow}
+                    alt="icon"
+                    className={isArrowRotated3 ? ct.arrowRotated : ""}
+                  />
+                </div>
+                {isActive3 && (
+                  <div className={ct.input__content}>
+                    <div className={ct.accordion__checkBox}>
+                      <input
+                        type="checkbox"
+                        className={ct.accordion__input__checkBox}
+                      />
+                      <span className={ct.truck__title}>Automatic</span>
+                    </div>
+                    <div className={ct.accordion__checkBox}>
+                      <input
+                        type="checkbox"
+                        className={ct.accordion__input__checkBox}
+                      />
+                      <span className={ct.truck__title}>Manual</span>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <div className={ct.search__item}>
+                <div
+                  className={ct.search__item__main}
+                  onClick={() => {
+                    toggleAccordion4();
+                    toggleArrowRotation4();
+                  }}
+                >
+                  <span className={ct.search__item__mainText}>Price</span>
+                  <img
+                    src={Arrow}
+                    alt="icon"
+                    className={isArrowRotated4 ? ct.arrowRotated : ""}
+                  />
+                </div>
+                {isActive4 && (
+                  <div className={ct.input__content}>
+                    <div className={ct.accordion__counter}>
+                      <div className={ct.accordion__price__wrapper}>
+                        <div className={ct.price__numbers__wrapper}>
+                          <span className={ct.accordion__price__num}>
+                            {minValue}
+                          </span>
+                          <span
+                            className={
+                              ct.accordion__price__num +
+                              " " +
+                              ct.accordion__price__total
+                            }
+                          >
+                            {maxValue}
+                          </span>
+                        </div>
+                        <ReactSlider
+                          className="horizontal-slider"
+                          thumbClassName="example-thumb"
+                          trackClassName="example-track"
+                          //defaultValue={[0, 100]}
+                          value={sliderValue}
+                          onChange={handleSliderChange}
+                          ariaLabel={["Lower thumb", "Upper thumb"]}
+                          ariaValuetext={(state) =>
+                            `Thumb value ${state.valueNow}`
+                          }
+                          renderThumb={(props, state) => (
+                            <div {...props}>{state.valueNow}</div>
+                          )}
+                          pearling
+                          minDistance={10}
+                          min={0}
+                          max={500000}
+                        />
+                      </div>
+                      <div className={ct.accordion__inputsWrapper}>
+                        {/* <input type="range"  
                 min={0}
                 max={500000}
                 value={maxValue}
-                onChange={handleMaxChange}/>
-                 </div>
-                </div>
-                </div>}
-            </div>
-            <div className={ct.search__item}>
-              <div className={ct.search__item__main} onClick={() => {
-                  toggleAccordion5();
-                  toggleArrowRotation5();
-                }}>
-                <span className={ct.search__item__mainText}>Year</span>
-                <img src={Arrow} alt="icon" className={isArrowRotated5 ? ct.arrowRotated : ""}/>
+                onChange={handleMaxChange}/> */}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
-              {isActive5 && <div className={ct.input__content}>
-                <div className={ct.accordion__counter}>
-                <div className={ct.accordion__price__wrapper}>
-                  <span className={ct.accordion__year__num}>{minYear}</span>
-                  <span className={ct.accordion__year__num + " " + ct.accordion__year__total}>{maxYear}</span>
+              <div className={ct.search__item}>
+                <div
+                  className={ct.search__item__main}
+                  onClick={() => {
+                    toggleAccordion5();
+                    toggleArrowRotation5();
+                  }}
+                >
+                  <span className={ct.search__item__mainText}>Year</span>
+                  <img
+                    src={Arrow}
+                    alt="icon"
+                    className={isArrowRotated5 ? ct.arrowRotated : ""}
+                  />
                 </div>
-                <div className={ct.accordion__inputsWrapper}>
-                <input type="range"  
+                {isActive5 && (
+                  <div className={ct.input__content}>
+                    <div className={ct.accordion__counter}>
+                      <div className={ct.accordion__price__wrapper}>
+                        <div className={ct.price__numbers__wrapper}>
+                          <span className={ct.accordion__year__num}>
+                            {minYear}
+                          </span>
+                          <span
+                            className={
+                              ct.accordion__year__num +
+                              " " +
+                              ct.accordion__year__total
+                            }
+                          >
+                            {maxYear}
+                          </span>
+                        </div>
+                      </div>
+                      <div className={ct.accordion__inputsWrapper}>
+                        <ReactSlider
+                          className="horizontal-slider"
+                          thumbClassName="example-thumb"
+                          trackClassName="example-track"
+                          //defaultValue={[0, 100]}
+                          value={sliderYearValue}
+                          onChange={handleSliderYearChange}
+                          ariaLabel={["Lower thumb", "Upper thumb"]}
+                          ariaValuetext={(state) =>
+                            `Thumb value ${state.valueNow}`
+                          }
+                          renderThumb={(props, state) => (
+                            <div {...props}>{state.valueNow}</div>
+                          )}
+                          pearling
+                          minDistance={1}
+                          min={2002}
+                          max={2023}
+                        />
+                        {/* <input type="range"  
                 min={2005}
                 max={2023}
                 value={maxYear}
-                onChange={handleMaxTime}/>
-                 </div>
-                </div>
-                </div>}
-             </div>
-            <div className={ct.search__item}>
-              <div className={ct.search__item__main} onClick={() => {
-                  toggleAccordion6();
-                  toggleArrowRotation6();
-                }}>
-                <span className={ct.search__item__mainText}>Kilometres </span>
-                <img src={Arrow} alt="icon" className={isArrowRotated6 ? ct.arrowRotated : ""}/>
+                onChange={handleMaxTime}/> */}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
-              {isActive6 && <div className={ct.input__content}>
-                <div className={ct.accordion__counter}>
-                <div className={ct.accordion__price__wrapper}>
-                  <span className={ct.accordion__distance__num}>{minDistance}</span>
-                  <span className={ct.accordion__distance__num + " " + ct.accordion__price__total}>{maxDistance}</span>
+              <div className={ct.search__item}>
+                <div
+                  className={ct.search__item__main}
+                  onClick={() => {
+                    toggleAccordion6();
+                    toggleArrowRotation6();
+                  }}
+                >
+                  <span className={ct.search__item__mainText}>Kilometres </span>
+                  <img
+                    src={Arrow}
+                    alt="icon"
+                    className={isArrowRotated6 ? ct.arrowRotated : ""}
+                  />
                 </div>
-                <div className={ct.accordion__inputsWrapper}>
-                <input type="range"  
+                {isActive6 && (
+                  <div className={ct.input__content}>
+                    <div className={ct.accordion__counter}>
+                      <div className={ct.accordion__price__wrapper}>
+                        <div className={ct.price__numbers__wrapper}>
+                          <span className={ct.accordion__distance__num}>
+                            {minDistance}
+                          </span>
+                          <span
+                            className={
+                              ct.accordion__distance__num +
+                              " " +
+                              ct.accordion__price__total
+                            }
+                          >
+                            {maxDistance}
+                          </span>
+                        </div>
+                      </div>
+                      <div className={ct.accordion__inputsWrapper}>
+                        <ReactSlider
+                          className="horizontal-slider slider__distance"
+                          thumbClassName="example-thumb"
+                          trackClassName="example-track"
+                          value={sliderDistanceValue}
+                          onChange={handleSliderDistanceChange}
+                          renderThumb={(props, state) => (
+                            <div {...props}>{state.valueNow}</div>
+                          )}
+                          //min={0}
+                          max={200000}
+                        />
+                        {/* <input type="range"  
                 min={0}
                 max={200000}
                 value={maxDistance}
-                onChange={handleMaxDistance}/>
-                 </div>
-                </div>
-                </div>}
+                onChange={handleMaxDistance}/> */}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-}
-      {/* -------------------------------------------------- */}
+          )}
+          {/* -------------------------------------------------- */}
           <div className={ct.catalog__cars}>
             <div className={ct.catalog__filters}>
               <div className={ct.catalog__filters__block}>
@@ -490,21 +643,43 @@ export const Catalog = ({ isCustomStyle }) => {
               <div className={ct.catalog__filters__block}>
                 <span className={ct.recomendations__label}>Sorted by</span>
                 <div className={ct.filters__block__recomendations}>
-                  <div className={ct.recomendations__main} onClick={()=> {recomendationArrowRotation();showRecomendation()}}>
-                  <span className={ct.recomendations__text}>
-                    Recommendations
-                  </span>
-                  <img src={Arrow} alt="arrow" className={isArrowRotated7 ? ct.arrowRotated : ""}/>
+                  <div
+                    className={ct.recomendations__main}
+                    onClick={() => {
+                      recomendationArrowRotation();
+                      showRecomendation();
+                    }}
+                  >
+                    <span className={ct.recomendations__text}>
+                      Recommendations
+                    </span>
+                    <img
+                      src={Arrow}
+                      alt="arrow"
+                      className={isArrowRotated7 ? ct.arrowRotated : ""}
+                    />
                   </div>
-                  {isRecomendations &&
-                  <div className={ct.recomendations__content}>
+                  {isRecomendations && (
+                    <div className={ct.recomendations__content}>
                       <div className={ct.recomendations__content__container}>
-                        <Link to="/"><span className={ct.recomendations__content__item}>Newest inventory</span></Link>
-                        <Link to="/"><span className={ct.recomendations__content__item}>Lowest price</span></Link>
-                        <Link to="/"><span className={ct.recomendations__content__item}>Highest prices</span></Link>
-                       </div>
-                  </div>
-                  }
+                        <Link to="/">
+                          <span className={ct.recomendations__content__item}>
+                            Newest inventory
+                          </span>
+                        </Link>
+                        <Link to="/">
+                          <span className={ct.recomendations__content__item}>
+                            Lowest price
+                          </span>
+                        </Link>
+                        <Link to="/">
+                          <span className={ct.recomendations__content__item}>
+                            Highest prices
+                          </span>
+                        </Link>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -667,3 +842,5 @@ export const Catalog = ({ isCustomStyle }) => {
     </div>
   );
 };
+
+export default Catalog;

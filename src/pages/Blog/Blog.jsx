@@ -15,7 +15,7 @@ import Img9 from '../../images/blog-img9.webp';
 import { useState } from 'react';
 
 
-export const Blog = () => {
+ const Blog = () => {
      return (
         <div className={b.blog__wrapper}>
           <Header />
@@ -109,3 +109,5 @@ export const Blog = () => {
           </div>
     )
 }
+
+export default Blog;

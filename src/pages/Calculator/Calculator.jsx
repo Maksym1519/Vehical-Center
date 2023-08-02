@@ -4,7 +4,7 @@ import { IntroTitle } from "../../components/Common/IntroTitle";
 import { Counter } from "../../components/Counter";
 import { Footer } from "../../components/Common/Footer/Footer";
 
-export const Calculator = () => {
+ const Calculator = () => {
   return (
     <div className={ca.calculator__wrapper}>
       <Header />
@@ -21,3 +21,5 @@ export const Calculator = () => {
     </div>
   );
 };
+
+export default Calculator;

@@ -19,7 +19,7 @@ export const ClientSlider = () => {
   const params = {
     injectStyles: [
       `
-          swiper-container {
+           swiper-container {
             max-width: 100% !important;
              }
           .swiper-wrapper {

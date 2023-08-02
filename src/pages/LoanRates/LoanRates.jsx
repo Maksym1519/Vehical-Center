@@ -9,7 +9,7 @@ import Procent from '../../images/Procent.svg';
 import Clock from '../../images/Clock.svg';
 import CarBenefit from '../../images/benefits-car.webp'
 
-export const LoanRates = () => {
+ const LoanRates = () => {
     return (
         <div className={l.wrapper}>
           <Header />
@@ -85,3 +85,5 @@ export const LoanRates = () => {
         </div>
     )
 }
+
+export default LoanRates;

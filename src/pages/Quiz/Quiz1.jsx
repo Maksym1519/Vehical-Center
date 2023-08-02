@@ -5,7 +5,7 @@ import { HeaderCar } from "../../components/Common/Header/HeaderCar";
 import { HeaderQuiz } from "../../components/Common/Header/HeaderQuiz.jsx";
 import { Quiz2 } from "./Quiz2";
 import { Quiz31 } from "./Quiz31";
-import { Quiz41 } from "./Quiz41";
+import { Quiz41 } from "./Quiz4";
 
 const Quiz1 = () => {
   const [isOpen, setNextOpen] = useState(false);
@@ -16,18 +16,20 @@ const Quiz1 = () => {
     setNextOpen(false);
   };
   //----------------------------------------
+  const stepSize = 0; // Width of one step in pixels
   const [divWidth, setDivWidth] = useState(0);
   const [currentStep, setCurrentStep] = useState(1); // Используем состояние для отслеживания текущего шага
 
   const handleClick = () => {
-    // Увеличиваем ширину на 15% от текущей ширины (на 0% если div уже заполнен)
-    setDivWidth((prevWidth) => prevWidth + (100 - prevWidth) * 0.15);
-    setCurrentStep((prevStep) => prevStep + 1);
+    //setDivWidth((prevWidth) => prevWidth + (100 - prevWidth));
+    setDivWidth((prevWidth) => prevWidth + 11.1);
+    setCurrentStep(2);
     openModal();
-  };
+   };
   const handleBackClick = () => {
     setCurrentStep((prevStep) => Math.max(1, prevStep - 1)); // Ensure the step doesn't go below 1
-    setDivWidth((prevWidth) => prevWidth - (100 - prevWidth) * 0.15);
+    //setDivWidth((prevWidth) => prevWidth - (100 - prevWidth) * 0.15);\
+    setDivWidth((prevWidth) => prevWidth - 11.1);
   };
   return (
     <div className={qa.quiz__wrapper}>
