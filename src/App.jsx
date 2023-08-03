@@ -25,7 +25,7 @@ const App = () => {
   
   return (
      <>
-      <nav>
+      {/* <nav>
         <Link to="/">Home</Link>
         <Link to="/About">About</Link>
         <Link to="/LoanRates">LoanRates</Link>
@@ -39,7 +39,7 @@ const App = () => {
         <Link to="/Privacy">Privacy</Link>
         <Link to="/Quiz1">Quiz1</Link>
         <Link to="/404">404</Link>
-      </nav>
+      </nav> */}
       <Routes>
         <Route path="/" element={<React.Suspense><MainLazy /></React.Suspense>} />
         <Route path="/About" element={<React.Suspense><AboutLazy /></React.Suspense>} />
