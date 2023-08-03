@@ -25,6 +25,11 @@ import ArrowLeft from '../../images/Arrow-360-left.svg';
 import ArrowRight from '../../images/Arrow-360-right.svg';
 import Rotate from '../../images/360.svg';
 
+
+function LoadingInfo () {
+  return <h2>Loading...</h2>
+  
+}
  const Car = () => {
   register();
   const params = {

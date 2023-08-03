@@ -9,7 +9,7 @@ import { Button } from "../../components/Common/Button";
 import { ButtonProps } from "../../components/Common/Button";
 import { Button178 } from "../../components/Common/Button";
 //import { ClientSlider } from "../../components/ClientSlider";
-import { Counter } from "../../components/Counter";
+//import { Counter } from "../../components/Counter";
 import { Footer } from "../../components/Common/Footer/Footer";
 import a from "./about.module.scss";
 import m from "../Main/main.module.scss";
