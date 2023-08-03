@@ -128,6 +128,7 @@
     max-width: 100%;
     object-fit: cover;
   }
+  
   //description------------------------------
   .car__card__description {
     min-width: 100%;
@@ -641,7 +642,9 @@
     max-width: 100%;
     height: 100%;
   }
-
+.cars__slider {
+  max-width: 100%;
+}
   .car__slide__wrapper img {
     min-width: 100%;
     max-width: 100%;
@@ -776,5 +779,9 @@
   }
   .counter__wrapper {
     margin-bottom: 40px;
+  }
+  .car__buttonWrapper {
+    display: block;
+    min-width: 100%;
   }
 }

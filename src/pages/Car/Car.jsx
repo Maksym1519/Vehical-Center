@@ -1,5 +1,6 @@
 import ca from "./car.module.scss";
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from "react";
+import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
 import { useEffect } from "react";
 import { register } from "swiper/element/bundle";
@@ -7,7 +8,7 @@ import { HeaderCar } from "../../components/Common/Header/HeaderCar";
 //import { Counter } from "../../components/Counter";
 import { Footer } from "../../components/Common/Footer/Footer";
 import { CarButtonHeaderMobile } from "./CarButton";
-const CounterLazy = lazy(()=>import('../../components/Counter'));
+const CounterLazy = lazy(() => import("../../components/Counter"));
 import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
@@ -21,16 +22,14 @@ import Share from "../../images/car-Share.svg";
 import Car1 from "../../images/car-slide1.webp";
 import Car2 from "../../images/car-slide2.webp";
 import Car3 from "../../images/car-slide3.webp";
-import ArrowLeft from '../../images/Arrow-360-left.svg';
-import ArrowRight from '../../images/Arrow-360-right.svg';
-import Rotate from '../../images/360.svg';
+import ArrowLeft from "../../images/Arrow-360-left.svg";
+import ArrowRight from "../../images/Arrow-360-right.svg";
+import Rotate from "../../images/360.svg";
 
-
-function LoadingInfo () {
-  return <h2>Loading...</h2>
-  
+function LoadingInfo() {
+  return <h2>Loading...</h2>;
 }
- const Car = () => {
+const Car = () => {
   register();
   const params = {
     injectStyles: [
@@ -139,16 +138,16 @@ function LoadingInfo () {
   const buttonStyle = {
     minWidth: "100%",
     width: "100%",
-     };
+  };
   //---------------------------------------------
-  
-    const handleMouseEnter = (event) => {
-      event.target.classList.add('rotate-360'); // Add the 'rotate-360' class on mouse enter
-    };
-  
-    const handleMouseLeave = (event) => {
-      event.target.classList.remove('rotate-360'); // Remove the 'rotate-360' class on mouse leave
-    }
+
+  const handleMouseEnter = (event) => {
+    event.target.classList.add("rotate-360"); // Add the 'rotate-360' class on mouse enter
+  };
+
+  const handleMouseLeave = (event) => {
+    event.target.classList.remove("rotate-360"); // Remove the 'rotate-360' class on mouse leave
+  };
   return (
     <div className={ca.carPage__wrapper}>
       <div className={ca.header__wrapper}>
@@ -164,9 +163,15 @@ function LoadingInfo () {
               </span>
             </div>
             <div className={ca.display__image__navigation}>
-              <div className={ca.display__image__wrapper} >
-                <img src={CarBg} alt="bg" className={ca.display__image__rotation} onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave} loading="lazy"/>
+              <div className={ca.display__image__wrapper}>
+                <img
+                  src={CarBg}
+                  alt="bg"
+                  className={ca.display__image__rotation}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                  loading="lazy"
+                />
               </div>
               <div className={ca.navigation__items__body}>
                 <div className={ca.navigation__items__exterior}>
@@ -226,7 +231,11 @@ function LoadingInfo () {
                 </swiper-slide>
               </swiper-container>
             </div>
-            <div className={ca.display__button__wrapper}><CarButtonHeaderMobile text={'apply for this vehicle'} /></div>
+<Link to='/404' className={ca.car__buttonWrapper}>
+            <div className={ca.display__button__wrapper}>
+              <CarButtonHeaderMobile text={"apply for this vehicle"} />
+            </div>
+</Link>
           </div>
           <div className={ca.car__card__description}>
             <div className={ca.card_description__main}>
@@ -285,22 +294,24 @@ function LoadingInfo () {
                 through three-digit internal factory numbering of all Porsche
                 models assigned to a very specific 1964 model.
               </p>
-              <button className={ca.textInfo__button}>
-                Request more information
-              </button>
+              <Link to="/404">
+                <button className={ca.textInfo__button}>
+                  Request more information
+                </button>
+              </Link>
             </div>
           </div>
         </div>
       </div>
       <div className={ca.counter__wrapper}>
-      <Suspense fallback={<LoadingInfo />}>
-        <CounterLazy
-          title={"Calculate the installment plan for this car."}
-          buttonText={textForButton}
-          styleForCounter={counterStyle}
-          buttonStyle={buttonStyle}
-        />
-         </Suspense>
+        <Suspense fallback={<LoadingInfo />}>
+          <CounterLazy
+            title={"Calculate the installment plan for this car."}
+            buttonText={textForButton}
+            styleForCounter={counterStyle}
+            buttonStyle={buttonStyle}
+          />
+        </Suspense>
       </div>
       <Footer />
     </div>
