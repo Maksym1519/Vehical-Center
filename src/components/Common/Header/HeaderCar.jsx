@@ -33,11 +33,17 @@ export const HeaderCar = ({ isCustomStyle }) => {
            </div>
             </Link>
            <div className={hc.header__buttonWrapper}>
+            <Link to='/catalog'>
             <div className={`${hc.header__inventoryButton} ${
                 isCustomStyle ? hc.customStyle : ""}`}>
             Inventory
             </div>
-            <div className={hc.button__wrapper}><CarButtonHeader text={'apply for this vehicle'} /></div>
+            </Link>
+             <Link to='/404'>
+            <div className={hc.button__wrapper}>
+              <CarButtonHeader text={'apply for this vehicle'} />
+              </div>
+             </Link>
             </div>
            <div className={hc.header__burger} onClick={openModal}>
             <span></span>

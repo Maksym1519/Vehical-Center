@@ -1,11 +1,13 @@
 @media (min-width: 1025px) {
   .counter {
     width: 100%;
+    max-width: 1200px;
     height: auto;
-    margin-top: 217px;
+    margin: 217px auto 0;
+    box-sizing: border-box;
   }
   .counter__container {
-    width: 83.33%;
+    width: 100%;
     height: auto;
     margin: 0 auto;
     display: flex;
@@ -85,7 +87,7 @@
     flex-direction: column;
   }
   .counter__inputWrapper:nth-child(1n) {
-    margin-bottom: 58px;
+    margin-bottom: 62px;
   }
   .counter__input__body {
     width: 100%;
@@ -93,7 +95,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 17px;
+    margin-bottom: 32px;
   }
   .counter__input__text {
     color: var(--primary-content, #41456B);
@@ -715,4 +717,7 @@
     flex-shrink: 1;
     margin-top: 0px;
   }
+  .counter__button__wrapper {
+    min-width: 280px;
+   }
 }

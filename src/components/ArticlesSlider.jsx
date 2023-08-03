@@ -1,4 +1,5 @@
 import As from './articlesSlider.module.scss';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import React, { useRef, useState } from "react";
 import { useEffect } from "react";
@@ -293,7 +294,9 @@ export const ArticlesSlider = ({text}) => {
             </swiper-slide>
           </swiper-container>
           </div>
+          <Link to='/404'>
           <button className={As.articles__button}>all articles</button>
+          </Link>
         </div>
        
        </div>

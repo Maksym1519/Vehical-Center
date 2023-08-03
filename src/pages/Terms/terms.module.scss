@@ -93,6 +93,7 @@
     .line__wrapper {
         width: 100%;
         max-width: 100%;
+        min-height: 65px;
         height: auto;
         padding: 20px;
         border: 1px solid var(--secondary-s-color, #D7D7D7);

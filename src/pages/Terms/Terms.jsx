@@ -5,9 +5,17 @@ import { IconContext } from 'react-icons';
 import { Footer } from '../../components/Common/Footer/Footer';
 import ArrowDown from '../../images/Arrow-Bottom.svg';
 import ArrowTop from '../../images/Arrow-Top.svg';
-import { Header } from '../../components/Common/Header/Header';
+import { lazy, Suspense } from 'react';
+const Header = lazy(()=>import('../../components/Common/Header/Header'))
+//import { Header } from '../../components/Common/Header/Header';
 import { IntroTitle } from '../../components/Common/IntroTitle';
 import { TermsData } from './termsData/TermsData';
+
+
+function LoadingInfo () {
+  return <h2>Loading...</h2>
+  
+}
 
 
 const Terms = () => {
@@ -81,7 +89,9 @@ const toggle = index => {
 };
     return (
         <div className={t.terms__wrapper}>
-         <Header />
+        <Suspense fallback={<LoadingInfo />}>
+    <Header />
+  </Suspense>
          <IntroTitle text={'Terms & Conditions'} />
          <div className={t.terms__container}>
          <IconContext.Provider value={{ color: '#00FFB9', size: '125px' }}>

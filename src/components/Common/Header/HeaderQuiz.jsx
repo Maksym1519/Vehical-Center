@@ -32,13 +32,15 @@ export const HeaderQuiz = ({ isCustomStyle }) => {
             </div>
           </Link>
           <div className={hc.header__buttonWrapper}>
-            <div
-              className={`${hc.header__inventoryButton} ${
-                isCustomStyle ? hc.customStyle : ""
-              }`}
-            >
-              Inventory
-            </div>
+            <Link to="/catalog">
+              <div
+                className={`${hc.header__inventoryButton} ${
+                  isCustomStyle ? hc.customStyle : ""
+                }`}
+              >
+                Inventory
+              </div>
+            </Link>
           </div>
           <div className={hc.header__burger} onClick={openModal}>
             <span></span>

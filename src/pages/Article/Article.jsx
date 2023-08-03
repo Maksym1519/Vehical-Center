@@ -1,16 +1,25 @@
 import ar from "./article.module.scss";
+import { lazy, Suspense } from 'react';
+const Header = lazy(()=>import('../../components/Common/Header/Header'))
 import { Link, Route, Router, Routes } from "react-router-dom";
-import { Header } from "../../components/Common/Header/Header";
+//import { Header } from "../../components/Common/Header/Header";
 import { ArticlesSlider } from "../../components/ArticlesSlider";
 import { Footer } from "../../components/Common/Footer/Footer";
 import Banner from "../../images/article-banner.webp";
 import BannerMob from '../../images/article-banner-360.webp';
 import Back from '../../images/Arrow-back.svg'
 
+
+function LoadingInfo () {
+  return <h2>Loading...</h2>
+  
+}
 const Article = () => {
   return (
     <div className={ar.article__wrapper}>
-      <Header />
+       <Suspense fallback={<LoadingInfo />}>
+    <Header />
+  </Suspense>
       <div className={ar.article__banner}>
         <img src={Banner} alt="banner" className={ar.article__banner__imgDesctop} />
         <img src={BannerMob} alt="banner" className={ar.article__banner__imgMobile} />

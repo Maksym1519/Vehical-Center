@@ -1,12 +1,14 @@
 @media (min-width: 1025px) {
 .articles {
     width: 100%;
+    max-width: 1200px;
     height: auto;
-    margin-top: 220px;
-    margin-bottom: 40px;
+    //margin-top: 220px;
+    //margin-bottom: 40px;
+    margin: 220px auto 40px 
 }
 .articles__container {
-    width: 83.33%;
+    width: 100%;
     height: auto;
     margin: 0 auto;
     display: flex;
@@ -48,6 +50,7 @@ line-height: 140.5%;
         }
     .articles__slider {
         width: 100%;
+        max-width: 1200px;
         height: auto;
         }
     .slider__item {

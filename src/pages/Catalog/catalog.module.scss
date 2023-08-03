@@ -717,8 +717,8 @@ line-height: 25px;
   background: #fff;
   min-width: 100%;
   z-index: 999;
-  padding-left: 174px;
-  padding-right: 174px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .search__close {
   position: absolute;
@@ -731,6 +731,7 @@ line-height: 25px;
   font-size: 20px;
   line-height: 25px;
   margin-bottom: 21px;
+  padding-left: 64px;
 }
 .search__item {
   border-radius: 2px;

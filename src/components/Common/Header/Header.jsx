@@ -9,7 +9,7 @@ import { ContuctUs } from '../../ContactUs';
 import { ContuctUsComplete } from '../../ContactUsCoplete';
 import { useState } from 'react';
 
-export const Header = ({ isCustomStyle }) => {
+ const Header = ({ isCustomStyle }) => {
   const [isOpen, setModalOpen] = useState(false)
   const openModal = () => {
     setModalOpen(true)
@@ -31,13 +31,17 @@ export const Header = ({ isCustomStyle }) => {
            </div>
             </Link>
            <div className={h.header__buttonWrapper}>
+            <Link to='/catalog'>
             <div className={`${h.header__inventoryButton} ${
                 isCustomStyle ? h.customStyle : ""}`}>
             Inventory
             </div>
+            </Link>
+            <Link to="/car">
              <div className={h.header__button}>
              Request a car
              </div>
+             </Link>
             </div>
            <div className={h.header__burger} onClick={openModal}>
             <span></span>
@@ -50,3 +54,5 @@ export const Header = ({ isCustomStyle }) => {
         </div>
     )
 }
+
+export default Header;

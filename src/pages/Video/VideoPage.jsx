@@ -1,7 +1,9 @@
 import v from "./video.module.scss";
 import ReactPlayer from "react-player";
 import { VideoPopUp } from "../../components/VideoPopUp";
-import { Header } from "../../components/Common/Header/Header";
+import { lazy, Suspense } from 'react';
+const Header = lazy(()=>import('../../components/Common/Header/Header'))
+//import { Header } from "../../components/Common/Header/Header";
 import { IntroTitle } from "../../components/Common/IntroTitle";
 import { VideoItem } from "../../components/VideoItem";
 import { Footer } from "../../components/Common/Footer/Footer";
@@ -11,6 +13,11 @@ import Video3 from "../../images/Video3.webp";
 import Video4 from "../../images/Video4.webp";
 import { useState } from "react";
 
+
+function LoadingInfo () {
+  return <h2>Loading...</h2>
+  
+}
  const VideoPage = () => {
   const [isOpen, setOpen] = useState(false);
   const [selectedVideoId, setSelectedVideoId] = useState(null);
@@ -38,7 +45,9 @@ import { useState } from "react";
   ];
   return (
     <div className={v.videoPage__wrapper}>
-      <Header />
+     <Suspense fallback={<LoadingInfo />}>
+    <Header />
+  </Suspense>
       <IntroTitle text={"Vehicle videos"} />
       <div className={v.videoItems__container}>
         {images.map((image, index) => (

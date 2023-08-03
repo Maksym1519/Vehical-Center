@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
-import { Header } from "../../components/Common/Header/Header";
+import { lazy, Suspense } from 'react';
+const Header = lazy(()=>import('../../components/Common/Header/Header'))
+//import { Header } from "../../components/Common/Header/Header";
 import { IntroTitle } from "../../components/Common/IntroTitle";
 import { Button } from "../../components/Common/Button";
 import { ButtonProps } from "../../components/Common/Button";
@@ -15,10 +17,17 @@ import TransCar from "../../images/transparency-car.webp";
 import TeamBg from "../../images/team-bg.webp";
 import FeatureBg from "../../images/features-bg.webp";
 
+function LoadingInfo () {
+  return <h2>Loading...</h2>
+  
+}
+
  const About = () => {
   return (
     <div className={a.about__wrapper}>
-      <Header />
+       <Suspense fallback={<LoadingInfo />}>
+    <Header />
+  </Suspense>
       <IntroTitle text={"About VAC "} />
       <div className={a.aboutMission__wrapper}>
         <div className={a.aboutMission__container}>
@@ -30,8 +39,9 @@ import FeatureBg from "../../images/features-bg.webp";
               simple. You can complete the entire process from home—we’ll even
               deliver the car to you!
             </p>
-            {/* <button className={a.info__button}>Request a Car</button> */}
+            <Suspense fallback={<LoadingInfo />}>
             <Button178 text={'REQUEST A CAR'} />
+            </Suspense>
           </div>
           <div className={a.aboutMission__imgWrapper}>
             <img src={Car} alt="car" />
@@ -166,7 +176,9 @@ import FeatureBg from "../../images/features-bg.webp";
                 sign anything until we have explained it clearly and you have
                 had a chance to read it.
               </p>
+              <Suspense fallback={<LoadingInfo />}>
               <Button178 text={'REQUEST A CAR'}/>
+              </Suspense>
             </div>
           </div>
         </div>
@@ -178,7 +190,9 @@ import FeatureBg from "../../images/features-bg.webp";
               <h4 className={a.agents__block__subTitle}>
                 Contact us today and speak with one of our qualified agents
               </h4>
+              <Suspense fallback={<LoadingInfo />}>
               <ButtonProps text={"Contact Us Now"} />
+              </Suspense>
             </div>
             <div className={a.agents__block}>
               <h3 className={a.agents__block__title}>Our qualified agents</h3>
@@ -201,7 +215,9 @@ import FeatureBg from "../../images/features-bg.webp";
         </div>
       </div>
       <div className={a.aboutSlider__wrapper}>
+      <Suspense fallback={<LoadingInfo />}>
         <ClientSlider />
+        </Suspense>
       </div>
       <div className={a.team__wrapper}>
         <div className={a.container}>
@@ -269,11 +285,16 @@ import FeatureBg from "../../images/features-bg.webp";
         </div>
       </div>
       <div className={a.counter__wrapper}>
+      <Suspense fallback={<LoadingInfo />}>
       <Counter text={'Before you start shopping, let’s figure out how much you can afford. Move the sliders to see how the loan duration and the total loan amount affect your monthly payments.'} title={'Let’s figure out how much you can afford'} />
+      </Suspense>
       </div>
+      <Suspense fallback={<LoadingInfo />}>
       <Footer />
+      </Suspense>
     </div>
   );
 };
+
 
 export default About;

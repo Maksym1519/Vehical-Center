@@ -1,10 +1,12 @@
 @media (min-width: 1024px) {
 .client__slider {
     width: 100%;
+    max-width: 1200px;
     height: auto;
+    margin: 0 auto;
    }
 .client__slider__container {
-    width: 83.33%;
+    width: 100%;
     height: auto;
     margin: 0 auto;
     display: flex;

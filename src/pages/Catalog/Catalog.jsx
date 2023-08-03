@@ -1,7 +1,9 @@
 import ct from "./catalog.module.scss";
 import ReactSlider from "react-slider";
 import { Link } from "react-router-dom";
-import { Header } from "../../components/Common/Header/Header";
+import { lazy, Suspense } from 'react';
+const Header = lazy(()=>import('../../components/Common/Header/Header'))
+//import { Header } from "../../components/Common/Header/Header";
 import { Footer } from "../../components/Common/Footer/Footer";
 import { CatalogModal } from "./CatalogModal";
 import { Accordion, AccordionItem } from "react-accessible-accordion";
@@ -20,6 +22,11 @@ import Truck from "../../images/Truck-icon.svg";
 import Filter from "../../images/Filter icon.svg";
 import Close from "../../images/search-Close.svg";
 
+
+function LoadingInfo () {
+  return <h2>Loading...</h2>
+  
+}
 const Catalog = ({ isCustomStyle }) => {
   const [sliderValue, setSliderValue] = useState([0, 500000]);
   const [sliderYearValue, setSliderYearValue] = useState([2002, 2023]);
@@ -251,7 +258,9 @@ const Catalog = ({ isCustomStyle }) => {
 
   return (
     <div className={ct.catalog__wrapper}>
+      <Suspense fallback={<LoadingInfo />}>
       <Header isCustomStyle={true} />
+      </Suspense>
       <div className={ct.catalog__mainWrapper}>
         <div className={ct.catalog__container}>
           {/* catalog search------------------------------------------------------- */}

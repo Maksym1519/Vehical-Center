@@ -23,11 +23,13 @@ export const MobileMenu = ({closeModal, openModal}) => {
               <Link to="/blog"><div className={mm.mobileMenu__item}>Blog</div></Link>
               <Link to="/"><div className={mm.mobileMenu__item}>Calculate</div></Link>
               </div>
+              <Link to='/404'>
               <div className={mm.socialMedia__wrapper}>
                 <img src={Insta} alt="icon" />
                 <img src={Facebook} alt="icon" />
                 <img src={Youtube} alt="icon" />
               </div>
+             </Link>
            </div>
            <img src={Close} alt="close" className={mm.mobileMenu__close} onClick={closeModal}/>
            {isOpen &&

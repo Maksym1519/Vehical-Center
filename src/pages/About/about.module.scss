@@ -1,6 +1,7 @@
 @media (min-width: 1025px) {
   .container {
     width: 83.33%;
+    max-width: 1200px;
     height: auto;
     margin: 0 auto;
   }
@@ -11,12 +12,14 @@
   }
   .aboutMission__wrapper {
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     height: auto;
     padding-top: 40px;
     padding-bottom: 110px;
   }
   .aboutMission__container {
-    width: 82.77%;
+    width: 100%;
     height: auto;
     margin: 0 auto;
     display: grid;
@@ -78,12 +81,13 @@
   //interests---------------------
   .getCar__wrapper {
     width: 100%;
+    max-width: 1200px;
     height: auto;
     padding-top: 110px;
-    margin-bottom: 192px;
+    margin: 0 auto 222px;
   }
   .getCar__container {
-    width: 82.77%;
+    width: 100%;
     max-width: 100%;
     height: auto;
     margin: 0 auto;
@@ -152,7 +156,7 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin-bottom: 220px;
+    margin: 0 auto 220px;
   }
   .transparency__container {
     width: 100%;
@@ -161,7 +165,7 @@
     display: grid;
     grid-template-columns: 1.05fr 1fr;
     column-gap: 72px;
-  }
+     }
   .transparency__imgWrapper {
     width: 100%;
     max-width: 100%;
@@ -200,16 +204,18 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin-bottom: 197px;
+    margin: 0 auto 197px;
   }
   .bestPrice__container {
+    max-width: 1200px;
     width: 100%;
     max-width: 100%;
     height: auto;
     display: grid;
-    grid-template-columns: 1.02fr 1fr;
+    grid-template-columns: 1fr 1fr;
     column-gap: 88px;
-  }
+    margin: 0 auto;
+    }
   .bestPrice__block {
     width: 100%;
     max-width: 100%;
@@ -255,7 +261,7 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin-bottom: 220px;
+    margin: 0 auto 220px;
   }
   .agents__container {
     width: 100%;
@@ -315,7 +321,7 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin-bottom: 220px;
+    margin: 0 auto 220px;
     padding-top: 20px;
   }
   .team__container {
@@ -382,12 +388,14 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin-bottom: 220px;
+    height: 494px;
+    margin: 0 auto 232px;
   }
   .features__container {
     width: 100%;
     max-width: 100%;
     height: auto;
+    max-height: 494px;
     display: grid;
     grid-template-columns: 0.9fr 1fr;
     column-gap: 60px;
@@ -406,6 +414,8 @@
   .features__imgWrapper img {
     width: 100%;
     max-width: 100%;
+    min-height: 100%;
+    display: block;
   }
   .features__info {
     width: 100%;
