@@ -1,12 +1,13 @@
 import React, { useRef, useState } from "react";
 import { lazy, Suspense } from 'react';
-const Header = lazy(()=>import('../../components/Common/Header/Header'))
+const Header = lazy(()=>import('../../components/Common/Header/Header'));
+const ClientSliderLazy = lazy(()=>import('../../components/ClientSlider'));
 //import { Header } from "../../components/Common/Header/Header";
 import { IntroTitle } from "../../components/Common/IntroTitle";
 import { Button } from "../../components/Common/Button";
 import { ButtonProps } from "../../components/Common/Button";
 import { Button178 } from "../../components/Common/Button";
-import { ClientSlider } from "../../components/ClientSlider";
+//import { ClientSlider } from "../../components/ClientSlider";
 import { Counter } from "../../components/Counter";
 import { Footer } from "../../components/Common/Footer/Footer";
 import a from "./about.module.scss";
@@ -216,7 +217,7 @@ function LoadingInfo () {
       </div>
       <div className={a.aboutSlider__wrapper}>
       <Suspense fallback={<LoadingInfo />}>
-        <ClientSlider />
+        <ClientSliderLazy />
         </Suspense>
       </div>
       <div className={a.team__wrapper}>

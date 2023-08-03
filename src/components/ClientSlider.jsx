@@ -14,7 +14,7 @@ import SliderImg from '../images/client-slider-bg.webp';
 
 import Cs from './clientSlider.module.scss'
 
-export const ClientSlider = () => {
+ const ClientSlider = () => {
   register();
   const params = {
     injectStyles: [
@@ -153,3 +153,5 @@ export const ClientSlider = () => {
     </div>
   );
 };
+
+export default ClientSlider;
