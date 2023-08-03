@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { lazy, Suspense } from 'react';
 const Header = lazy(()=>import('../../components/Common/Header/Header'));
 const ClientSliderLazy = lazy(()=>import('../../components/ClientSlider'));
+const CounterLazy = lazy(()=>import('../../components/Counter'));
 //import { Header } from "../../components/Common/Header/Header";
 import { IntroTitle } from "../../components/Common/IntroTitle";
 import { Button } from "../../components/Common/Button";
@@ -45,7 +46,7 @@ function LoadingInfo () {
             </Suspense>
           </div>
           <div className={a.aboutMission__imgWrapper}>
-            <img src={Car} alt="car" />
+            <img src={Car} alt="car" loading="lazy"/>
           </div>
         </div>
       </div>
@@ -74,7 +75,7 @@ function LoadingInfo () {
             <div className={a.body__item}>
               <div className={a.body__item__row}>
                 <div className={m.step__iconWrapper}>
-                  <img src={StepIcon} alt="icon" className={m.step__iconImg} />
+                  <img src={StepIcon} alt="icon" className={m.step__iconImg} loading="lazy"/>
                   <span className={m.step__iconNumber}>1</span>
                 </div>
                 <div className={a.text__wrapper}>
@@ -86,7 +87,7 @@ function LoadingInfo () {
               </div>
               <div className={a.body__item__row}>
                 <div className={m.step__iconWrapper}>
-                  <img src={StepIcon} alt="icon" className={m.step__iconImg} />
+                  <img src={StepIcon} alt="icon" className={m.step__iconImg} loading="lazy"/>
                   <span className={m.step__iconNumber}>2</span>
                 </div>
                 <div className={a.text__wrapper}>
@@ -99,7 +100,7 @@ function LoadingInfo () {
               </div>
               <div className={a.body__item__row}>
                 <div className={m.step__iconWrapper}>
-                  <img src={StepIcon} alt="icon" className={m.step__iconImg} />
+                  <img src={StepIcon} alt="icon" className={m.step__iconImg} loading="lazy"/>
                   <span className={m.step__iconNumber}>3</span>
                 </div>
                 <div className={a.text__wrapper}>
@@ -118,7 +119,7 @@ function LoadingInfo () {
         <div className={a.container}>
           <div className={a.transparency__container}>
             <div className={a.transparency__imgWrapper}>
-              <img src={TransCar} alt="car" />
+              <img src={TransCar} alt="car" loading="lazy"/>
             </div>
             <div className={a.transparency__info}>
               <h3 className={a.transparency__info__title}>
@@ -250,7 +251,7 @@ function LoadingInfo () {
               </div>
             </div>
             <div className={a.team__imgWrapper}>
-              <img src={TeamBg} alt="bg" />
+              <img src={TeamBg} alt="bg" loading="lazy"/>
             </div>
           </div>
         </div>
@@ -259,7 +260,7 @@ function LoadingInfo () {
         <div className={a.container}>
           <div className={a.features__container}>
             <div className={a.features__imgWrapper}>
-              <img src={FeatureBg} alt="bg" />
+              <img src={FeatureBg} alt="bg" loading="lazy"/>
             </div>
             <div className={a.features__info}>
                <div className={a.features__info__description}>
@@ -287,7 +288,7 @@ function LoadingInfo () {
       </div>
       <div className={a.counter__wrapper}>
       <Suspense fallback={<LoadingInfo />}>
-      <Counter text={'Before you start shopping, let’s figure out how much you can afford. Move the sliders to see how the loan duration and the total loan amount affect your monthly payments.'} title={'Let’s figure out how much you can afford'} />
+      <CounterLazy text={'Before you start shopping, let’s figure out how much you can afford. Move the sliders to see how the loan duration and the total loan amount affect your monthly payments.'} title={'Let’s figure out how much you can afford'} />
       </Suspense>
       </div>
       <Suspense fallback={<LoadingInfo />}>

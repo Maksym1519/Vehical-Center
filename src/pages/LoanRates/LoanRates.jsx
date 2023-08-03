@@ -1,10 +1,11 @@
 import l from "./loanRates.module.scss";
 import { lazy, Suspense } from "react";
 const Header = lazy(() => import("../../components/Common/Header/Header"));
+const CounterLazy = lazy(() => import("../../components/Counter"));
 //import { Header } from "../../components/Common/Header/Header";
 import { IntroTitle } from "../../components/Common/IntroTitle";
 import { Button178 } from "../../components/Common/Button";
-import { Counter } from "../../components/Counter";
+//import { Counter } from "../../components/Counter";
 import { Footer } from "../../components/Common/Footer/Footer";
 import Car from "../../images/creditPolicy.webp";
 import Procent from "../../images/Procent.svg";
@@ -111,12 +112,14 @@ const LoanRates = () => {
         </div>
       </div>
       <div className={l.counter__wrapper}>
-        <Counter
+      <Suspense fallback={<LoadingInfo />}>
+        <CounterLazy
           text={
             "Before you start shopping, let’s figure out how much you can afford. Move the sliders to see how the loan duration and the total loan amount affect your monthly payments."
           }
           title={"Let’s figure out how much you can afford"}
         />
+        </Suspense>
       </div>
       <Footer />
     </div>

@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import { Link, Route, Router, Routes } from "react-router-dom";
 const Header = lazy(() => import("../../components/Common/Header/Header"));
 const ClientSliderLazy = lazy(()=>import('../../components/ClientSlider'));
+const CounterLazy = lazy(()=>import('../../components/Counter'));
 //import { Header } from "../../components/Common/Header/Header";
 import m from "./main.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -32,7 +33,7 @@ import Car1 from "../../images/choose-car-img1.webp";
 import Car2 from "../../images/choose-car-img2.webp";
 import { Button } from "../../components/Common/Button";
 //import { ClientSlider } from "../../components/ClientSlider";
-import { Counter } from "../../components/Counter";
+//import { Counter } from "../../components/Counter";
 import { ArticlesSlider } from "../../components/ArticlesSlider";
 import { Footer } from "../../components/Common/Footer/Footer";
 
@@ -389,12 +390,14 @@ const Main = () => {
       <Suspense fallback={<LoadingInfo />}>
       <ClientSliderLazy />
       </Suspense>
-      <Counter
+      <Suspense fallback={<LoadingInfo />}>
+      <CounterLazy
         text={
           "Before you start shopping, let’s figure out how much you can afford. Move the sliders to see how the loan duration and the total loan amount affect your monthly payments."
         }
         title={"Let’s figure out how much you can afford"}
       />
+      </Suspense>
       <ArticlesSlider text={"Interesting to read"} />
       <Footer />
     </div>

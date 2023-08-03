@@ -1,6 +1,7 @@
 import ca from "./calculator.module.scss";
 import { lazy, Suspense } from 'react';
 const Header = lazy(()=>import('../../components/Common/Header/Header'))
+const CounterLazy = lazy(()=>import('../../components/Counter'))
 //import { Header } from "../../components/Common/Header/Header";
 import { IntroTitle } from "../../components/Common/IntroTitle";
 import { Counter } from "../../components/Counter";
@@ -19,12 +20,14 @@ function LoadingInfo () {
   </Suspense>
       <IntroTitle text={"Use our free calculator!"} />
       <div className={ca.counter__wrapper}>
-        <Counter
+      <Suspense fallback={<LoadingInfo />}>
+        <CounterLazy
           text={
             "Before you start shopping, let’s figure out how much you can afford. Move the sliders to see how the loan duration and the total loan amount affect your monthly payments."
           }
           title={"Let’s figure out how much you can afford"}
         />
+        </Suspense>
       </div>
       <Footer />
     </div>

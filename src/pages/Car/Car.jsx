@@ -4,9 +4,10 @@ import { useRef, useState } from "react";
 import { useEffect } from "react";
 import { register } from "swiper/element/bundle";
 import { HeaderCar } from "../../components/Common/Header/HeaderCar";
-import { Counter } from "../../components/Counter";
+//import { Counter } from "../../components/Counter";
 import { Footer } from "../../components/Common/Footer/Footer";
 import { CarButtonHeaderMobile } from "./CarButton";
+const CounterLazy = lazy(()=>import('../../components/Counter'));
 import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
@@ -287,12 +288,14 @@ import Rotate from '../../images/360.svg';
         </div>
       </div>
       <div className={ca.counter__wrapper}>
-        <Counter
+      <Suspense fallback={<LoadingInfo />}>
+        <CounterLazy
           title={"Calculate the installment plan for this car."}
           buttonText={textForButton}
           styleForCounter={counterStyle}
           buttonStyle={buttonStyle}
         />
+         </Suspense>
       </div>
       <Footer />
     </div>

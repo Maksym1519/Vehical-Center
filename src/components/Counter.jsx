@@ -7,7 +7,7 @@ import React, { useRef, useState } from "react";
 import { useEffect } from "react";
 import { register } from "swiper/element/bundle";
 
-export const Counter = ({
+ const Counter = ({
   text,
   title,
   buttonText,
@@ -206,3 +206,5 @@ export const Counter = ({
     </div>
   );
 };
+
+export default Counter;
