@@ -44,10 +44,7 @@ import { register } from "swiper/element/bundle";
     const newTime = parseInt(event.target.value);
     setTime(newTime);
   };
-  const calculateMonthPayment = Math.floor(price / time);
-  const calculateWeekPayment = Math.floor(calculateMonthPayment / 4);
-  const calculateBiWeekPayment = Math.floor(calculateMonthPayment / 2);
-
+  
   const buttonLabel = buttonText ? buttonText : "Request a Car";
   //input-slider--------------------------------------
   const [sliderAmountValue, setSliderAmountValue] = useState([0, 200000]);
@@ -66,6 +63,9 @@ import { register } from "swiper/element/bundle";
     setMinDuration(newValue[0]);
     setMaxDuration(newValue[1]);
   };
+  const calculateMonthPayment = Math.floor(sliderAmountValue[1] / sliderDurationValue[1]);
+  const calculateWeekPayment = Math.floor(calculateMonthPayment / 4);
+  const calculateBiWeekPayment = Math.floor(calculateMonthPayment / 2);
 
   //--------------------------------------------
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
